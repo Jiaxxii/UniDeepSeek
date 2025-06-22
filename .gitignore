@@ -7,6 +7,10 @@
 /[Ll]ogs/
 /[Mm]emoryCaptures/
 
+# 忽略付费插件 Sirenix （Odin Inspector只是对编辑器的增强）
+[Aa]ssets/Plugins
+[Aa]ssets/Plugins.meta
+
 # 自动生成的文件
 *.csproj
 *.userprefs
