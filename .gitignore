@@ -1,0 +1,28 @@
+﻿# Unity 临时文件
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Mm]emoryCaptures/
+
+# 自动生成的文件
+*.csproj
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.opendb
+*.VC.db
+
+# 资源缓存
+[Aa]ssets/AssetStoreTools*
+[Pp]ackages/packages-lock.json
+
+# 异常日志
+crashlytics-build.properties
+
+# Mac 文件
+.DS_Store
