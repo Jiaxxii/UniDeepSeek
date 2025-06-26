@@ -19,19 +19,19 @@ namespace Xiyu.UniDeepSeek.Tools
 
 #if UNITY_EDITOR
         [Sirenix.OdinInspector.ShowInInspector]
-        [Sirenix.OdinInspector.ShowIf("FunctionCallModel", FunctionCallModel.Required)]
+        [Sirenix.OdinInspector.ShowIf("FunctionCallModel", FunctionCallModel.Function)]
 #endif
         public string Type => "Function";
 
 #if UNITY_EDITOR
         [Sirenix.OdinInspector.ShowInInspector]
-        [Sirenix.OdinInspector.ShowIf("FunctionCallModel", FunctionCallModel.Required)]
+        [Sirenix.OdinInspector.ShowIf("FunctionCallModel", FunctionCallModel.Function)]
 #endif
         public string FunctionName { get; set; }
 
         public ParamsStandardError VerifyParams()
         {
-            if (FunctionCallModel == FunctionCallModel.Required && string.IsNullOrEmpty(FunctionName))
+            if (FunctionCallModel == FunctionCallModel.Function && string.IsNullOrEmpty(FunctionName))
             {
                 return ParamsStandardError.FunctionNameByNull;
             }
@@ -43,21 +43,12 @@ namespace Xiyu.UniDeepSeek.Tools
         [CanBeNull]
         public JToken FromObjectAsToken(JsonSerializer serializer = null)
         {
-            if (FunctionCallModel == FunctionCallModel.None) return null;
-
-            var obj = new JObject
+            if (FunctionCallModel == FunctionCallModel.Function)
             {
-                { "tool_choice", FunctionCallModel.ToString().ToLower() }
-            };
-
-            if (FunctionCallModel == FunctionCallModel.Auto)
-            {
-                return obj;
+                return new JObject { { "function", new JObject { { "name", FunctionName } } } };
             }
 
-            obj.Add("function", new JObject { { "name", FunctionName } });
-
-            return obj;
+            return FunctionCallModel.ToString().ToLower();
         }
     }
 }

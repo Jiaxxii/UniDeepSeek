@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using System.Collections.Generic;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Xiyu.UniDeepSeek.MessagesType;
 
@@ -27,6 +28,12 @@ namespace Xiyu.UniDeepSeek.Tools
 #endif
         public string JsonParameters { get; set; }
 
+#if ODIN_INSPECTOR
+        [Sirenix.OdinInspector.ShowInInspector]
+        [Sirenix.OdinInspector.LabelText("必要参数")]
+#endif
+        public List<string> RequiredParameters { get; set; }
+
 
         public void ObjectAsJson(object obj, JsonSerializerSettings settings = null)
         {
@@ -51,7 +58,8 @@ namespace Xiyu.UniDeepSeek.Tools
             {
                 { "name", FunctionName },
                 { "description", Description },
-                { "parameters", JToken.Parse(JsonParameters) }
+                { "parameters", JObject.Parse(JsonParameters) },
+                { "required", JToken.FromObject(RequiredParameters) },
             };
         }
     }

@@ -3,6 +3,15 @@
     [System.Serializable]
     public class SystemMessage : Message
     {
+#if UNITY_EDITOR && ODIN_INSPECTOR // 供序列化使用
+        public
+#else
+        private
+#endif
+            SystemMessage()
+        {
+        }
+
         public override RoleType Role => RoleType.System;
 
 

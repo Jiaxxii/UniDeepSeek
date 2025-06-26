@@ -11,6 +11,10 @@
 [Aa]ssets/Plugins
 [Aa]ssets/Plugins.meta
 
+# 忽略资源文件
+[Aa]ssets/Resources
+[Aa]ssets/Resources.meta
+
 # 自动生成的文件
 *.csproj
 *.userprefs

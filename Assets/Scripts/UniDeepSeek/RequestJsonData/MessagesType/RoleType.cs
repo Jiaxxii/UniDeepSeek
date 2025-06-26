@@ -12,6 +12,9 @@
         Assistant,
 
         // [System.Runtime.Serialization.EnumMember(Value = "tool")]
-        Tool
+        Tool,
+
+        // [System.Runtime.Serialization.EnumMember(Value = "stream_delta")]
+        StreamDelta
     }
 }

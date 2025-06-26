@@ -8,6 +8,7 @@ namespace Xiyu.UniDeepSeek.MessagesType
 {
     public abstract class Message : ISerializeParameters
     {
+        protected const string HideContent = "HIDE_CONTENT";
         /// <summary>
         /// 消息的角色。
         /// </summary>
@@ -24,9 +25,9 @@ namespace Xiyu.UniDeepSeek.MessagesType
         /// 内容。
         /// </summary>
 #if ODIN_INSPECTOR
+        [ShowInInspector, HideIf("@Content == \"HIDE_CONTENT\"")]
         [LabelText("内容")]
-        [ShowInInspector]
-        [TextArea]
+        [TextArea(5, 10)]
 #endif
         public string Content { get; set; }
 

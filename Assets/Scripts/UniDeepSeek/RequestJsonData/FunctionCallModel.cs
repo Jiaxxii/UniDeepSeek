@@ -4,6 +4,7 @@
     {
         None,
         Auto,
-        Required
+        Required,
+        Function
     }
 }

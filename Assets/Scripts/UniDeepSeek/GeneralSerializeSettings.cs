@@ -23,7 +23,7 @@ namespace Xiyu.UniDeepSeek
             // 枚举值序列化为字符串
             Converters = new List<JsonConverter>
             {
-                new StringEnumConverter()
+                new StringEnumConverter(new SnakeCaseNamingStrategy())
             }
         };
 

@@ -5,7 +5,12 @@ namespace Xiyu.UniDeepSeek.MessagesType
     [System.Serializable]
     public class AssistantMessage : Message
     {
-        private AssistantMessage()
+#if UNITY_EDITOR && ODIN_INSPECTOR // 供序列化使用
+        public
+#else
+        private
+#endif
+            AssistantMessage()
         {
         }
 
@@ -23,6 +28,7 @@ namespace Xiyu.UniDeepSeek.MessagesType
 
 #if ODIN_INSPECTOR
         [Sirenix.OdinInspector.ShowInInspector]
+        [UnityEngine.TextArea(10, 20)]
 #endif
         public string ReasoningContent { get; set; }
 
@@ -50,6 +56,11 @@ namespace Xiyu.UniDeepSeek.MessagesType
         public static AssistantMessage CreateMessage(string content, string name = null)
         {
             return new AssistantMessage { Content = content, Name = name };
+        }
+
+        public static AssistantMessage CreateMessage(string content, string reasoningContent, string name)
+        {
+            return new AssistantMessage { Content = content, ReasoningContent = reasoningContent, Name = name };
         }
 
         /// <summary>

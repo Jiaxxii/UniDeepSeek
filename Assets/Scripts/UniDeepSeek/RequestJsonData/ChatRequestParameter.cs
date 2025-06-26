@@ -26,7 +26,7 @@ namespace Xiyu.UniDeepSeek
 #if ODIN_INSPECTOR
         [ShowInInspector, PropertySpace(10, SpaceAfter = 20), LabelText("消息")]
 #endif
-        public List<Message> Messages { get; set; } = new();
+        public List<MessagesType.Message> Messages { get; set; } = new();
 
 #if ODIN_INSPECTOR
         [ShowInInspector, LabelText("重复惩罚度（相同内容）"), PropertySpace, TabGroup("调节", TextColor = "#61AFEF"), HideIf("Model", ChatModel.Reasoner)]
@@ -100,7 +100,7 @@ namespace Xiyu.UniDeepSeek
         [Range(0, 20), Tooltip("一个介于 0 到 20 之间的整数 N，指定每个输出位置返回输出概率 top N 的 token，且返回这些 token 的对数概率。指定此参数时，logprobs 必须为 true。")]
 #endif
         [JsonIgnore]
-        public int TopLogprobs { get; set; } = 1;
+        public int TopLogprobs { get; set; } = 0;
 
 #if ODIN_INSPECTOR
         [ShowInInspector, PropertySpace, TabGroup("工具", TextColor = "#E5C07B")]
@@ -112,7 +112,7 @@ namespace Xiyu.UniDeepSeek
         [ShowInInspector, LabelText("工具选择"), PropertySpace, TabGroup("工具")]
 #endif
         [JsonIgnore] // 手动控制序列化格式
-        public ToolChoice ToolChoice { get; set; } = new();
+        public ToolChoice ToolChoice { get; private set; } = new();
 
 
         public ParamsStandardError VerifyParams()
@@ -134,7 +134,17 @@ namespace Xiyu.UniDeepSeek
 
         public JToken FromObjectAsToken(JsonSerializer serializer = null)
         {
-            var jObject = new JObject { { "model", Model.ToString().ToLower() } };
+            var jObject = new JObject
+            {
+                {
+                    "model", Model switch
+                    {
+                        ChatModel.Chat => "deepseek-chat",
+                        ChatModel.Reasoner => "deepseek-reasoner",
+                        _ => throw new ArgumentOutOfRangeException()
+                    }
+                }
+            };
 
             serializer ??= GeneralSerializeSettings.SampleJsonSerializer;
 
@@ -215,7 +225,14 @@ namespace Xiyu.UniDeepSeek
             }
 
 
-            if (ToolInstances is not null && ToolInstances.Count > 0)
+            // 没有工具实例 或 没有选择工具
+            if (ToolInstances is null || ToolInstances.Count == 0 ||
+                (ToolInstances.Count != 0 && ToolChoice is not null && ToolChoice.FunctionCallModel == FunctionCallModel.None))
+            {
+                return jObject;
+            }
+
+            if (ToolChoice is not null && ToolInstances is not null && ToolInstances.Count > 0)
             {
                 var tools = new JArray();
                 foreach (var toolInstance in ToolInstances)
@@ -234,7 +251,8 @@ namespace Xiyu.UniDeepSeek
                 jObject.Add("tools", tools);
             }
 
-            if (ToolChoice is not null && ToolChoice.FunctionCallModel != FunctionCallModel.None)
+
+            if (ToolChoice is not null)
             {
                 jObject.Add("tool_choice", ToolChoice.FromObjectAsToken(serializer));
             }

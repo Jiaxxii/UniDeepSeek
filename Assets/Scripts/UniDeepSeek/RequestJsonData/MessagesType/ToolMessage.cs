@@ -3,6 +3,21 @@
     [System.Serializable]
     public class ToolMessage : Message
     {
+#if UNITY_EDITOR && ODIN_INSPECTOR // 供序列化使用
+        public
+#else
+        private
+#endif
+            ToolMessage()
+        {
+        }
+
+        public ToolMessage(string toolCallId, string content)
+        {
+            ToolCallId = toolCallId;
+            Content = content;
+        }
+
         public override RoleType Role => RoleType.Tool;
 
 #if ODIN_INSPECTOR
