@@ -5,7 +5,6 @@ using Cysharp.Threading.Tasks;
 using UnityEngine;
 using Xiyu.UniDeepSeek;
 using Xiyu.UniDeepSeek.MessagesType;
-using Message = Xiyu.UniDeepSeek.MessagesType.Message;
 
 
 #if ODIN_INSPECTOR
@@ -20,10 +19,7 @@ public class Test : MonoBehaviour
 #if ODIN_INSPECTOR
     [ShowInInspector]
 #endif
-    private ChatRequestParameter chatRequestParameter = new()
-    {
-        Messages = new List<Message> { new UserMessage("杭州今天的天气怎么样？") }
-    };
+    private ChatRequestParameter chatRequestParameter = new();
 
     [SerializeField]
 #if ODIN_INSPECTOR
@@ -31,25 +27,9 @@ public class Test : MonoBehaviour
 #endif
     private ChatCompletion chatCompletion;
 
-    private CancellationTokenSource _cancellationTokenSource;
-#if ODIN_INSPECTOR
-    [Button("创建\\取消令牌", DrawResult = true)]
-#endif
-    private string CancelTest()
-    {
-        if (_cancellationTokenSource == null)
-        {
-            _cancellationTokenSource = new CancellationTokenSource();
-            return "创建令牌";
-        }
-
-        _cancellationTokenSource.Cancel();
-        _cancellationTokenSource = null;
-        return "取消令牌";
-    }
 
 #if ODIN_INSPECTOR
-    [Button("Chat Completion 取消请求测试", DrawResult = false), PropertySpace(50)]
+    [Button("Chat Completion 取消请求测试", DrawResult = false), PropertySpace(10)]
 #endif
     private async UniTaskVoid ChatTest()
     {
@@ -73,7 +53,7 @@ public class Test : MonoBehaviour
     }
 
 #if ODIN_INSPECTOR
-    [Button("Stream Chat Completion 取消请求测试", DrawResult = false), PropertySpace(20)]
+    [Button("Stream Chat Completion 取消请求测试", DrawResult = false), PropertySpace(10)]
 #endif
     private async UniTaskVoid StreamChatTest()
     {
@@ -102,7 +82,7 @@ public class Test : MonoBehaviour
     }
 
 #if ODIN_INSPECTOR
-    [Button("对话前缀续写 取消请求测试", DrawResult = false), PropertySpace(20)]
+    [Button("对话前缀续写 取消请求测试", DrawResult = false), PropertySpace(10)]
 #endif
     private async UniTaskVoid PrefixChatTest()
     {
@@ -126,7 +106,7 @@ public class Test : MonoBehaviour
     }
 
 #if ODIN_INSPECTOR
-    [Button("流式对话前缀续写 取消请求测试", DrawResult = false), PropertySpace(20)]
+    [Button("流式对话前缀续写 取消请求测试", DrawResult = false), PropertySpace(10)]
 #endif
     private async UniTaskVoid StreamPrefixChatTest()
     {
@@ -155,7 +135,7 @@ public class Test : MonoBehaviour
     }
 
 #if ODIN_INSPECTOR
-    [Button("对话前缀续写测试（流式-深度思考模型）", DrawResult = false)]
+    [Button("对话前缀续写测试（流式-深度思考模型）", DrawResult = false), PropertySpace(10)]
 #endif
     private async UniTaskVoid StreamThinkConversationPrefixContinuationTest()
     {
@@ -177,7 +157,7 @@ public class Test : MonoBehaviour
     }
 
 #if ODIN_INSPECTOR
-    [Button("对话前缀续写测试（流式）", DrawResult = false)]
+    [Button("对话前缀续写测试（流式）", DrawResult = false), PropertySpace(10)]
 #endif
     private async UniTaskVoid StreamConversationPrefixContinuationTest()
     {

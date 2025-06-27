@@ -5,7 +5,6 @@ using System.Threading;
 using Cysharp.Threading.Tasks;
 using Cysharp.Threading.Tasks.Linq;
 using JetBrains.Annotations;
-using UnityEngine;
 
 
 namespace Xiyu.UniDeepSeek
@@ -19,7 +18,7 @@ namespace Xiyu.UniDeepSeek
 
         private readonly string _apiKey;
 
-        public Uri BaseUri { get; private set; } = new("https://api.deepseek.com");
+        public Uri BaseUri { get; } = new("https://api.deepseek.com");
 
         public string DefaultMediaType { get; set; } = "application/json";
 
@@ -91,7 +90,7 @@ namespace Xiyu.UniDeepSeek
             return MainHttpClient.SendAsync(httpRequestMessage, httpCompletionOption, cancellationToken);
         }
 
-        protected Uri GetUri([NotNull] string requestUri)
+        protected virtual Uri GetUri([NotNull] string requestUri)
         {
             if (string.IsNullOrWhiteSpace(requestUri))
                 throw new ArgumentException("Request URI cannot be null or empty.", nameof(requestUri));

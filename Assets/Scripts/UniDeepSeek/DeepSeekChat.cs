@@ -13,14 +13,6 @@ using Xiyu.UniDeepSeek.Tools;
 
 namespace Xiyu.UniDeepSeek
 {
-    public enum ChatState
-    {
-        Success,
-        Cancel,
-        InvalidFunctionCall,
-        MaxFunctionCallCountReached
-    }
-
     public class DeepSeekChat : ChatProcessor
     {
         public DeepSeekChat([NotNull] ChatRequestParameter setting, [NotNull] string apiKey) : base(apiKey)

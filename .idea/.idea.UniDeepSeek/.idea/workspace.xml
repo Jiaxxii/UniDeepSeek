@@ -5,14 +5,43 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8dc74092-d10d-470c-8ee2-01be99c0ea2b" name="更改" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Canvas.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Example/ChatCompletion/ChatCompletion.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Example/ChatCompletion/ChatCompletion.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Example/FunctionCallChatCompletion.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Example/FunctionCallChatCompletion/FunctionCallChatCompletion.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Example/FunctionCallChatCompletion/FunctionCallChatCompletion.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Example/FunctionCallChatCompletion/FunctionCallChatCompletion.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Example/PrefixChatCompletion.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Example/PrefixChatCompletion/PrefixChatCompletion.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Example/PrefixChatCompletion/PrefixChatCompletion.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Example/PrefixChatCompletion/PrefixChatCompletion.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Example/Special.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Example/Special/PrefixReasonerStreamChatCompletion.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Example/Special/PrefixReasonerStreamChatCompletion/PrefixReasonerStreamChatCompletion.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Example/Special/PrefixReasonerStreamChatCompletion/PrefixReasonerStreamChatCompletion.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Example/Special/PrefixReasonerStreamChatCompletion/PrefixReasonerStreamChatCompletion.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Example/Special/ReasonerStreamChatCompletion.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Example/Special/ReasonerStreamChatCompletion/ReasonerStreamChatCompletion.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Example/Special/ReasonerStreamChatCompletion/ReasonerStreamChatCompletion.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Example/Special/ReasonerStreamChatCompletion/ReasonerStreamChatCompletion.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Example/SteamChatCompletion.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Example/SteamChatCompletion/StreamChatCompletion.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Example/SteamChatCompletion/StreamChatCompletion.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Example/SteamChatCompletion/StreamChatCompletion.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Example/StreamPrefixChatCompletion/StreamPrefixChatCompleiton.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Example/StreamPrefixChatCompletion/StreamPrefixChatCompletion.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Loading.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/LoadingControl.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/ChatState.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/ChatState.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UniDeepSeek/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UniDeepSeek/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Test.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Test.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Analysis/StreamDeserializeCompletions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Analysis/StreamDeserializeCompletions.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/ChatProcessor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/ChatProcessor.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/DeepSeekChat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/DeepSeekChat.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/FunctionCallCenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/FunctionCallCenter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/MainHttpClient.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/MainHttpClient.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-6000.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-6000.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniDeepSeek.sln" beforeDir="false" afterPath="$PROJECT_DIR$/UniDeepSeek.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,11 +91,6 @@
     <setting file="mock://F:/Unity/MyProject/UniDeepSeek/Assets/Scripts/Test.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Test.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Analysis/SampleDeserializeCompletion.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://F:/Unity/MyProject/UniDeepSeek/Assets/Scripts/UniDeepSeek/Analysis/StreamDeserializeCompletions.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://F:/Unity/MyProject/UniDeepSeek/Assets/Scripts/UniDeepSeek/ChatProcessor.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://F:/Unity/MyProject/UniDeepSeek/Assets/Scripts/UniDeepSeek/DeepSeekChat.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://F:/Unity/MyProject/UniDeepSeek/Assets/Scripts/UniDeepSeek/FunctionCallCenter.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://F:/Unity/MyProject/UniDeepSeek/Assets/Scripts/UniDeepSeek/MainHttpClient.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/ResponseJsonData/Logprobs/LogprobItem.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
@@ -186,7 +210,8 @@
       <workItem from="1750985228919" duration="3327000" />
       <workItem from="1750988593467" duration="127000" />
       <workItem from="1750988774064" duration="4333000" />
-      <workItem from="1750993349921" duration="1913000" />
+      <workItem from="1750993349921" duration="7042000" />
+      <workItem from="1751007233036" duration="7183000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -220,7 +245,15 @@
       <option name="project" value="LOCAL" />
       <updated>1750954447707</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="fix(chat): 修复了无法捕获`OperationCanceledException`的bug&#10;&#10;- 未在流式反序列化中检查任务的取消状态，导致取消令牌被忽略，任务无法正常取消。">
+      <option name="closed" value="true" />
+      <created>1750995332622</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1750995332622</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -254,7 +287,8 @@
     <MESSAGE value="update `.gitignore` file" />
     <MESSAGE value="[update] 请求配置更新" />
     <MESSAGE value="feat(chat): 完善DeepSeek接口.&#10;&#10;- 实现普通非流式于流式异步调用方法&#10;- 实现对话前缀续写功能（包含流式调用）&#10;- 自动处理 `FunctionCall`&#10;- 自动记录对话结果&#10;- 自动清理不再有效的 `Xiyu.UniDeepSeek.MessagesType.ToolMessage` 消息" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(chat): 完善DeepSeek接口.&#10;&#10;- 实现普通非流式于流式异步调用方法&#10;- 实现对话前缀续写功能（包含流式调用）&#10;- 自动处理 `FunctionCall`&#10;- 自动记录对话结果&#10;- 自动清理不再有效的 `Xiyu.UniDeepSeek.MessagesType.ToolMessage` 消息" />
+    <MESSAGE value="fix(chat): 修复了无法捕获`OperationCanceledException`的bug&#10;&#10;- 未在流式反序列化中检查任务的取消状态，导致取消令牌被忽略，任务无法正常取消。" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix(chat): 修复了无法捕获`OperationCanceledException`的bug&#10;&#10;- 未在流式反序列化中检查任务的取消状态，导致取消令牌被忽略，任务无法正常取消。" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
