@@ -1,6 +1,8 @@
-﻿using System.Net.Http;
+﻿using System;
+using System.Net.Http;
 using System.Threading;
 using Cysharp.Threading.Tasks;
+using UnityEngine;
 
 namespace Xiyu.UniDeepSeek
 {
@@ -23,11 +25,11 @@ namespace Xiyu.UniDeepSeek
             return Client.PostAsync(requestUri, content, cancellationToken ?? CancellationToken.None).AsUniTask();
         }
 
-        public static UniTask<HttpResponseMessage> SendAsync(HttpRequestMessage request,
-            HttpCompletionOption completionOption = HttpCompletionOption.ResponseContentRead,
+        public static UniTask<HttpResponseMessage> SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption,
             CancellationToken? cancellationToken = null)
         {
-            return Client.SendAsync(request, completionOption, cancellationToken ?? CancellationToken.None).AsUniTask();
+            return Client.SendAsync(request, completionOption, cancellationToken ?? CancellationToken.None)
+                .AsUniTask();
         }
 
         public static void Dispose()

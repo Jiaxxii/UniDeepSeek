@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading;
 using Cysharp.Threading.Tasks;
 using Cysharp.Threading.Tasks.Linq;
@@ -12,6 +13,14 @@ using Xiyu.UniDeepSeek.Tools;
 
 namespace Xiyu.UniDeepSeek
 {
+    public enum ChatState
+    {
+        Success,
+        Cancel,
+        InvalidFunctionCall,
+        MaxFunctionCallCountReached
+    }
+
     public class DeepSeekChat : ChatProcessor
     {
         public DeepSeekChat([NotNull] ChatRequestParameter setting, [NotNull] string apiKey) : base(apiKey)
@@ -61,6 +70,8 @@ namespace Xiyu.UniDeepSeek
         /// 自动删除请求后没用的工具消息以减少网络流量 （默认:true）
         /// </summary>
         public bool AutoRemoveFunctionCallMessage { get; set; } = true;
+
+        public int MaxFunctionCallCount { get; set; } = 10;
 
         /// <summary>
         /// 消息过滤器，用于过滤掉不需要的消息
@@ -138,32 +149,55 @@ namespace Xiyu.UniDeepSeek
 
 
         /// <summary>
-        /// 【不记录消息】【流式】【可自动调用函数】 发起一起聊天补全请求
+        /// 【可自动调用函数】 发起一起聊天补全请求
         /// </summary>
         /// <param name="cancellation"></param>
         /// <returns></returns>
-        public async UniTask<ChatCompletion> ChatCompletionAsync(CancellationToken? cancellation = null)
+        public async UniTask<(ChatState state, ChatCompletion chatCompletion)> ChatCompletionAsync(CancellationToken? cancellation = null)
         {
             CleanUpMessageList();
-            while (true)
+            var maxFunctionCallCount = MaxFunctionCallCount;
+            while (maxFunctionCallCount > 0)
             {
                 var requestJson = Setting.FromObjectAsToken(GeneralSerializeSettings.SampleJsonSerializer).ToString(Formatting.None);
 
-                var responseJson = await GetChatCompletionStringAsync(GetChatCompletionPath(), requestJson, cancellation);
+                string responseJson;
+                try
+                {
+                    responseJson = await GetChatCompletionStringAsync(GetChatCompletionPath(), requestJson, cancellation);
+                }
+                catch (WebException exception) when (exception.Status == WebExceptionStatus.RequestCanceled)
+                {
+                    return (ChatState.Cancel, null);
+                }
 
                 var chatCompletion = AnalysisChatCompletion.AnalysisChatCompletion(ref responseJson, GeneralSerializeSettings.SampleJsonSerializerSettings);
 
-                // _lastChatCompletion = chatCompletion;
                 // 记录消息
                 RecordMessage(chatCompletion.Choices);
 
                 if (chatCompletion.Choices[0].SourcesMessage.ToolCalls is { Count: > 0 } == false)
                 {
-                    return chatCompletion;
+                    return (ChatState.Success, chatCompletion);
                 }
 
-                await ProcessFunctionCallsAsync(chatCompletion.Choices[0].SourcesMessage, UseConcurrency);
+                try
+                {
+                    var isCancellationRequested = await ProcessFunctionCallsAsync(chatCompletion.Choices[0].SourcesMessage, UseConcurrency, cancellation);
+                    if (isCancellationRequested)
+                    {
+                        return (ChatState.Cancel, null);
+                    }
+                }
+                catch (OperationCanceledException)
+                {
+                    return (ChatState.Cancel, null);
+                }
+
+                maxFunctionCallCount--;
             }
+
+            return (ChatState.MaxFunctionCallCountReached, null);
         }
 
         /// <summary>
@@ -184,9 +218,16 @@ namespace Xiyu.UniDeepSeek
 
             var requestJson = jsonObject.ToString(Formatting.None);
 
-            var stream = await SendStreamRequestAsync(GetChatCompletionPath(), requestJson, cancellation);
+            try
+            {
+                var stream = await SendStreamRequestAsync(GetChatCompletionPath(), requestJson, cancellation);
 
-            return AnalysisChatCompletionsAsync.AnalysisChatCompletion(stream, GeneralSerializeSettings.SampleJsonSerializerSettings, cancellation);
+                return AnalysisChatCompletionsAsync.AnalysisChatCompletion(stream, GeneralSerializeSettings.SampleJsonSerializerSettings, cancellation);
+            }
+            catch (WebException exception) when (exception.Status == WebExceptionStatus.RequestCanceled)
+            {
+                throw new OperationCanceledException(exception.Message, exception);
+            }
         }
 
 
@@ -203,11 +244,20 @@ namespace Xiyu.UniDeepSeek
 
             async UniTask Create(IAsyncWriter<ChatCompletion> writer, CancellationToken cst)
             {
+                var maxFunctionCallCount = MaxFunctionCallCount;
                 do
                 {
                     CleanUpMessageList();
                     var requestJson = GetStreamRequestJson();
-                    var usageCompletion = await CombineStreamCompletionAsync(writer, GetChatCompletionPath(), requestJson, cst);
+                    ChatCompletion usageCompletion;
+                    try
+                    {
+                        usageCompletion = await CombineStreamCompletionAsync(writer, GetChatCompletionPath(), requestJson, cst);
+                    }
+                    catch (WebException exception) when (exception.Status == WebExceptionStatus.RequestCanceled)
+                    {
+                        throw new OperationCanceledException(exception.Message, exception);
+                    }
 
                     if (usageCompletion.Choices[0].SourcesMessage.ToolCalls == null || usageCompletion.Choices[0].SourcesMessage.ToolCalls.Count == 0)
                     {
@@ -216,8 +266,14 @@ namespace Xiyu.UniDeepSeek
                         return;
                     }
 
-                    await ProcessFunctionCallsAsync(usageCompletion.Choices[0].SourcesMessage, UseConcurrency);
-                } while (true);
+                    var isCancellationRequested = await ProcessFunctionCallsAsync(usageCompletion.Choices[0].SourcesMessage, UseConcurrency, cst);
+                    if (isCancellationRequested)
+                    {
+                        throw new OperationCanceledException("工具函数调用取消。");
+                    }
+                } while (maxFunctionCallCount-- > 0);
+
+                throw new InvalidOperationException("达到最大函数调用次数。");
             }
         }
 
@@ -233,18 +289,31 @@ namespace Xiyu.UniDeepSeek
         /// <param name="name">可以选填的参与者的名称，为模型提供信息以区分相同角色的参与者。</param>
         /// <param name="cancellationToken">取消令牌</param>
         /// <returns>对话补全结果</returns>
-        public async UniTask<ChatCompletion> ChatPrefixCompletionAsync([CanBeNull] string prefix = null, [CanBeNull] string think = null, [CanBeNull] string name = null,
+        public async UniTask<(ChatState state, ChatCompletion chatCompletion)> ChatPrefixCompletionAsync([CanBeNull] string prefix = null, [CanBeNull] string think = null,
+            [CanBeNull] string name = null,
             CancellationToken? cancellationToken = null)
         {
-            var completion = await ExecuteWithModelAsync(think, async cancelToken =>
+            var (state, completion) = await ExecuteWithModelAsync(think, async cancelToken =>
             {
                 var requestJson = GetPrefixModelRequestJson(false, prefix, think, name);
 
-                var responseJson = await GetChatCompletionStringAsync(GetChatCompletionPath(true), requestJson, cancelToken);
+                string responseJson;
+                try
+                {
+                    responseJson = await GetChatCompletionStringAsync(GetChatCompletionPath(true), requestJson, cancelToken);
+                }
+                catch (WebException exception) when (exception.Status == WebExceptionStatus.RequestCanceled)
+                {
+                    return (ChatState.Cancel, null);
+                }
 
-                return AnalysisChatCompletion.AnalysisChatCompletion(ref responseJson, GeneralSerializeSettings.SampleJsonSerializerSettings);
+                return (ChatState.Success, AnalysisChatCompletion.AnalysisChatCompletion(ref responseJson, GeneralSerializeSettings.SampleJsonSerializerSettings));
             }, cancellationToken ?? CancellationToken.None);
 
+            if (state == ChatState.Cancel)
+            {
+                return (ChatState.Cancel, null);
+            }
 
             if (completion != null)
             {
@@ -255,7 +324,7 @@ namespace Xiyu.UniDeepSeek
                 RecordMessage(completion.Choices);
             }
 
-            return completion;
+            return (ChatState.Success, completion);
         }
 
 
@@ -272,7 +341,7 @@ namespace Xiyu.UniDeepSeek
         /// <param name="onCompletion">在完全处理完消息后调用的回调函数，返回一个全新的`ChatCompletion`对象</param>
         /// <param name="cancellationToken">取消令牌</param>
         /// <returns>对话补全流</returns>
-        public UniTaskCancelableAsyncEnumerable<ChatCompletion> ChatStreamCompletionsEnumerableAsync([CanBeNull] string prefix, [CanBeNull] string think, string name = null,
+        public UniTaskCancelableAsyncEnumerable<ChatCompletion> ChatPrefixStreamCompletionsEnumerableAsync([CanBeNull] string prefix, [CanBeNull] string think, string name = null,
             Action<ChatCompletion> onCompletion = null,
             CancellationToken? cancellationToken = null)
         {
@@ -280,12 +349,20 @@ namespace Xiyu.UniDeepSeek
 
             async UniTask Create(IAsyncWriter<ChatCompletion> writer, CancellationToken ct)
             {
-                var usageCompletion = await ExecuteWithModelAsync(think, cancelToken =>
+                var (_, usageCompletion) = await ExecuteWithModelAsync(think, async cancelToken =>
                 {
                     var requestJson = GetPrefixModelRequestJson(true, prefix, think, name);
 
-                    return CombineStreamCompletionAsync(writer, GetChatCompletionPath(true), requestJson, cancelToken);
+                    try
+                    {
+                        return (ChatState.Success, await CombineStreamCompletionAsync(writer, GetChatCompletionPath(true), requestJson, cancelToken));
+                    }
+                    catch (WebException exception) when (exception.Status == WebExceptionStatus.RequestCanceled)
+                    {
+                        throw new OperationCanceledException(exception.Message, exception);
+                    }
                 }, ct);
+
 
                 if (usageCompletion != null)
                 {
@@ -300,7 +377,8 @@ namespace Xiyu.UniDeepSeek
         }
 
 
-        private async UniTask<ChatCompletion> ExecuteWithModelAsync([CanBeNull] string think, Func<CancellationToken, UniTask<ChatCompletion>> func,
+        private async UniTask<(ChatState state, ChatCompletion chatCompletion)> ExecuteWithModelAsync([CanBeNull] string think,
+            Func<CancellationToken, UniTask<(ChatState state, ChatCompletion chatCompletion)>> func,
             CancellationToken cancellationToken)
         {
             CleanUpMessageList();
@@ -380,7 +458,7 @@ namespace Xiyu.UniDeepSeek
 
 
         // 处理工具调用获取调用后的消息
-        private async UniTask ProcessFunctionCallsAsync(Message message, bool useConcurrency = true)
+        private async UniTask<bool> ProcessFunctionCallsAsync(Message message, bool useConcurrency = true, CancellationToken? cancellationToken = null)
         {
             RecordMessage(new MessagesType.FunctionCallMessage(message));
 
@@ -404,21 +482,47 @@ namespace Xiyu.UniDeepSeek
 
             if (useConcurrency)
             {
-                foreach (var (id, result) in await FunctionCallCenter.InvokeFunction(functionCalls))
+                foreach (var result in await FunctionCallCenter.InvokeFunction(functionCalls, cancellationToken))
                 {
-                    var userMessage = new MessagesType.ToolMessage(id, result);
-                    RecordMessage(userMessage);
+                    switch (result.State)
+                    {
+                        case ChatState.Cancel:
+                            return true;
+                        case ChatState.Success or ChatState.InvalidFunctionCall:
+                        {
+                            var userMessage = new MessagesType.ToolMessage(result.FunctionId, result.Result);
+                            RecordMessage(userMessage);
+                            break;
+                        }
+                        default:
+                            Debug.LogWarning($"工具函数\"{result.FunctionId}\"调用失败，状态码：{result.State}。信息：{result.Message}");
+                            break;
+                    }
                 }
             }
             else
             {
                 foreach (var functionCall in functionCalls)
                 {
-                    var (_, result) = await FunctionCallCenter.InvokeFunction(functionCall);
-                    var userMessage = new MessagesType.ToolMessage(functionCall.Id, result);
-                    RecordMessage(userMessage);
+                    var result = await FunctionCallCenter.InvokeFunction(functionCall, cancellationToken);
+                    switch (result.State)
+                    {
+                        case ChatState.Cancel:
+                            return true;
+                        case ChatState.Success or ChatState.InvalidFunctionCall:
+                        {
+                            var userMessage = new MessagesType.ToolMessage(functionCall.Id, result.Result);
+                            RecordMessage(userMessage);
+                            break;
+                        }
+                        default:
+                            Debug.LogWarning($"工具函数\"{functionCall.Id}\"调用失败，状态码：{result.State}。信息：{result.Message}");
+                            break;
+                    }
                 }
             }
+
+            return false;
         }
 
 

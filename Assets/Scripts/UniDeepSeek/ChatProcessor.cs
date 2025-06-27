@@ -87,8 +87,8 @@ namespace Xiyu.UniDeepSeek
             using var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, uri);
             httpRequestMessage.Content = stringContent;
             httpRequestMessage.Headers.Add("Authorization", $"Bearer {_apiKey}");
-
-            return MainHttpClient.SendAsync(httpRequestMessage, HttpCompletionOption.ResponseHeadersRead, cancellationToken);
+            
+            return MainHttpClient.SendAsync(httpRequestMessage, httpCompletionOption, cancellationToken);
         }
 
         protected Uri GetUri([NotNull] string requestUri)

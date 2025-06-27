@@ -20,6 +20,7 @@ namespace Xiyu.UniDeepSeek
             {
                 await foreach (var data in UnitySseParser.ParseStreamAsync(stream, cts))
                 {
+                    cts.ThrowIfCancellationRequested();
                     var trimData = data.Trim();
                     if (trimData.Equals("[DONE]", StringComparison.OrdinalIgnoreCase))
                     {
