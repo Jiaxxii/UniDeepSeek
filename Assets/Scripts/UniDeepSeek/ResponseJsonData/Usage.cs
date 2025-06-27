@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using JetBrains.Annotations;
 
 
 #if ODIN_INSPECTOR
@@ -26,7 +29,7 @@ namespace Xiyu.UniDeepSeek
         [ShowInInspector, ReadOnly, BoxGroup("Usage")]
         [UnityEngine.Tooltip("模型 completion 产生的 token 数量。")]
 #endif
-        public int CompletionTokens { get; }
+        public int CompletionTokens { get; private set; }
 
         /// <summary>
         /// 用户 prompt 所包含的 token 数。该值等于 prompt_cache_hit_tokens + prompt_cache_miss_tokens。
@@ -35,7 +38,7 @@ namespace Xiyu.UniDeepSeek
         [ShowInInspector, ReadOnly, BoxGroup("Usage")]
         [UnityEngine.Tooltip("用户 prompt 所包含的 token 数。该值等于 prompt_cache_hit_tokens + prompt_cache_miss_tokens。")]
 #endif
-        public int PromptTokens { get; }
+        public int PromptTokens { get; private set; }
 
         /// <summary>
         /// 用户 prompt 中，命中上下文缓存的 token 数。
@@ -44,7 +47,7 @@ namespace Xiyu.UniDeepSeek
         [ShowInInspector, ReadOnly, BoxGroup("Usage")]
         [UnityEngine.Tooltip("用户 prompt 中，命中上下文缓存的 token 数。")]
 #endif
-        public int PromptCacheHitTokens { get; }
+        public int PromptCacheHitTokens { get; private set; }
 
 
         /// <summary>
@@ -54,7 +57,7 @@ namespace Xiyu.UniDeepSeek
         [ShowInInspector, ReadOnly, BoxGroup("Usage")]
         [UnityEngine.Tooltip("用户 prompt 中，未命中上下文缓存的 token 数。")]
 #endif
-        public int PromptCacheMissTokens { get; }
+        public int PromptCacheMissTokens { get; private set; }
 
         /// <summary>
         /// 该请求中，所有的 token 数量（prompt + completion）。
@@ -63,7 +66,7 @@ namespace Xiyu.UniDeepSeek
         [ShowInInspector, ReadOnly, BoxGroup("Usage")]
         [UnityEngine.Tooltip("该请求中，所有的 token 数量（prompt + completion）。")]
 #endif
-        public int TotalTokens { get; }
+        public int TotalTokens { get; private set; }
 
         /// <summary>
         /// completion tokens 的详细信息。
@@ -72,7 +75,21 @@ namespace Xiyu.UniDeepSeek
         [ShowInInspector, ReadOnly, InlineProperty, BoxGroup("Usage"), HideLabel, ShowIf("@this.CompletionTokensDetails!= null")]
         [UnityEngine.Tooltip("completion tokens 的详细信息。")]
 #endif
-        public CompletionTokensDetails CompletionTokensDetails { get; }
+        public CompletionTokensDetails CompletionTokensDetails { get; private set; }
+
+
+        public void AppendUsage(IEnumerable<Usage> usages)
+        {
+            foreach (var usage in usages)
+            {
+                CompletionTokens += usage.CompletionTokens;
+                PromptTokens += usage.PromptTokens;
+                PromptCacheHitTokens += usage.PromptCacheHitTokens;
+                PromptCacheMissTokens += usage.PromptCacheMissTokens;
+                TotalTokens += usage.TotalTokens;
+                CompletionTokensDetails?.Append(usage.CompletionTokensDetails);
+            }
+        }
     }
 
     [Serializable]
@@ -90,6 +107,12 @@ namespace Xiyu.UniDeepSeek
         [ShowInInspector, ReadOnly]
         [UnityEngine.Tooltip("推理模型所产生的思维链 token 数量。")]
 #endif
-        public int ReasoningTokens { get; }
+        public int ReasoningTokens { get; private set; }
+
+        public void Append([CanBeNull] CompletionTokensDetails details)
+        {
+            if (details == null) return;
+            ReasoningTokens += details.ReasoningTokens;
+        }
     }
 }

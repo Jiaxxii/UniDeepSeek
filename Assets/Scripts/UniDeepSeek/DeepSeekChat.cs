@@ -149,6 +149,7 @@ namespace Xiyu.UniDeepSeek
         {
             CleanUpMessageList();
             var maxFunctionCallCount = MaxFunctionCallCount;
+            var usages = new List<Usage>();
             while (maxFunctionCallCount > 0)
             {
                 var requestJson = Setting.FromObjectAsToken(GeneralSerializeSettings.SampleJsonSerializer).ToString(Formatting.None);
@@ -170,8 +171,11 @@ namespace Xiyu.UniDeepSeek
 
                 if (chatCompletion.Choices[0].SourcesMessage.ToolCalls is { Count: > 0 } == false)
                 {
+                    chatCompletion.Usage!.AppendUsage(usages);
                     return (ChatState.Success, chatCompletion);
                 }
+
+                usages.Add(chatCompletion.Usage);
 
                 try
                 {
@@ -237,6 +241,7 @@ namespace Xiyu.UniDeepSeek
             async UniTask Create(IAsyncWriter<ChatCompletion> writer, CancellationToken cst)
             {
                 var maxFunctionCallCount = MaxFunctionCallCount;
+                var toolsUsage = new List<Usage>();
                 do
                 {
                     CleanUpMessageList();
@@ -253,11 +258,13 @@ namespace Xiyu.UniDeepSeek
 
                     if (usageCompletion.Choices[0].SourcesMessage.ToolCalls == null || usageCompletion.Choices[0].SourcesMessage.ToolCalls.Count == 0)
                     {
+                        usageCompletion.Usage!.AppendUsage(toolsUsage);
                         onCompletion?.Invoke(usageCompletion);
                         RecordMessage(usageCompletion.Choices);
                         return;
                     }
 
+                    toolsUsage.Add(usageCompletion.Usage);
                     var isCancellationRequested = await ProcessFunctionCallsAsync(usageCompletion.Choices[0].SourcesMessage, UseConcurrency, cst);
                     if (isCancellationRequested)
                     {

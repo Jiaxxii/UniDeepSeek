@@ -5,43 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8dc74092-d10d-470c-8ee2-01be99c0ea2b" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Canvas.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Example/ChatCompletion/ChatCompletion.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Example/ChatCompletion/ChatCompletion.unity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Example/FunctionCallChatCompletion.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Example/FunctionCallChatCompletion/FunctionCallChatCompletion.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Example/FunctionCallChatCompletion/FunctionCallChatCompletion.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Example/FunctionCallChatCompletion/FunctionCallChatCompletion.unity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Example/PrefixChatCompletion.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Example/PrefixChatCompletion/PrefixChatCompletion.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Example/PrefixChatCompletion/PrefixChatCompletion.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Example/PrefixChatCompletion/PrefixChatCompletion.unity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Example/Special.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Example/Special/PrefixReasonerStreamChatCompletion.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Example/Special/PrefixReasonerStreamChatCompletion/PrefixReasonerStreamChatCompletion.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Example/Special/PrefixReasonerStreamChatCompletion/PrefixReasonerStreamChatCompletion.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Example/Special/PrefixReasonerStreamChatCompletion/PrefixReasonerStreamChatCompletion.unity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Example/Special/ReasonerStreamChatCompletion.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Example/Special/ReasonerStreamChatCompletion/ReasonerStreamChatCompletion.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Example/Special/ReasonerStreamChatCompletion/ReasonerStreamChatCompletion.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Example/Special/ReasonerStreamChatCompletion/ReasonerStreamChatCompletion.unity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Example/SteamChatCompletion.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Example/SteamChatCompletion/StreamChatCompletion.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Example/SteamChatCompletion/StreamChatCompletion.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Example/SteamChatCompletion/StreamChatCompletion.unity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Example/StreamPrefixChatCompletion/StreamPrefixChatCompleiton.unity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Example/StreamPrefixChatCompletion/StreamPrefixChatCompletion.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Loading.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/LoadingControl.controller" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/ChatState.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/ChatState.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UniDeepSeek/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UniDeepSeek/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Test.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Test.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/ChatProcessor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/ChatProcessor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Example/ChatCompletion/ChatCompletion.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Example/ChatCompletion/ChatCompletion.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Example/FunctionCallChatCompletion/FunctionCallChatCompletion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Example/FunctionCallChatCompletion/FunctionCallChatCompletion.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Example/Special/PrefixReasonerStreamChatCompletion/PrefixReasonerStreamChatCompletion.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Example/Special/PrefixReasonerStreamChatCompletion/PrefixReasonerStreamChatCompletion.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Test.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Test.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/DeepSeekChat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/DeepSeekChat.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/ResponseJsonData/Usage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/ResponseJsonData/Usage.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UniDeepSeek.sln" beforeDir="false" afterPath="$PROJECT_DIR$/UniDeepSeek.sln" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-6000.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-6000.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,23 +83,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.7643909&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.gutterIcons&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;,
-    &quot;附加到 Unity 编辑器.附加到 Unity 编辑器.executor&quot;: &quot;Debug&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "XThreadsFramesViewSplitterKey": "0.7643909",
+    "git-widget-placeholder": "master",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "cn.yiiguxing.plugin.translate",
+    "vue.rearranger.settings.migration": "true",
+    "附加到 Unity 编辑器.附加到 Unity 编辑器.executor": "Debug"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="附加到 Unity 编辑器.附加到 Unity 编辑器">
     <configuration name="启动 Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="F:\Unity\Editor\6000.0.47f1\Editor\Unity.exe" />
@@ -211,7 +188,8 @@
       <workItem from="1750988593467" duration="127000" />
       <workItem from="1750988774064" duration="4333000" />
       <workItem from="1750993349921" duration="7042000" />
-      <workItem from="1751007233036" duration="7183000" />
+      <workItem from="1751007233036" duration="7959000" />
+      <workItem from="1751019855324" duration="1939000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -253,7 +231,15 @@
       <option name="project" value="LOCAL" />
       <updated>1750995332622</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="docs(null): 添加了一些使用示例。&#10;&#10;- 添加了非流式调用、流式调用、FunctionCall、对话前缀续写功能的示例场景。">
+      <option name="closed" value="true" />
+      <created>1751014595573</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1751014595573</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -288,7 +274,8 @@
     <MESSAGE value="[update] 请求配置更新" />
     <MESSAGE value="feat(chat): 完善DeepSeek接口.&#10;&#10;- 实现普通非流式于流式异步调用方法&#10;- 实现对话前缀续写功能（包含流式调用）&#10;- 自动处理 `FunctionCall`&#10;- 自动记录对话结果&#10;- 自动清理不再有效的 `Xiyu.UniDeepSeek.MessagesType.ToolMessage` 消息" />
     <MESSAGE value="fix(chat): 修复了无法捕获`OperationCanceledException`的bug&#10;&#10;- 未在流式反序列化中检查任务的取消状态，导致取消令牌被忽略，任务无法正常取消。" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix(chat): 修复了无法捕获`OperationCanceledException`的bug&#10;&#10;- 未在流式反序列化中检查任务的取消状态，导致取消令牌被忽略，任务无法正常取消。" />
+    <MESSAGE value="docs(null): 添加了一些使用示例。&#10;&#10;- 添加了非流式调用、流式调用、FunctionCall、对话前缀续写功能的示例场景。" />
+    <option name="LAST_COMMIT_MESSAGE" value="docs(null): 添加了一些使用示例。&#10;&#10;- 添加了非流式调用、流式调用、FunctionCall、对话前缀续写功能的示例场景。" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -312,5 +299,9 @@
         <PinnedItemInfo parentTag="Type#Xiyu.UniDeepSeek.ChatCompletion" memberName="Choices" />
       </pinned-members>
     </pin-to-top-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
