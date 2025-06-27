@@ -50,14 +50,8 @@ namespace Example.FunctionCallChatCompletion
             {
                 chatText.text = $"{chatCompletion.Choices[0].SourcesMessage.Content}";
             }
-
-            _usage = chatCompletion.Usage;
         }
 
-#if ODIN_INSPECTOR
-        [Sirenix.OdinInspector.ShowInInspector]
-        private Usage _usage;
-#endif
 
         // 模拟天气查询函数
         private static void AddFunctionCallFirst(DeepSeekChat deepSeekChat)
