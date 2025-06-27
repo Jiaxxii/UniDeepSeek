@@ -66,7 +66,7 @@ namespace Example.FunctionCallChatCompletion
             const string parameters = "{\"type\":\"object\",\"properties\":{\"location\":{\"type\":\"string\",\"description\":\"城市名称\"}}}";
             deepSeekChat.RegisterFunction("get_weather", description, parameters, (fc, token) =>
             {
-                var t = 20;
+                var t = Random.Range(28, 35);
                 Debug.Log("调用工具：<color=#E4BF6B>天气查询</color> -> <color=#DB5548>" + t + "°C</color>");
                 return UniTask.FromResult(new FunctionCallResult(fc.Id, $"{t}°C", ChatState.Success));
             }, "location");
@@ -107,7 +107,7 @@ namespace Example.FunctionCallChatCompletion
                 var query = "未查询到用户信息";
                 if (arguments.TryGetValue("user_name", out var jToken))
                 {
-                    query = $"你好，{jToken.Value<string>()}，你目前的等级是{10}级。";
+                    query = $"你好，{jToken.Value<string>()}，你目前的等级是{Random.Range(0, 100)}级。";
                 }
 
                 Debug.Log($"调用工具：<color=#E4BF6B>用户等级查询</color> -> <color=#E08E4A>{query}</color>");
