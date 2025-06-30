@@ -30,13 +30,13 @@ namespace Xiyu.UniDeepSeek
         /// 数据解析器
         /// </summary>
         [NotNull]
-        public IAnalysisChatCompletion AnalysisChatCompletion { get; set; } = new SampleDeserializeCompletion();
+        public IAnalysisCompletion<ChatCompletion> AnalysisCompletion { get; set; } = new SampleDeserializeCompletion();
 
         /// <summary>
         /// 异步数据流解析器
         /// </summary>
         [NotNull]
-        public IAnalysisChatCompletionsAsync AnalysisChatCompletionsAsync { get; set; } = new StreamDeserializeCompletions();
+        public IAnalysisCompletionsAsync<ChatCompletion> AnalysisCompletionsAsync { get; set; } = new StreamDeserializeCompletions();
 
         /// <summary>
         /// 工具函数调用中心
@@ -164,7 +164,7 @@ namespace Xiyu.UniDeepSeek
                     return (ChatState.Cancel, null);
                 }
 
-                var chatCompletion = AnalysisChatCompletion.AnalysisChatCompletion(ref responseJson, GeneralSerializeSettings.SampleJsonSerializerSettings);
+                var chatCompletion = AnalysisCompletion.AnalysisChatCompletion(ref responseJson, GeneralSerializeSettings.SampleJsonSerializerSettings);
 
                 // 记录消息
                 RecordMessage(chatCompletion.Choices);
@@ -218,7 +218,7 @@ namespace Xiyu.UniDeepSeek
             {
                 var stream = await SendStreamRequestAsync(GetChatCompletionPath(), requestJson, cancellation);
 
-                return AnalysisChatCompletionsAsync.AnalysisChatCompletion(stream, GeneralSerializeSettings.SampleJsonSerializerSettings, cancellation);
+                return AnalysisCompletionsAsync.AnalysisChatCompletion(stream, GeneralSerializeSettings.SampleJsonSerializerSettings, cancellation);
             }
             catch (WebException exception) when (exception.Status == WebExceptionStatus.RequestCanceled)
             {
@@ -306,7 +306,7 @@ namespace Xiyu.UniDeepSeek
                     return (ChatState.Cancel, null);
                 }
 
-                return (ChatState.Success, AnalysisChatCompletion.AnalysisChatCompletion(ref responseJson, GeneralSerializeSettings.SampleJsonSerializerSettings));
+                return (ChatState.Success, AnalysisCompletion.AnalysisChatCompletion(ref responseJson, GeneralSerializeSettings.SampleJsonSerializerSettings));
             }, cancellationToken ?? CancellationToken.None);
 
             if (state == ChatState.Cancel)
@@ -564,7 +564,7 @@ namespace Xiyu.UniDeepSeek
             var stream = await SendStreamRequestAsync(requestUrl, requestJson, cst);
 
             var chatCompletions = new List<ChatCompletion>();
-            await foreach (var chatCompletion in AnalysisChatCompletionsAsync.AnalysisChatCompletion(stream, GeneralSerializeSettings.SampleJsonSerializerSettings, cst))
+            await foreach (var chatCompletion in AnalysisCompletionsAsync.AnalysisChatCompletion(stream, GeneralSerializeSettings.SampleJsonSerializerSettings, cst))
             {
                 chatCompletions.Add(chatCompletion);
                 await writer.YieldAsync(chatCompletion);

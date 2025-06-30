@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "asset-store-tools-editor", "asset-store-tools-editor.csproj", "{2f924ecb-3553-2dd7-6791-d490003f4e96}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniTask", "UniTask.csproj", "{6ab8a08c-b5d9-34c3-1c59-31d1d91bb224}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniDeepSeek", "UniDeepSeek.csproj", "{c6719318-5479-b716-a62f-bf6d50e47266}"
@@ -30,8 +28,6 @@ Global
 		Debug|Any CPU = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2f924ecb-3553-2dd7-6791-d490003f4e96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2f924ecb-3553-2dd7-6791-d490003f4e96}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6ab8a08c-b5d9-34c3-1c59-31d1d91bb224}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6ab8a08c-b5d9-34c3-1c59-31d1d91bb224}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{c6719318-5479-b716-a62f-bf6d50e47266}.Debug|Any CPU.ActiveCfg = Debug|Any CPU

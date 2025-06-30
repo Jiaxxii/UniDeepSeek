@@ -2,9 +2,9 @@
 
 namespace Xiyu.UniDeepSeek
 {
-    public sealed class SampleDeserializeCompletion : IAnalysisChatCompletion
+    public sealed class SampleDeserializeCompletion : IAnalysisCompletion<ChatCompletion>
     {
-        ChatCompletion IAnalysisChatCompletion.AnalysisChatCompletion(ref string jsonData, JsonSerializerSettings settings)
+        ChatCompletion IAnalysisCompletion<ChatCompletion>.AnalysisChatCompletion(ref string jsonData, JsonSerializerSettings settings)
         {
             return JsonConvert.DeserializeObject<ChatCompletion>(jsonData, settings);
         }

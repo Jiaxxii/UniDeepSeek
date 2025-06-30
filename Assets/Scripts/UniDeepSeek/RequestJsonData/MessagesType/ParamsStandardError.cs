@@ -15,5 +15,8 @@
 
         // Function Errors
         FunctionNameByNull = 200,
+        
+        // Fim
+        PromptEmpty
     }
 }

@@ -5,9 +5,47 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8dc74092-d10d-470c-8ee2-01be99c0ea2b" name="更改" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Example/FimChatCompletion/FimChatCompletion.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Example/FimChatCompletion/FimChatCompletion.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Example/FimChatCompletion/FimChatCompletion.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Expands.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Expands/ChatCompletionExpand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Expands/ChatCompletionExpand.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Expands/TokenPricingCalculatorExpand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Expands/TokenPricingCalculatorExpand.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/FillInTheMiddle.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/FillInTheMiddle/Analysis.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/FillInTheMiddle/Analysis/FimDeserializeCompletion.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/FillInTheMiddle/Analysis/FimDeserializeCompletion.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/FillInTheMiddle/Analysis/FimStreamDeserializeCompletions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/FillInTheMiddle/Analysis/FimStreamDeserializeCompletions.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/FillInTheMiddle/FimDeepSeekChat.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/FillInTheMiddle/FimDeepSeekChat.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/FillInTheMiddle/RequestJsonData.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/FillInTheMiddle/RequestJsonData/FimRequestParameter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/FillInTheMiddle/RequestJsonData/FimRequestParameter.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/FillInTheMiddle/ResponeseJsonData.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/FillInTheMiddle/ResponeseJsonData/FimChatCompletion.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/FillInTheMiddle/ResponeseJsonData/FimChatCompletion.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/FillInTheMiddle/ResponeseJsonData/FimChatCompletionStatic.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/FillInTheMiddle/ResponeseJsonData/FimChatCompletionStatic.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/FillInTheMiddle/ResponeseJsonData/FimChoice.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/FillInTheMiddle/ResponeseJsonData/FimChoice.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/FillInTheMiddle/ResponeseJsonData/FimLogprobs.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/FillInTheMiddle/ResponeseJsonData/FimLogprobs.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UniDeepSeek/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UniDeepSeek/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Example/FunctionCallChatCompletion/FunctionCallChatCompletion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Example/FunctionCallChatCompletion/FunctionCallChatCompletion.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Analysis/IAnalysisChatCompletion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Analysis/IAnalysisCompletion.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Analysis/IAnalysisChatCompletion.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Analysis/IAnalysisCompletion.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Analysis/IAnalysisChatCompletionsAsync.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Analysis/IAnalysisCompletionsAsync.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Analysis/IAnalysisChatCompletionsAsync.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Analysis/IAnalysisCompletionsAsync.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Analysis/SampleDeserializeCompletion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Analysis/SampleDeserializeCompletion.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Analysis/StreamDeserializeCompletions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Analysis/StreamDeserializeCompletions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/DeepSeekChat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/DeepSeekChat.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/RequestJsonData/MessagesType/ParamsStandardError.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/RequestJsonData/MessagesType/ParamsStandardError.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/StreamHandle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/StreamHandle.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniDeepSeek.sln" beforeDir="false" afterPath="$PROJECT_DIR$/UniDeepSeek.sln" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-6000.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-6000.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +94,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/b583e7d8f82a4d824fae2e16e2af7f00dc92a5cddd53375c554aee1980d145/JContainer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock://F:/Unity/MyProject/UniDeepSeek/Assets/Example/FunctionCallChatCompletion/FunctionCallChatCompletion.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Analysis/SampleDeserializeCompletion.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Expands/ChatCompletionExpand.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/ResponseJsonData/Logprobs/LogprobItem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock://F:/Unity/MyProject/UniDeepSeek/UserSettings/EditorUserSettings.asset" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -72,23 +111,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "XThreadsFramesViewSplitterKey": "0.7643909",
-    "git-widget-placeholder": "master",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "cn.yiiguxing.plugin.translate",
-    "vue.rearranger.settings.migration": "true",
-    "附加到 Unity 编辑器.附加到 Unity 编辑器.executor": "Debug"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.7643909&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;SolutionBuilderGeneralOptionsPage&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;,
+    &quot;附加到 Unity 编辑器.附加到 Unity 编辑器.executor&quot;: &quot;Debug&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="附加到 Unity 编辑器.附加到 Unity 编辑器">
     <configuration name="启动 Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="F:\Unity\Editor\6000.0.47f1\Editor\Unity.exe" />
@@ -112,13 +151,15 @@
       <option name="PTY_MODE" value="Auto" />
       <method v="2" />
     </configuration>
-    <configuration name="附加到 Unity 编辑器" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="附加到 Unity 编辑器" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="2040">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="2040" />
       <option name="projectPathOnTarget" />
       <option name="runtimes">
-        <list />
+        <list>
+          <MonoRuntime />
+        </list>
       </option>
       <option name="selectedOptions">
         <list />
@@ -178,7 +219,8 @@
       <workItem from="1750988774064" duration="4333000" />
       <workItem from="1750993349921" duration="7042000" />
       <workItem from="1751007233036" duration="7959000" />
-      <workItem from="1751019855324" duration="2680000" />
+      <workItem from="1751019855324" duration="5298000" />
+      <workItem from="1751250828023" duration="18529000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -244,7 +286,15 @@
       <option name="project" value="LOCAL" />
       <updated>1751022377895</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="test(Example.FunctionCallChatCompletion.FunctionCallChatCompletion): 删除插件(`Sirenix`)不存在时导致保持的代码">
+      <option name="closed" value="true" />
+      <created>1751022650332</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1751022650332</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -282,7 +332,8 @@
     <MESSAGE value="docs(null): 添加了一些使用示例。&#10;&#10;- 添加了非流式调用、流式调用、FunctionCall、对话前缀续写功能的示例场景。" />
     <MESSAGE value="fix(usage): 修复对话请求 `Usage` 中不正确的统计。&#10;&#10;- 触发 `FunctionCall` 时只返回了最终对话的Token统计未记录FunctionCall的Token统计。" />
     <MESSAGE value="test(Example.FunctionCallChatCompletion.FunctionCallChatCompletion): 恢复随机返回结果" />
-    <option name="LAST_COMMIT_MESSAGE" value="test(Example.FunctionCallChatCompletion.FunctionCallChatCompletion): 恢复随机返回结果" />
+    <MESSAGE value="test(Example.FunctionCallChatCompletion.FunctionCallChatCompletion): 删除插件(`Sirenix`)不存在时导致保持的代码" />
+    <option name="LAST_COMMIT_MESSAGE" value="test(Example.FunctionCallChatCompletion.FunctionCallChatCompletion): 删除插件(`Sirenix`)不存在时导致保持的代码" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

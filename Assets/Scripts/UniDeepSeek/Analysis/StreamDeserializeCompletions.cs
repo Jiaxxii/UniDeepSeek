@@ -8,9 +8,9 @@ using UnityEngine;
 
 namespace Xiyu.UniDeepSeek
 {
-    public class StreamDeserializeCompletions : IAnalysisChatCompletionsAsync
+    public class StreamDeserializeCompletions : IAnalysisCompletionsAsync<ChatCompletion>
     {
-        UniTaskCancelableAsyncEnumerable<ChatCompletion> IAnalysisChatCompletionsAsync.AnalysisChatCompletion(Stream stream, JsonSerializerSettings settings,
+        UniTaskCancelableAsyncEnumerable<ChatCompletion> IAnalysisCompletionsAsync<ChatCompletion>.AnalysisChatCompletion(Stream stream, JsonSerializerSettings settings,
             CancellationToken? cancellationToken)
         {
             return UniTaskAsyncEnumerable.Create<ChatCompletion>(Create)

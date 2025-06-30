@@ -15,7 +15,7 @@ namespace Xiyu.UniDeepSeek
     [Obsolete("`StreamHandle`处理流式`FunctionCall`数据尝试重新调用方法困难，建议使用请求器中内置的流处理。", false)]
     public class StreamHandle
     {
-        private readonly IAnalysisChatCompletionsAsync _chatCompletionParser;
+        private readonly IAnalysisCompletionsAsync<ChatCompletion> _completionParser;
 
         private readonly Func<CancellationToken, UniTask<Stream>> _streamFunc;
 
@@ -42,11 +42,11 @@ namespace Xiyu.UniDeepSeek
 
         private readonly Func<ChatCompletion, UniTask<TaskCompletionState>> _onCompletion;
 
-        public StreamHandle([CanBeNull] IAnalysisChatCompletionsAsync chatCompletionParser, [CanBeNull] Func<CancellationToken, UniTask<Stream>> streamFunc,
+        public StreamHandle([CanBeNull] IAnalysisCompletionsAsync<ChatCompletion> completionParser, [CanBeNull] Func<CancellationToken, UniTask<Stream>> streamFunc,
             JsonSerializerSettings settings = null,
             Func<ChatCompletion, UniTask<TaskCompletionState>> onCompletion = null)
         {
-            _chatCompletionParser = chatCompletionParser;
+            _completionParser = completionParser;
             _streamFunc = streamFunc;
             _settings = settings ?? GeneralSerializeSettings.SampleJsonSerializerSettings;
             _chatCompletion = null;
@@ -88,7 +88,7 @@ namespace Xiyu.UniDeepSeek
             try
             {
                 var stream = await _streamFunc.Invoke(cts);
-                await foreach (var chatCompletion in _chatCompletionParser.AnalysisChatCompletion(stream, _settings, cts))
+                await foreach (var chatCompletion in _completionParser.AnalysisChatCompletion(stream, _settings, cts))
                 {
                     await writer.YieldAsync(chatCompletion);
                     result.Add(chatCompletion);
