@@ -39,7 +39,7 @@ namespace Xiyu.UniDeepSeek.FillInTheMiddle
 
 
 #if ODIN_INSPECTOR
-        [ShowInInspector]
+        [ShowInInspector, ShowIf("@Logprobs != null")]
 #endif
         public FimLogprobs Logprobs { get; }
 

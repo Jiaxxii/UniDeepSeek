@@ -14,25 +14,27 @@ namespace Example.Special.ReasonerStreamChatCompletion
     {
         [SerializeField] private Text chatText;
 
-#if !ODIN_INSPECTOR
+        private bool _isRunning;
+
         private void Start()
         {
             ReasonerStreamChatCompletionAsync().Forget();
         }
-#endif
+
 
 #if ODIN_INSPECTOR
-        [Sirenix.OdinInspector.Button("ReasonerStreamChatCompletionAsync")]
+        [Sirenix.OdinInspector.Button("启动", DrawResult = false)]
 #endif
         private async UniTaskVoid ReasonerStreamChatCompletionAsync()
         {
-#if ODIN_INSPECTOR
-            if (!Application.isPlaying)
+            if (_isRunning)
             {
-                Debug.LogWarning("请在运行时调用`ReasonerStreamChatCompletionAsync`");
+                Debug.Log("正在运行中，请等待结束");
                 return;
             }
-#endif
+
+            _isRunning = true;
+
             // 使用你自己的 API Key
             var apiKey = Resources.Load<TextAsset>("DeepSeek-ApiKey").text;
 
@@ -47,7 +49,9 @@ namespace Example.Special.ReasonerStreamChatCompletion
             var think = true;
             try
             {
-                chatText.text = "（";
+                if (Application.isPlaying)
+                    chatText.text = "（";
+
                 var cancellationToken = this.GetCancellationTokenOnDestroy();
                 await foreach (var chatCompletion in deepSeekChat.StreamChatCompletionsEnumerableAsync(c => completion = c, cancellationToken))
                 {
@@ -55,17 +59,22 @@ namespace Example.Special.ReasonerStreamChatCompletion
 
                     if (string.IsNullOrEmpty(message.Content))
                     {
-                        chatText.text += message.ReasoningContent;
+                        if (Application.isPlaying)
+                            chatText.text += message.ReasoningContent;
+                        else Debug.Log(message.ReasoningContent);
                     }
                     else if (think)
                     {
                         think = false;
-                        chatText.text += "）\n\n";
+                        if (Application.isPlaying)
+                            chatText.text += "）\n\n";
                     }
 
                     if (!think)
                     {
-                        chatText.text += message.Content;
+                        if (Application.isPlaying)
+                            chatText.text += message.Content;
+                        else Debug.Log(message.Content);
                     }
                 }
 
@@ -75,6 +84,8 @@ namespace Example.Special.ReasonerStreamChatCompletion
             {
                 Debug.LogWarning("chat stream canceled: " + exception.Message);
             }
+
+            _isRunning = false;
         }
     }
 }

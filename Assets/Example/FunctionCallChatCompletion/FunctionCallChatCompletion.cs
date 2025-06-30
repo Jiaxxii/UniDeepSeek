@@ -15,18 +15,27 @@ namespace Example.FunctionCallChatCompletion
     {
         [SerializeField] private Text chatText;
 
-#if !ODIN_INSPECTOR
+        private bool _isRunning;
+
         private void Start()
         {
             FunctionCallChatCompletionAsync().Forget();
         }
-#endif
+
 
 #if ODIN_INSPECTOR
-        [Sirenix.OdinInspector.Button("FunctionCallChatCompletionAsync")]
+        [Sirenix.OdinInspector.Button("启动", DrawResult = false)]
 #endif
         private async UniTaskVoid FunctionCallChatCompletionAsync()
         {
+            if (_isRunning)
+            {
+                Debug.Log("正在运行中，请勿重复运行。");
+                return;
+            }
+
+            _isRunning = true;
+
             // 使用你自己的 API Key
             var apiKey = Resources.Load<TextAsset>("DeepSeek-ApiKey").text;
 
@@ -44,12 +53,21 @@ namespace Example.FunctionCallChatCompletion
             // 使用 流式方法调用 同样会自动处理 FunctionCall
             var (state, chatCompletion) = await deepSeekChat.ChatCompletionAsync();
 
-            chatText.text = $"request state: <color=#E08E4A>{state}</color>";
-
-            if (state == ChatState.Success)
+            if (Application.isPlaying)
             {
-                chatText.text = $"{chatCompletion.Choices[0].SourcesMessage.Content}";
+                chatText.text = $"request state: <color=#E08E4A>{state}</color>";
+
+                if (state == ChatState.Success)
+                    chatText.text = $"{chatCompletion.Choices[0].SourcesMessage.Content}";
             }
+            else
+            {
+                Debug.Log($"request state: <color=#E08E4A>{state}</color>");
+                if (state == ChatState.Success)
+                    Debug.Log($"AI回复: {chatCompletion.Choices[0].SourcesMessage.Content}");
+            }
+
+            _isRunning = false;
         }
 
 

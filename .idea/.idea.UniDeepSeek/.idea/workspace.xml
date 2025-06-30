@@ -5,9 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8dc74092-d10d-470c-8ee2-01be99c0ea2b" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/README.md.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UniDeepSeek/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UniDeepSeek/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Example/ChatCompletion/ChatCompletion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Example/ChatCompletion/ChatCompletion.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Example/FimChatCompletion/FimChatCompletion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Example/FimChatCompletion/FimChatCompletion.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Example/FimChatCompletion/FimChatCompletion.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Example/FimChatCompletion/FimChatCompletion.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Example/FunctionCallChatCompletion/FunctionCallChatCompletion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Example/FunctionCallChatCompletion/FunctionCallChatCompletion.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Example/PrefixChatCompletion/PrefixChatCompletion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Example/PrefixChatCompletion/PrefixChatCompletion.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Example/Special/PrefixReasonerStreamChatCompletion/PrefixReasonerStreamChatCompletion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Example/Special/PrefixReasonerStreamChatCompletion/PrefixReasonerStreamChatCompletion.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Example/Special/ReasonerStreamChatCompletion/ReasonerStreamChatCompletion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Example/Special/ReasonerStreamChatCompletion/ReasonerStreamChatCompletion.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Example/SteamChatCompletion/StreamChatCompletion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Example/SteamChatCompletion/StreamChatCompletion.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Example/StreamPrefixChatCompletion/StreamPrefixChatCompletion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Example/StreamPrefixChatCompletion/StreamPrefixChatCompletion.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/FillInTheMiddle/ResponeseJsonData/FimChoice.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/FillInTheMiddle/ResponeseJsonData/FimChoice.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,11 +62,10 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/443ce614ff11fd4152a3c735dec9ef388c537ef8ea9c24e0f018f1bd619e85/JObject.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/696aa455fd6736cddaf4da626e8bac73eb7a3f4de26241c24169a89f925074/System.Net.Http.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/b583e7d8f82a4d824fae2e16e2af7f00dc92a5cddd53375c554aee1980d145/JContainer.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://F:/Unity/MyProject/UniDeepSeek/Assets/Example/FunctionCallChatCompletion/FunctionCallChatCompletion.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://F:/Unity/MyProject/UniDeepSeek/Assets/Example/FimChatCompletion/FimChatCompletion.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Analysis/SampleDeserializeCompletion.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Expands/ChatCompletionExpand.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/ResponseJsonData/Logprobs/LogprobItem.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://F:/Unity/MyProject/UniDeepSeek/UserSettings/EditorUserSettings.asset" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
@@ -182,7 +189,7 @@
       <workItem from="1750993349921" duration="7042000" />
       <workItem from="1751007233036" duration="7959000" />
       <workItem from="1751019855324" duration="5298000" />
-      <workItem from="1751250828023" duration="21776000" />
+      <workItem from="1751250828023" duration="24101000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -264,7 +271,23 @@
       <option name="project" value="LOCAL" />
       <updated>1751273220054</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="docs: add file EADME.md">
+      <option name="closed" value="true" />
+      <created>1751276490034</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1751276490034</updated>
+    </task>
+    <task id="LOCAL-00012" summary="test: FimChatCompletion.unity 添加引用">
+      <option name="closed" value="true" />
+      <created>1751276793854</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1751276793854</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -304,7 +327,9 @@
     <MESSAGE value="test(Example.FunctionCallChatCompletion.FunctionCallChatCompletion): 恢复随机返回结果" />
     <MESSAGE value="test(Example.FunctionCallChatCompletion.FunctionCallChatCompletion): 删除插件(`Sirenix`)不存在时导致保持的代码" />
     <MESSAGE value="feat(fim): 新增加FIM（Fill-In-the-Middle）功能。&#10;&#10;- `FimDeepSeekChat` 对话补全功能类，使用方法与`DeepSeekChat`类似&#10;&#10;- 接口 `IAnalysisChatCompletion` 泛型化为 `IAnalysisCompletion&lt;out T&gt;`。&#10;&#10;- 接口 `IAnalysisChatCompletionsAsync` 泛型化为 `IAnalysisCompletionsAsync&lt;T&gt;`。" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(fim): 新增加FIM（Fill-In-the-Middle）功能。&#10;&#10;- `FimDeepSeekChat` 对话补全功能类，使用方法与`DeepSeekChat`类似&#10;&#10;- 接口 `IAnalysisChatCompletion` 泛型化为 `IAnalysisCompletion&lt;out T&gt;`。&#10;&#10;- 接口 `IAnalysisChatCompletionsAsync` 泛型化为 `IAnalysisCompletionsAsync&lt;T&gt;`。" />
+    <MESSAGE value="docs: add file EADME.md" />
+    <MESSAGE value="test: FimChatCompletion.unity 添加引用" />
+    <option name="LAST_COMMIT_MESSAGE" value="test: FimChatCompletion.unity 添加引用" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

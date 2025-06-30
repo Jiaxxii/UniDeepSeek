@@ -11,25 +11,26 @@ namespace Example.Special.PrefixReasonerStreamChatCompletion
     {
         [SerializeField] private Text chatText;
 
-#if !ODIN_INSPECTOR
+        private bool _isRuing;
+
         private void Start()
         {
             ReasonerStreamChatCompletionAsync().Forget();
         }
-#endif
+
 
 #if ODIN_INSPECTOR
-        [Sirenix.OdinInspector.Button("ReasonerStreamChatCompletionAsync")]
+        [Sirenix.OdinInspector.Button("启动", DrawResult = false)]
 #endif
         private async UniTaskVoid ReasonerStreamChatCompletionAsync()
         {
-#if ODIN_INSPECTOR
-            if (!Application.isPlaying)
+            if (_isRuing)
             {
-                Debug.LogWarning("请在运行时调用`ReasonerStreamChatCompletionAsync`");
+                Debug.Log("正在请求中，请勿重复请求");
                 return;
             }
-#endif
+
+            _isRuing = true;
             // 使用你自己的 API Key
             var apiKey = Resources.Load<TextAsset>("DeepSeek-ApiKey").text;
 
@@ -49,7 +50,9 @@ namespace Example.Special.PrefixReasonerStreamChatCompletion
                                      "女孩子应该都很喜欢猫这种可爱的动物吧？对吧。\n\n" +
                                      "我可以模仿小猫的语气来友好的做出回答，比如使用“喵~”、“肉爪子”、“炸毛”之类的词语进行回复，注意保持礼貌与友好。";
 
-                chatText.text = $"（{think}）\n\n{prefix}";
+                if (Application.isPlaying)
+                    chatText.text = $"（{think}）\n\n{prefix}";
+                else Debug.Log($"（{think}）\n\n{prefix}");
                 await foreach (var chatCompletion in deepSeekChat.ChatPrefixStreamCompletionsEnumerableAsync(
                                    prefix, think,
                                    onCompletion: chatCompletion => completion = chatCompletion,
@@ -59,7 +62,9 @@ namespace Example.Special.PrefixReasonerStreamChatCompletion
 
                     if (!string.IsNullOrEmpty(message.Content))
                     {
-                        chatText.text += message.Content;
+                        if (Application.isPlaying)
+                            chatText.text += message.Content;
+                        else Debug.Log($"收到消息：{message.Content}");
                     }
                 }
 
@@ -69,6 +74,8 @@ namespace Example.Special.PrefixReasonerStreamChatCompletion
             {
                 Debug.LogWarning("chat stream canceled: " + exception.Message);
             }
+
+            _isRuing = false;
         }
     }
 }

@@ -18,29 +18,28 @@ namespace Example.FimChatCompletion
         private Xiyu.UniDeepSeek.FillInTheMiddle.FimChatCompletion _fimChatCompletion;
 #endif
 
+        private bool _isRunning;
 
         private void Start()
         {
-#if ODIN_INSPECTOR
-            Debug.Log("使用按钮进行测试。");
-#else
             FimChatCompletionAsync().Forget();
-#endif
         }
 
         [SerializeField] [TextArea(3, 5)] private string prompt;
         [SerializeField] [TextArea(3, 5)] private string suffix;
 
 #if ODIN_INSPECTOR
-        [Button("FimChatCompletionAsync")]
+        [Sirenix.OdinInspector.Button("启动", DrawResult = false)]
 #endif
         private async UniTaskVoid FimChatCompletionAsync()
         {
-            if (!Application.isPlaying)
+            if (_isRunning)
             {
-                Debug.LogWarning("Please run in play mode.");
+                Debug.LogWarning("正在运行中，请等待。");
                 return;
             }
+
+            _isRunning = true;
 
             // 使用你自己的 API Key
             var apiKey = Resources.Load<TextAsset>("DeepSeek-ApiKey").text;
@@ -55,8 +54,11 @@ namespace Example.FimChatCompletion
 
             _fimChatCompletion = await fimDeepSeekChat.ChatCompletionAsync(prompt, suffix, this.GetCancellationTokenOnDestroy());
 
+            if (Application.isPlaying)
+                textComponent.text = _fimChatCompletion.Choices[0].Text;
+            else Debug.Log(_fimChatCompletion.Choices[0].Text);
 
-            textComponent.text = _fimChatCompletion.Choices[0].Text;
+            _isRunning = false;
         }
     }
 }

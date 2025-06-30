@@ -10,18 +10,27 @@ namespace Example.PrefixChatCompletion
     {
         [SerializeField] private Text chatText;
 
-#if !ODIN_INSPECTOR
+        private bool _isRunning;
+
         private void Start()
         {
             PrefixChatCompletionAsync().Forget();
         }
-#endif
+
 
 #if ODIN_INSPECTOR
-        [Sirenix.OdinInspector.Button("PrefixChatCompletionAsync")]
+        [Sirenix.OdinInspector.Button("启动", DrawResult = false)]
 #endif
         private async UniTaskVoid PrefixChatCompletionAsync()
         {
+            if (_isRunning)
+            {
+                Debug.Log("正在运行中，请勿重复启动！");
+                return;
+            }
+
+            _isRunning = true;
+
             // 使用你自己的 API Key
             var apiKey = Resources.Load<TextAsset>("DeepSeek-ApiKey").text;
 
@@ -36,12 +45,22 @@ namespace Example.PrefixChatCompletion
 
             var (state, chatCompletion) = await deepSeekChat.ChatPrefixCompletionAsync(prefix: "你好呀，西，你可以叫我小深。");
 
-            chatText.text = $"request state: <color=#E08E4A>{state}</color>";
-
-            if (state == ChatState.Success)
+            if (Application.isPlaying)
             {
-                chatText.text = $"{chatCompletion.Choices[0].SourcesMessage.Content}";
+                chatText.text = $"request state: <color=#E08E4A>{state}</color>";
+
+                if (state == ChatState.Success)
+                    chatText.text = $"{chatCompletion.Choices[0].SourcesMessage.Content}";
             }
+            else
+            {
+                Debug.Log($"request state: {state}");
+                if (state == ChatState.Success)
+                    Debug.Log($"AI回复: {chatCompletion.Choices[0].SourcesMessage.Content}");
+            }
+
+
+            _isRunning = false;
         }
     }
 }
