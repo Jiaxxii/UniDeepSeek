@@ -312,7 +312,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textComponent: {fileID: 275849007}
-  prompt: "```csharp\n// \u6700\u5C11\u4EE3\u7801\u7684\u5192\u6CE1\u6392\u5E8F (\u4F7F\u7528foreach)\npublic
+  prompt: "```csharp\n// \u6700\u5C11\u4EE3\u7801\u7684\u5192\u6CE1\u6392\u5E8F\npublic
     void BubbleSort(int[] source)"
   suffix: '```'
 --- !u!1 &1358794494

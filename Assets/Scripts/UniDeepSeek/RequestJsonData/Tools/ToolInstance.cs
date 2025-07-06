@@ -7,12 +7,12 @@ namespace Xiyu.UniDeepSeek.Tools
     [System.Serializable]
     public sealed class ToolInstance : ISerializeParameters
     {
-#if UNITY_EDITOR
+#if ODIN_INSPECTOR
         [Sirenix.OdinInspector.ShowInInspector]
 #endif
         public string Type { get; } = "function";
 
-#if UNITY_EDITOR
+#if ODIN_INSPECTOR
         [Sirenix.OdinInspector.ShowInInspector]
 #endif
         public FunctionDefine FunctionDefine { get; set; } = new();

@@ -18,9 +18,8 @@ namespace Xiyu.UniDeepSeek
     {
 #if ODIN_INSPECTOR
         [ShowInInspector, PropertySpace(10, SpaceAfter = 20), LabelText("模型")]
-        public ChatModel Model { get; set; } = ChatModel.Chat;
-
 #endif
+        public ChatModel Model { get; set; } = ChatModel.Chat;
 
 
 #if ODIN_INSPECTOR

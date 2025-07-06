@@ -15,8 +15,8 @@ namespace Example.FimChatCompletion
 
 #if ODIN_INSPECTOR
         [ShowInInspector, /*InlineProperty,*/ HideLabel]
-        private Xiyu.UniDeepSeek.FillInTheMiddle.FimChatCompletion _fimChatCompletion;
 #endif
+        private Xiyu.UniDeepSeek.FillInTheMiddle.FimChatCompletion _fimChatCompletion;
 
         private bool _isRunning;
 

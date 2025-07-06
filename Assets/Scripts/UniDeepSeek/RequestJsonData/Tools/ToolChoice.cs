@@ -6,24 +6,24 @@ using Xiyu.UniDeepSeek.MessagesType;
 namespace Xiyu.UniDeepSeek.Tools
 {
     [System.Serializable]
-#if UNITY_EDITOR
+#if ODIN_INSPECTOR
     [Sirenix.OdinInspector.InlineProperty]
 #endif
     public sealed class ToolChoice : ISerializeParameters
     {
-#if UNITY_EDITOR
+#if ODIN_INSPECTOR
         [Sirenix.OdinInspector.ShowInInspector, Sirenix.OdinInspector.EnumToggleButtons]
 #endif
         public FunctionCallModel FunctionCallModel { get; set; } = FunctionCallModel.None;
 
 
-#if UNITY_EDITOR
+#if ODIN_INSPECTOR
         [Sirenix.OdinInspector.ShowInInspector]
         [Sirenix.OdinInspector.ShowIf("FunctionCallModel", FunctionCallModel.Function)]
 #endif
         public string Type => "Function";
 
-#if UNITY_EDITOR
+#if ODIN_INSPECTOR
         [Sirenix.OdinInspector.ShowInInspector]
         [Sirenix.OdinInspector.ShowIf("FunctionCallModel", FunctionCallModel.Function)]
 #endif
