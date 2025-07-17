@@ -4,14 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8dc74092-d10d-470c-8ee2-01be99c0ea2b" name="更改" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.UniDeepSeek/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UniDeepSeek/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Example/FimChatCompletion/FimChatCompletion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Example/FimChatCompletion/FimChatCompletion.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/FunctionCallCenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/FunctionCallCenter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/RequestJsonData/ChatRequestParameter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/RequestJsonData/ChatRequestParameter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-6000.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-6000.dwlt" afterDir="false" />
+    <list default="true" id="8dc74092-d10d-470c-8ee2-01be99c0ea2b" name="更改" comment="fix(doc):为`ChatProcessor` 添加了一些注释。">
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/ChatProcessor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/ChatProcessor.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,7 +179,7 @@
       <workItem from="1751019855324" duration="5298000" />
       <workItem from="1751250828023" duration="24841000" />
       <workItem from="1751784410529" duration="500000" />
-      <workItem from="1752725014023" duration="1731000" />
+      <workItem from="1752725014023" duration="14763000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -299,7 +293,15 @@
       <option name="project" value="LOCAL" />
       <updated>1751784857550</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="fix(unity Inspector): 不使用 `Odin` 插件也提供了简单的序列化显示">
+      <option name="closed" value="true" />
+      <created>1752739204757</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1752739204757</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -343,7 +345,9 @@
     <MESSAGE value="test: FimChatCompletion.unity 添加引用" />
     <MESSAGE value="test(Example/*): 调整测试用例&#10;&#10;- 有 `Odin` 插件的情况下可直接运行" />
     <MESSAGE value="fix(global): 错误的使用 `if` 宏&#10;&#10;- 低级错误，错误的将 #if ODIN_INSPECTOR 写成了 #if UNITY_EDITOR，导致未安装Odin Inspector时编译器会报错。" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix(global): 错误的使用 `if` 宏&#10;&#10;- 低级错误，错误的将 #if ODIN_INSPECTOR 写成了 #if UNITY_EDITOR，导致未安装Odin Inspector时编译器会报错。" />
+    <MESSAGE value="fix(unity Inspector): 不使用 `Odin` 插件也提供了简单的序列化显示" />
+    <MESSAGE value="fix(doc):为`ChatProcessor` 添加了一些注释。" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix(doc):为`ChatProcessor` 添加了一些注释。" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
