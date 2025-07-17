@@ -18,13 +18,21 @@
         {
         }
 
+#if UNITY_EDITOR && !ODIN_INSPECTOR
+        [UnityEngine.SerializeField] private RoleType role = RoleType.User;
+        private void ForgetWaring() => _ = role;
+#endif
+
         public override RoleType Role => RoleType.User;
 
 #if ODIN_INSPECTOR
         [Sirenix.OdinInspector.ShowInInspector]
+#else
+        [UnityEngine.SerializeField]
 #endif
-        [Newtonsoft.Json.JsonProperty("name")]
-        public string UserName { get; set; }
+        private string _userName;
+
+        [Newtonsoft.Json.JsonProperty("name")] public string UserName { get; set; }
 
 
         public override ParamsStandardError VerifyParams()

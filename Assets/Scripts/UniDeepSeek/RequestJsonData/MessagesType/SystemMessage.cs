@@ -1,4 +1,10 @@
-﻿namespace Xiyu.UniDeepSeek.MessagesType
+﻿using Newtonsoft.Json;
+
+#if ODIN_INSPECTOR
+using Sirenix.OdinInspector;
+#endif
+
+namespace Xiyu.UniDeepSeek.MessagesType
 {
     [System.Serializable]
     public class SystemMessage : Message
@@ -12,14 +18,29 @@
         {
         }
 
+#if UNITY_EDITOR && !ODIN_INSPECTOR
+        [UnityEngine.SerializeField] private RoleType role = RoleType.System;
+        private void ForgetWaring() => _ = role;
+#endif
         public override RoleType Role => RoleType.System;
 
+        #region UserName
 
 #if ODIN_INSPECTOR
-        [Sirenix.OdinInspector.ShowInInspector]
+        [ShowInInspector]
+#else
+        [UnityEngine.SerializeField]
 #endif
-        [Newtonsoft.Json.JsonProperty("name")]
-        public string UserName { get; set; }
+        private string _userName;
+
+        [JsonProperty("name")]
+        public string UserName
+        {
+            get => _userName;
+            set => _userName = value;
+        }
+
+        #endregion
 
 
         public override ParamsStandardError VerifyParams()

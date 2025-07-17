@@ -2,23 +2,39 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
+#if ODIN_INSPECTOR
+using Sirenix.OdinInspector;
+#endif
+
 namespace Xiyu.UniDeepSeek.MessagesType
 {
+    [System.Serializable]
     public class FunctionCallMessage : Message
     {
         public FunctionCallMessage([NotNull] UniDeepSeek.Message callMessage)
         {
-            CallMessage = callMessage;
+            _callMessage = callMessage;
             Content = HideContent;
         }
 
+#if UNITY_EDITOR && !ODIN_INSPECTOR
+        [UnityEngine.SerializeField] private RoleType role = RoleType.Tool;
+        private void ForgetWaring() => _ = role;
+#endif
         [JsonIgnore] public override RoleType Role => RoleType.Tool;
 
+        #region CallMessage
+
 #if ODIN_INSPECTOR
-        [Sirenix.OdinInspector.ShowInInspector, Sirenix.OdinInspector.InlineProperty]
+        [ShowInInspector, InlineProperty, ReadOnly]
+#else
+        [UnityEngine.SerializeField]
 #endif
-        [JsonIgnore]
-        public UniDeepSeek.Message CallMessage { get; }
+        private UniDeepSeek.Message _callMessage;
+
+        [JsonIgnore] public UniDeepSeek.Message CallMessage => _callMessage;
+
+        #endregion
 
         public override JToken FromObjectAsToken(JsonSerializer serializer = null)
         {

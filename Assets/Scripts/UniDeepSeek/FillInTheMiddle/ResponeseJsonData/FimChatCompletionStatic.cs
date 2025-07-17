@@ -19,7 +19,7 @@ namespace Xiyu.UniDeepSeek.FillInTheMiddle
 
                 var array = fimChoices.Where(c => c.Logprobs != null).ToArray();
                 var fimLogprobs = new FimLogprobs(
-                    array.SelectMany(c => c.Logprobs.TextOffset).ToArray(),
+                    array.SelectMany(c => c.Logprobs.TextTextOffset).ToArray(),
                     array.SelectMany(c => c.Logprobs.TokenLogprobs).ToArray(),
                     array.SelectMany(c => c.Logprobs.Tokens).ToArray(),
                     array.SelectMany(c => c.Logprobs.TopLogprobs).ToArray()

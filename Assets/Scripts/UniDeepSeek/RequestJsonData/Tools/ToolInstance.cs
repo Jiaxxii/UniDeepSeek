@@ -12,10 +12,22 @@ namespace Xiyu.UniDeepSeek.Tools
 #endif
         public string Type { get; } = "function";
 
+        #region FUNCTIONDEFINE
+
 #if ODIN_INSPECTOR
         [Sirenix.OdinInspector.ShowInInspector]
+#else
+[UnityEngine.SerializeField]
 #endif
-        public FunctionDefine FunctionDefine { get; set; } = new();
+        private FunctionDefine _functionDefine = new();
+
+        public FunctionDefine FunctionDefine
+        {
+            get => _functionDefine;
+            set => _functionDefine = value;
+        }
+
+        #endregion
 
         public ParamsStandardError VerifyParams()
         {

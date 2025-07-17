@@ -11,23 +11,51 @@ namespace Xiyu.UniDeepSeek.Tools
 #endif
     public sealed class ToolChoice : ISerializeParameters
     {
+        #region FUNCTIONCALLMODEL
+
 #if ODIN_INSPECTOR
         [Sirenix.OdinInspector.ShowInInspector, Sirenix.OdinInspector.EnumToggleButtons]
+#else
+[UnityEngine.SerializeField]
 #endif
-        public FunctionCallModel FunctionCallModel { get; set; } = FunctionCallModel.None;
 
+        private FunctionCallModel _functionCallModel = FunctionCallModel.None;
+
+        public FunctionCallModel FunctionCallModel
+        {
+            get => _functionCallModel;
+            set => _functionCallModel = value;
+        }
+
+        #endregion
+
+        #region TYPE
 
 #if ODIN_INSPECTOR
         [Sirenix.OdinInspector.ShowInInspector]
         [Sirenix.OdinInspector.ShowIf("FunctionCallModel", FunctionCallModel.Function)]
 #endif
-        public string Type => "Function";
+
+        public string Type { get; } = "Function";
+
+        #endregion
+
+        #region FUNCTIONNAME
 
 #if ODIN_INSPECTOR
-        [Sirenix.OdinInspector.ShowInInspector]
-        [Sirenix.OdinInspector.ShowIf("FunctionCallModel", FunctionCallModel.Function)]
+        [Sirenix.OdinInspector.ShowInInspector] [Sirenix.OdinInspector.ShowIf("FunctionCallModel", FunctionCallModel.Function)]
+#else
+[UnityEngine.SerializeField]
 #endif
-        public string FunctionName { get; set; }
+        private string _functionName;
+
+        public string FunctionName
+        {
+            get => _functionName;
+            set => _functionName = value;
+        }
+
+        #endregion
 
         public ParamsStandardError VerifyParams()
         {

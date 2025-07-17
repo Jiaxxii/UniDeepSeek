@@ -1,4 +1,9 @@
 ﻿using JetBrains.Annotations;
+using UnityEngine;
+
+#if ODIN_INSPECTOR
+using Sirenix.OdinInspector;
+#endif
 
 namespace Xiyu.UniDeepSeek.MessagesType
 {
@@ -14,23 +19,63 @@ namespace Xiyu.UniDeepSeek.MessagesType
         {
         }
 
+#if UNITY_EDITOR && !ODIN_INSPECTOR
+        [UnityEngine.SerializeField] private RoleType role = RoleType.Assistant;
+        private void ForgetWaring() => _ = role;
+#endif
         public override RoleType Role => RoleType.Assistant;
 
-#if ODIN_INSPECTOR
-        [Sirenix.OdinInspector.ShowInInspector]
-#endif
-        public string Name { get; set; }
+        #region NAME
 
 #if ODIN_INSPECTOR
-        [Sirenix.OdinInspector.ShowInInspector]
+        [ShowInInspector, ReadOnly]
+#else
+        [SerializeField]
 #endif
-        public bool Prefix { get; set; }
+        private string _name;
+
+        public string Name
+        {
+            get => _name;
+            set => _name = value;
+        }
+
+        #endregion
+
+        #region Prefix
 
 #if ODIN_INSPECTOR
-        [Sirenix.OdinInspector.ShowInInspector]
-        [UnityEngine.TextArea(10, 20)]
+        [ShowInInspector]
+#else
+        [SerializeField]
 #endif
-        public string ReasoningContent { get; set; }
+        private bool _prefix;
+
+        public bool Prefix
+        {
+            get => _prefix;
+            set => _prefix = value;
+        }
+
+        #endregion
+
+        #region ReasoningContent
+
+#if ODIN_INSPECTOR
+        [ShowInInspector]
+#else
+        [SerializeField]
+#endif
+        [TextArea(10, 20)]
+        private string _reasoningContent;
+
+        public string ReasoningContent
+        {
+            get => _reasoningContent;
+            set => _reasoningContent = value;
+        }
+
+        #endregion
 
 
         public override ParamsStandardError VerifyParams()

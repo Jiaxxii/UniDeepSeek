@@ -1,4 +1,5 @@
 ﻿using System;
+using UnityEngine;
 #if ODIN_INSPECTOR
 using Sirenix.OdinInspector;
 #endif
@@ -14,36 +15,63 @@ namespace Xiyu.UniDeepSeek.Tools
     {
         public FunctionCall(string id, FunctionArg function = null, string type = "function")
         {
-            Id = id;
-            Type = type;
-            Function = function;
+            _id = id;
+            _type = type;
+            _functionArg = function;
         }
+
+        #region Id
+
+#if ODIN_INSPECTOR
+        [ShowInInspector, HorizontalGroup("info"), LabelWidth(20), ReadOnly]
+#else
+        [SerializeField]
+#endif
+        [Tooltip("tool 调用的 ID。")]
+        private string _id;
 
         /// <summary>
         /// tool 调用的 ID。
         /// </summary>
+
+        public string Id => _id;
+
+        #endregion
+
+        #region Type
+
 #if ODIN_INSPECTOR
-        [ShowInInspector, HorizontalGroup("info"), LabelWidth(20)]
-        [UnityEngine.Tooltip("tool 调用的 ID。")]
+        [ShowInInspector, HorizontalGroup("info"), LabelWidth(35), ReadOnly]
+#else
+        [SerializeField]
 #endif
-        public string Id { get; }
+        [Tooltip("tool 的类型，目前仅支持 function。")]
+        private string _type;
 
         /// <summary>
         /// tool 的类型，目前仅支持 function。
         /// </summary>
+
+        public string Type => _type;
+
+        #endregion
+
+        #region Function
+
 #if ODIN_INSPECTOR
-        [ShowInInspector, HorizontalGroup("info"), LabelWidth(35)]
-        [UnityEngine.Tooltip("tool 的类型，目前仅支持 function。")]
+        [ShowInInspector, InlineProperty, HideLabel]
+#else
+        [SerializeField]
 #endif
-        public string Type { get; }
+        [Tooltip("模型调用的函数参数。")]
+        private FunctionArg _functionArg;
 
         /// <summary>
         /// 模型调用的函数参数。
         /// </summary>
-#if ODIN_INSPECTOR
-        [ShowInInspector, InlineProperty, HideLabel]
-        [UnityEngine.Tooltip("模型调用的函数参数。")]
-#endif
-        public FunctionArg Function { get; }
+
+        public FunctionArg Function => _functionArg;
+
+        #endregion
     }
 }

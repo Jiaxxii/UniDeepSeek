@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using JetBrains.Annotations;
 using Newtonsoft.Json;
+using UnityEngine;
 using Xiyu.UniDeepSeek.Tools;
+using Object = System.Object;
 
 #if ODIN_INSPECTOR
 using Sirenix.OdinInspector;
@@ -16,79 +18,138 @@ namespace Xiyu.UniDeepSeek
     {
         public ChatCompletion(List<Choice> choices, string id, int created, ChatModel model, [CanBeNull] string systemFingerprint, string @object, [CanBeNull] Usage usage)
         {
-            ID = id;
-            Created = created;
-            Model = model;
-            SystemFingerprint = systemFingerprint;
-            Object = @object;
-            Usage = usage;
-            Choices = choices;
+            _id = id;
+            _created = created;
+            _model = model;
+            _systemFingerprint = systemFingerprint;
+            _object = @object;
+            _usage = usage;
+            _choices = choices;
         }
+
+        #region Choices
+
+#if ODIN_INSPECTOR
+        [ShowInInspector, LabelText("对话结果"), BoxGroup("信息"), ReadOnly]
+#else
+        [SerializeField]
+#endif
+        [Tooltip("模型生成的 completion 的选择列表。")]
+        private List<Choice> _choices;
 
         /// <summary>
         /// 模型生成的 completion 的选择列表。
         /// </summary>
-#if ODIN_INSPECTOR
-        [ShowInInspector, LabelText("对话结果"), BoxGroup("信息")]
-        [UnityEngine.Tooltip("模型生成的 completion 的选择列表。")]
-#endif
-        public List<Choice> Choices { get; }
+        public List<Choice> Choices => _choices;
 
+        #endregion
+
+        #region ID
+
+        private string _id;
 
         /// <summary>
         /// 对话的唯一标识符。
         /// </summary>
 #if ODIN_INSPECTOR
-        [ShowInInspector, BoxGroup("信息")]
-        [UnityEngine.Tooltip("对话的唯一标识符。")]
+        [ShowInInspector, BoxGroup("信息"), ReadOnly]
+#else
+        [SerializeField]
 #endif
-        public string ID { get; }
+        [Tooltip("对话的唯一标识符。")]
+        public string ID => _id;
+
+        #endregion
+
+        #region Created
+
+#if ODIN_INSPECTOR
+        [ShowInInspector, BoxGroup("信息"), ReadOnly]
+#else
+        [SerializeField]
+#endif
+        [Tooltip("创建聊天完成时的 Unix 时间戳（以秒为单位）。")]
+        private int _created;
 
         /// <summary>
         /// 创建聊天完成时的 Unix 时间戳（以秒为单位）。
         /// </summary>
+
+        public int Created => _created;
+
+        #endregion
+
+        #region Model
+
 #if ODIN_INSPECTOR
-        [ShowInInspector, BoxGroup("信息")]
-        [UnityEngine.Tooltip("创建聊天完成时的 Unix 时间戳（以秒为单位）。")]
+        [ShowInInspector, BoxGroup("信息"), ReadOnly]
+#else
+        [SerializeField]
 #endif
-        public int Created { get; }
+        [Tooltip("创建聊天完成时的 Unix 时间戳（以秒为单位）。")]
+        private ChatModel _model;
 
         /// <summary>
         /// 创建聊天完成时的 Unix 时间戳（以秒为单位）。
         /// </summary>
+        public ChatModel Model => _model;
+
+        #endregion
+
+
+        #region SystemFingerprint
+
 #if ODIN_INSPECTOR
-        [ShowInInspector, BoxGroup("信息")]
-        [UnityEngine.Tooltip("创建聊天完成时的 Unix 时间戳（以秒为单位）。")]
+        [ShowInInspector, BoxGroup("信息"), ReadOnly]
+#else
+        [SerializeField]
 #endif
-        public ChatModel Model { get; }
+        [Tooltip("此指纹表示模型运行时使用的后端配置。")]
+        private string _systemFingerprint;
 
         /// <summary>
         /// 此指纹表示模型运行时使用的后端配置。
         /// </summary>
-#if ODIN_INSPECTOR
-        [ShowInInspector, BoxGroup("信息")]
-        [UnityEngine.Tooltip("此指纹表示模型运行时使用的后端配置。")]
-#endif
+
         [CanBeNull]
-        public string SystemFingerprint { get; }
+        public string SystemFingerprint => _systemFingerprint;
+
+        #endregion
+
+        #region Object
+
+#if ODIN_INSPECTOR
+        [ShowInInspector, BoxGroup("信息"), ReadOnly]
+#else
+        [SerializeField]
+#endif
+        [Tooltip("对象的类型, 其值为 chat.completion。")]
+        private string _object;
 
         /// <summary>
         /// 对象的类型, 其值为 chat.completion。
         /// </summary>
+
+        public string Object => _object;
+
+        #endregion
+
+        #region Usage
+
 #if ODIN_INSPECTOR
-        [ShowInInspector, BoxGroup("信息")]
-        [UnityEngine.Tooltip("对象的类型, 其值为 chat.completion。")]
+        [ShowInInspector, HideLabel, ReadOnly]
+#else
+        [SerializeField]
 #endif
-        public string Object { get; }
+        [Tooltip("该对话补全请求的用量信息。")]
+        private Usage _usage;
 
         /// <summary>
         /// 该对话补全请求的用量信息。
         /// </summary>
-#if ODIN_INSPECTOR
-        [ShowInInspector, HideLabel]
-        [UnityEngine.Tooltip("该对话补全请求的用量信息。")]
-#endif
         [CanBeNull]
-        public Usage Usage { get; }
+        public Usage Usage => _usage;
+
+        #endregion
     }
 }

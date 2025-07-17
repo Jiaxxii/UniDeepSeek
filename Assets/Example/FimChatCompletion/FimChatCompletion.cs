@@ -29,7 +29,7 @@ namespace Example.FimChatCompletion
         [SerializeField] [TextArea(3, 5)] private string suffix;
 
 #if ODIN_INSPECTOR
-        [Sirenix.OdinInspector.Button("启动", DrawResult = false)]
+        [Button("启动", DrawResult = false)]
 #endif
         private async UniTaskVoid FimChatCompletionAsync()
         {

@@ -1,4 +1,8 @@
-﻿namespace Xiyu.UniDeepSeek.MessagesType
+﻿#if ODIN_INSPECTOR
+using Sirenix.OdinInspector;
+#endif
+
+namespace Xiyu.UniDeepSeek.MessagesType
 {
     [System.Serializable]
     public class ToolMessage : Message
@@ -18,13 +22,29 @@
             Content = content;
         }
 
+#if UNITY_EDITOR && !ODIN_INSPECTOR
+        [UnityEngine.SerializeField] private RoleType role = RoleType.Tool;
+        private void ForgetWaring() => _ = role;
+#endif
+
         public override RoleType Role => RoleType.Tool;
 
+        #region ToolCallId
+
 #if ODIN_INSPECTOR
-        [Sirenix.OdinInspector.ShowInInspector]
-        [Sirenix.OdinInspector.ReadOnly]
+        [ShowInInspector] [ReadOnly]
+#else
+        [UnityEngine.SerializeField]
 #endif
-        public string ToolCallId { get; set; }
+        private string _toolCallId;
+
+        public string ToolCallId
+        {
+            get => _toolCallId;
+            set => _toolCallId = value;
+        }
+
+        #endregion
 
 
         public override ParamsStandardError VerifyParams()
