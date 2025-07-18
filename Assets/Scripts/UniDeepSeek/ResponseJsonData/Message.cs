@@ -1,11 +1,16 @@
 ﻿using System.Collections.Generic;
-using JetBrains.Annotations;
 using Newtonsoft.Json;
 using UnityEngine;
 using Xiyu.UniDeepSeek.MessagesType;
 using Xiyu.UniDeepSeek.Tools;
 #if ODIN_INSPECTOR
 using Sirenix.OdinInspector;
+#endif
+
+#if RIDER
+using JetBrains.Annotations;
+#else
+using Xiyu.UniDeepSeek.Annotations;
 #endif
 
 namespace Xiyu.UniDeepSeek

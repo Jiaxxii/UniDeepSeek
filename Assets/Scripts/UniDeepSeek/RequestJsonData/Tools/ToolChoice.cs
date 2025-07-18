@@ -1,7 +1,12 @@
-﻿using JetBrains.Annotations;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Xiyu.UniDeepSeek.MessagesType;
+
+#if RIDER
+using JetBrains.Annotations;
+#else
+using Xiyu.UniDeepSeek.Annotations;
+#endif
 
 namespace Xiyu.UniDeepSeek.Tools
 {

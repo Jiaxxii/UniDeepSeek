@@ -3,9 +3,14 @@ using System.Collections.Generic;
 using System.Threading;
 using Cysharp.Threading.Tasks;
 using Cysharp.Threading.Tasks.Linq;
-using JetBrains.Annotations;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+
+#if RIDER
+using JetBrains.Annotations;
+#else
+using Xiyu.UniDeepSeek.Annotations;
+#endif
 
 namespace Xiyu.UniDeepSeek.FillInTheMiddle
 {

@@ -1,8 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using JetBrains.Annotations;
 using Xiyu.UniDeepSeek.Tools;
-
 namespace Xiyu.UniDeepSeek
 {
     public partial class ChatCompletion

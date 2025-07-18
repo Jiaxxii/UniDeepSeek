@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using JetBrains.Annotations;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using UnityEngine;
@@ -9,6 +8,12 @@ using Xiyu.UniDeepSeek.MessagesType;
 
 #if ODIN_INSPECTOR
 using Sirenix.OdinInspector;
+#endif
+
+#if RIDER
+using JetBrains.Annotations;
+#else
+using Xiyu.UniDeepSeek.Annotations;
 #endif
 
 namespace Xiyu.UniDeepSeek.FillInTheMiddle

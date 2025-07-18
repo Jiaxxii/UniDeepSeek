@@ -1,12 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using JetBrains.Annotations;
 using UnityEngine;
 
 
 #if ODIN_INSPECTOR
 using Sirenix.OdinInspector;
+#endif
+
+#if RIDER
+using JetBrains.Annotations;
+#else
+using Xiyu.UniDeepSeek.Annotations;
 #endif
 
 namespace Xiyu.UniDeepSeek
