@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8dc74092-d10d-470c-8ee2-01be99c0ea2b" name="更改" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.UniDeepSeek/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UniDeepSeek/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-6000.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-6000.dwlt" afterDir="false" />
-    </list>
+    <list default="true" id="8dc74092-d10d-470c-8ee2-01be99c0ea2b" name="更改" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -57,12 +52,12 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/443ce614ff11fd4152a3c735dec9ef388c537ef8ea9c24e0f018f1bd619e85/JObject.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/696aa455fd6736cddaf4da626e8bac73eb7a3f4de26241c24169a89f925074/System.Net.Http.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/b583e7d8f82a4d824fae2e16e2af7f00dc92a5cddd53375c554aee1980d145/JContainer.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://F:/Unity/MyProject/UniDeepSeek/Assets/Scripts/Editor/ManifestJsonEditor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Editor/ManifestJsonEditor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Analysis/SampleDeserializeCompletion.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://F:/Unity/MyProject/UniDeepSeek/Assets/Scripts/UniDeepSeek/ChatProcessor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Expands/ChatCompletionExpand.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/ResponseJsonData/Logprobs/LogprobItem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@f3fac7af1578/Runtime/UGUI/UI/Core/Text.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://F:/Unity/MyProject/UniDeepSeek/UserSettings/EditorUserSettings.asset" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
@@ -196,6 +191,7 @@
       <workItem from="1755846245184" duration="1020000" />
       <workItem from="1755847421691" duration="1807000" />
       <workItem from="1755849405120" duration="160000" />
+      <workItem from="1755859649822" duration="4598000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -349,7 +345,31 @@
       <option name="project" value="LOCAL" />
       <updated>1755848534233</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="feat(authentication api_key): 现在你可以指定 `ChatProcessor` 中的 `ApiKeyConverter` 来对api key进行加密解密。">
+      <option name="closed" value="true" />
+      <created>1755863774055</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1755863774055</updated>
+    </task>
+    <task id="LOCAL-00021" summary="log(unity reference refresh)">
+      <option name="closed" value="true" />
+      <created>1755864028495</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1755864028495</updated>
+    </task>
+    <task id="LOCAL-00022" summary="chore(EnhancedApiKeyConverter)&#10;&#10;`Assets\Scripts\UniDeepSeek\SecureApiKeyConverter.cs` move to 'Assets\Scripts\UniDeepSeek\Analysis\SecureApiKeyConverter.cs'">
+      <option name="closed" value="true" />
+      <created>1755864197533</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1755864197533</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -398,7 +418,10 @@
     <MESSAGE value="fix(download): 非 `Rider` 可能导致依赖缺少&#10;&#10;1.我们添加了自定义宏 `RIDER` 并且在`RiderSymbolDefiner` 中判断您是否是 `Rider` 用户。如果是将会开启宏定义，如果不是则会关闭，防止依赖缺少。&#10;&#10;2.我们添加了 `ManifestJsonEditor` 工具，你可以点击 `Unity -&gt; Tools -&gt; Xiyu -&gt; 添加 UniTask 和 Newtonsoft.Json 依赖` 中添加缺少的依赖" />
     <MESSAGE value="(fix:ctor): 为 `AssistantMessage` 与 `SystemMessage` 类添加构造函数。" />
     <MESSAGE value="fix(Dependency): `DependencyManager.cs` 会检查是否已经添加依赖。" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix(Dependency): `DependencyManager.cs` 会检查是否已经添加依赖。" />
+    <MESSAGE value="feat(authentication api_key): 现在你可以指定 `ChatProcessor` 中的 `ApiKeyConverter` 来对api key进行加密解密。" />
+    <MESSAGE value="log(unity reference refresh)" />
+    <MESSAGE value="chore(EnhancedApiKeyConverter)&#10;&#10;`Assets\Scripts\UniDeepSeek\SecureApiKeyConverter.cs` move to 'Assets\Scripts\UniDeepSeek\Analysis\SecureApiKeyConverter.cs'" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore(EnhancedApiKeyConverter)&#10;&#10;`Assets\Scripts\UniDeepSeek\SecureApiKeyConverter.cs` move to 'Assets\Scripts\UniDeepSeek\Analysis\SecureApiKeyConverter.cs'" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

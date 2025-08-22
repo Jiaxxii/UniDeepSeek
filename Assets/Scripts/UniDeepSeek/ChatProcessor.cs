@@ -25,7 +25,7 @@ namespace Xiyu.UniDeepSeek
         }
 
         /// <summary>
-        /// 使用指定的API密钥初始化ChatProcessor
+        /// 通过指定的IApiKeyConverter初始化ChatProcessor
         /// </summary>
         /// <param name="apiKeyConverter"></param>
         public ChatProcessor(IApiKeyConverter apiKeyConverter)
