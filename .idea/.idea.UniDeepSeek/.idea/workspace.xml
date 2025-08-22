@@ -5,33 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8dc74092-d10d-470c-8ee2-01be99c0ea2b" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Editor.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Editor/ManifestJsonEditor.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Editor/ManifestJsonEditor.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Editor/RiderSymbolDefiner.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Editor/RiderSymbolDefiner.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Annotations.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Annotations/CanBeNullAttribute.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Annotations/CanBeNullAttribute.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Annotations/NotNullAttribute.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Annotations/NotNullAttribute.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UniDeepSeek/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UniDeepSeek/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/ChatProcessor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/ChatProcessor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/DeepSeekChat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/DeepSeekChat.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/FillInTheMiddle/FimDeepSeekChat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/FillInTheMiddle/FimDeepSeekChat.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/FillInTheMiddle/RequestJsonData/FimRequestParameter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/FillInTheMiddle/RequestJsonData/FimRequestParameter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/FillInTheMiddle/ResponeseJsonData/FimChatCompletion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/FillInTheMiddle/ResponeseJsonData/FimChatCompletion.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/RequestJsonData/MessagesType/AssistantMessage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/RequestJsonData/MessagesType/AssistantMessage.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/RequestJsonData/MessagesType/FunctionCallMessage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/RequestJsonData/MessagesType/FunctionCallMessage.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/RequestJsonData/Tools/ToolChoice.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/RequestJsonData/Tools/ToolChoice.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/ResponseJsonData/ChatCompletion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/ResponseJsonData/ChatCompletion.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/ResponseJsonData/ChatCompletionStatic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/ResponseJsonData/ChatCompletionStatic.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/ResponseJsonData/Choice.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/ResponseJsonData/Choice.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/ResponseJsonData/Message.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/ResponseJsonData/Message.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/ResponseJsonData/Usage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/ResponseJsonData/Usage.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/StreamHandle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/StreamHandle.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UniDeepSeek.sln" beforeDir="false" afterPath="$PROJECT_DIR$/UniDeepSeek.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UniDeepSeek.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/UniDeepSeek.sln.DotSettings.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-6000.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-6000.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -81,10 +57,12 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/443ce614ff11fd4152a3c735dec9ef388c537ef8ea9c24e0f018f1bd619e85/JObject.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/696aa455fd6736cddaf4da626e8bac73eb7a3f4de26241c24169a89f925074/System.Net.Http.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/b583e7d8f82a4d824fae2e16e2af7f00dc92a5cddd53375c554aee1980d145/JContainer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://F:/Unity/MyProject/UniDeepSeek/Assets/Scripts/Editor/ManifestJsonEditor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Analysis/SampleDeserializeCompletion.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Expands/ChatCompletionExpand.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/ResponseJsonData/Logprobs/LogprobItem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@f3fac7af1578/Runtime/UGUI/UI/Core/Text.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://F:/Unity/MyProject/UniDeepSeek/UserSettings/EditorUserSettings.asset" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
@@ -211,6 +189,13 @@
       <workItem from="1752725014023" duration="14763000" />
       <workItem from="1752739839046" duration="84000" />
       <workItem from="1752805497601" duration="4374000" />
+      <workItem from="1752809912656" duration="684000" />
+      <workItem from="1755500118852" duration="246000" />
+      <workItem from="1755707186510" duration="4356000" />
+      <workItem from="1755839606127" duration="1978000" />
+      <workItem from="1755846245184" duration="1020000" />
+      <workItem from="1755847421691" duration="1807000" />
+      <workItem from="1755849405120" duration="160000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -340,7 +325,31 @@
       <option name="project" value="LOCAL" />
       <updated>1752739861293</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="fix(download): 非 `Rider` 可能导致依赖缺少&#10;&#10;1.我们添加了自定义宏 `RIDER` 并且在`RiderSymbolDefiner` 中判断您是否是 `Rider` 用户。如果是将会开启宏定义，如果不是则会关闭，防止依赖缺少。&#10;&#10;2.我们添加了 `ManifestJsonEditor` 工具，你可以点击 `Unity -&gt; Tools -&gt; Xiyu -&gt; 添加 UniTask 和 Newtonsoft.Json 依赖` 中添加缺少的依赖">
+      <option name="closed" value="true" />
+      <created>1752810442699</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1752810442699</updated>
+    </task>
+    <task id="LOCAL-00018" summary="(fix:ctor): 为 `AssistantMessage` 与 `SystemMessage` 类添加构造函数。">
+      <option name="closed" value="true" />
+      <created>1755840126214</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1755840126214</updated>
+    </task>
+    <task id="LOCAL-00019" summary="fix(Dependency): `DependencyManager.cs` 会检查是否已经添加依赖。">
+      <option name="closed" value="true" />
+      <created>1755848534233</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1755848534233</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -386,7 +395,10 @@
     <MESSAGE value="fix(global): 错误的使用 `if` 宏&#10;&#10;- 低级错误，错误的将 #if ODIN_INSPECTOR 写成了 #if UNITY_EDITOR，导致未安装Odin Inspector时编译器会报错。" />
     <MESSAGE value="fix(unity Inspector): 不使用 `Odin` 插件也提供了简单的序列化显示" />
     <MESSAGE value="fix(doc):为`ChatProcessor` 添加了一些注释。" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix(doc):为`ChatProcessor` 添加了一些注释。" />
+    <MESSAGE value="fix(download): 非 `Rider` 可能导致依赖缺少&#10;&#10;1.我们添加了自定义宏 `RIDER` 并且在`RiderSymbolDefiner` 中判断您是否是 `Rider` 用户。如果是将会开启宏定义，如果不是则会关闭，防止依赖缺少。&#10;&#10;2.我们添加了 `ManifestJsonEditor` 工具，你可以点击 `Unity -&gt; Tools -&gt; Xiyu -&gt; 添加 UniTask 和 Newtonsoft.Json 依赖` 中添加缺少的依赖" />
+    <MESSAGE value="(fix:ctor): 为 `AssistantMessage` 与 `SystemMessage` 类添加构造函数。" />
+    <MESSAGE value="fix(Dependency): `DependencyManager.cs` 会检查是否已经添加依赖。" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix(Dependency): `DependencyManager.cs` 会检查是否已经添加依赖。" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
