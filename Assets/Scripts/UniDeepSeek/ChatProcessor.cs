@@ -6,13 +6,14 @@ using Cysharp.Threading.Tasks;
 using Cysharp.Threading.Tasks.Linq;
 #if RIDER
 using JetBrains.Annotations;
+
 #else
 using Xiyu.UniDeepSeek.Annotations;
 #endif
 
 namespace Xiyu.UniDeepSeek
 {
-    public class ChatProcessor
+    public class ChatProcessor : IDisposable
     {
         /// <summary>
         /// 使用指定的API密钥初始化ChatProcessor
@@ -20,10 +21,19 @@ namespace Xiyu.UniDeepSeek
         /// <param name="apiKey">DeepSeek API密钥</param>
         public ChatProcessor(string apiKey)
         {
-            _apiKey = apiKey;
+            ApiKeyConverter = new DefaultApiKeyConverter(apiKey);
         }
 
-        private readonly string _apiKey;
+        /// <summary>
+        /// 使用指定的API密钥初始化ChatProcessor
+        /// </summary>
+        /// <param name="apiKeyConverter"></param>
+        public ChatProcessor(IApiKeyConverter apiKeyConverter)
+        {
+            ApiKeyConverter = apiKeyConverter;
+        }
+
+        [NotNull] public IApiKeyConverter ApiKeyConverter { get; set; }
 
         /// <summary>
         /// 获取API的基础URI
@@ -128,8 +138,8 @@ namespace Xiyu.UniDeepSeek
 
             using var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, uri);
             httpRequestMessage.Content = stringContent;
-            httpRequestMessage.Headers.Add("Authorization", $"Bearer {_apiKey}");
-            
+            httpRequestMessage.Headers.Add("Authorization", $"Bearer {GetApiKey()}");
+
             return MainHttpClient.SendAsync(httpRequestMessage, httpCompletionOption, cancellationToken);
         }
 
@@ -149,6 +159,20 @@ namespace Xiyu.UniDeepSeek
                 throw new InvalidOperationException("Base URI is not set.");
 
             return new Uri(BaseUri, requestUri);
+        }
+
+
+        protected virtual string GetApiKey()
+        {
+            var apiKey = ApiKeyConverter.GetApiKey();
+            if (!ApiKeyConverter.ValidateApiKey(apiKey))
+                throw new InvalidOperationException("Invalid API key.");
+            return apiKey;
+        }
+
+        public virtual void Dispose()
+        {
+            ApiKeyConverter.Dispose();
         }
     }
 }
