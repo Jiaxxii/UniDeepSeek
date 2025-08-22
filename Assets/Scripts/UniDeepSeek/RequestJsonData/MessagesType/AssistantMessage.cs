@@ -6,6 +6,7 @@ using Sirenix.OdinInspector;
 
 #if RIDER
 using JetBrains.Annotations;
+
 #else
 using Xiyu.UniDeepSeek.Annotations;
 #endif
@@ -22,6 +23,12 @@ namespace Xiyu.UniDeepSeek.MessagesType
 #endif
             AssistantMessage()
         {
+        }
+
+        public AssistantMessage(string content, string name = null)
+        {
+            Content = content;
+            Name = name;
         }
 
 #if UNITY_EDITOR && !ODIN_INSPECTOR

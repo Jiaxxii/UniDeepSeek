@@ -18,6 +18,12 @@ namespace Xiyu.UniDeepSeek.MessagesType
         {
         }
 
+        public SystemMessage(string content, string userName = null)
+        {
+            Content = content;
+            UserName = userName;
+        }
+
 #if UNITY_EDITOR && !ODIN_INSPECTOR
         [UnityEngine.SerializeField] private RoleType role = RoleType.System;
         private void ForgetWaring() => _ = role;
