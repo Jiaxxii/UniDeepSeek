@@ -4,9 +4,11 @@
 
 ### 前言
 
-1. 我们强烈推荐您使用插件 `Odin` 插件 ***（提示：二手市场有价格极低的 `Odin` 插件，请谨慎购买！）***
+1. [您必须学会 `UniTask` 中的一些基本操作，如果您使用过 `Task` 切换到 `UniTask` 的使用这可能几乎无感](https://github.com/Cysharp/UniTask)
 2. `UniDeepSeek` 依赖 `UniTask` 异步库与 `Newtonsoft.Json` 解析库，请确保您的项目中已经添加了这两个库。
 3. 使用尽可能高的 `Unity` 版本，最低需支持 `C# 9.0` 版本。
+4. `Assets\Example` 目录下包含所有功能的演示示例
+5. 我们强烈推荐您使用插件 `Odin` 插件 ***（提示：二手市场有价格极低的 `Odin` 插件，请谨慎购买！）***
 
 ---
 
