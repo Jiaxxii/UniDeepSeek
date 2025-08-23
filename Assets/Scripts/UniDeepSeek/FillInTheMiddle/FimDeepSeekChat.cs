@@ -8,6 +8,7 @@ using Newtonsoft.Json.Linq;
 
 #if RIDER
 using JetBrains.Annotations;
+
 #else
 using Xiyu.UniDeepSeek.Annotations;
 #endif
@@ -23,6 +24,10 @@ namespace Xiyu.UniDeepSeek.FillInTheMiddle
         [NotNull] public FimRequestParameter Setting { get; set; } = new();
 
         public FimDeepSeekChat(string apiKey) : base(apiKey)
+        {
+        }
+
+        public FimDeepSeekChat(IApiKeyConverter apiKeyConverter) : base(apiKeyConverter)
         {
         }
 

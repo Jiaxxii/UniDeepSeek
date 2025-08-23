@@ -11,6 +11,7 @@ using UnityEngine;
 using Xiyu.UniDeepSeek.Tools;
 #if RIDER
 using JetBrains.Annotations;
+
 #else
 using Xiyu.UniDeepSeek.Annotations;
 #endif
@@ -20,6 +21,11 @@ namespace Xiyu.UniDeepSeek
     public class DeepSeekChat : ChatProcessor
     {
         public DeepSeekChat([NotNull] ChatRequestParameter setting, [NotNull] string apiKey) : base(apiKey)
+        {
+            Setting = setting;
+        }
+
+        public DeepSeekChat([NotNull] ChatRequestParameter setting, IApiKeyConverter apiKeyConverter) : base(apiKeyConverter)
         {
             Setting = setting;
         }

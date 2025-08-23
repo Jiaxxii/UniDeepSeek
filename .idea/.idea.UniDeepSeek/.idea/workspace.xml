@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8dc74092-d10d-470c-8ee2-01be99c0ea2b" name="更改" comment="" />
+    <list default="true" id="8dc74092-d10d-470c-8ee2-01be99c0ea2b" name="更改" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.UniDeepSeek/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UniDeepSeek/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-6000.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-6000.dwlt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -192,6 +195,8 @@
       <workItem from="1755847421691" duration="1807000" />
       <workItem from="1755849405120" duration="160000" />
       <workItem from="1755859649822" duration="4598000" />
+      <workItem from="1755864765673" duration="178000" />
+      <workItem from="1755920126843" duration="1419000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -369,7 +374,15 @@
       <option name="project" value="LOCAL" />
       <updated>1755864197533</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="fix(doc): `ChatProcessor` 中 通过 `IApiKeyConverter` 初始化的代码注解错误">
+      <option name="closed" value="true" />
+      <created>1755864929892</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1755864929892</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -421,7 +434,8 @@
     <MESSAGE value="feat(authentication api_key): 现在你可以指定 `ChatProcessor` 中的 `ApiKeyConverter` 来对api key进行加密解密。" />
     <MESSAGE value="log(unity reference refresh)" />
     <MESSAGE value="chore(EnhancedApiKeyConverter)&#10;&#10;`Assets\Scripts\UniDeepSeek\SecureApiKeyConverter.cs` move to 'Assets\Scripts\UniDeepSeek\Analysis\SecureApiKeyConverter.cs'" />
-    <option name="LAST_COMMIT_MESSAGE" value="chore(EnhancedApiKeyConverter)&#10;&#10;`Assets\Scripts\UniDeepSeek\SecureApiKeyConverter.cs` move to 'Assets\Scripts\UniDeepSeek\Analysis\SecureApiKeyConverter.cs'" />
+    <MESSAGE value="fix(doc): `ChatProcessor` 中 通过 `IApiKeyConverter` 初始化的代码注解错误" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix(doc): `ChatProcessor` 中 通过 `IApiKeyConverter` 初始化的代码注解错误" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
