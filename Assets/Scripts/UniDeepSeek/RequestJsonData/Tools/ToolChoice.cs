@@ -4,6 +4,7 @@ using Xiyu.UniDeepSeek.MessagesType;
 
 #if RIDER
 using JetBrains.Annotations;
+
 #else
 using Xiyu.UniDeepSeek.Annotations;
 #endif
@@ -19,17 +20,15 @@ namespace Xiyu.UniDeepSeek.Tools
         #region FUNCTIONCALLMODEL
 
 #if ODIN_INSPECTOR
-        [Sirenix.OdinInspector.ShowInInspector, Sirenix.OdinInspector.EnumToggleButtons]
-#else
-[UnityEngine.SerializeField]
+        [Sirenix.OdinInspector.EnumToggleButtons]
 #endif
-
-        private FunctionCallModel _functionCallModel = FunctionCallModel.None;
+        [UnityEngine.SerializeField]
+        private FunctionCallModel functionCallModel = FunctionCallModel.None;
 
         public FunctionCallModel FunctionCallModel
         {
-            get => _functionCallModel;
-            set => _functionCallModel = value;
+            get => functionCallModel;
+            set => functionCallModel = value;
         }
 
         #endregion
@@ -48,16 +47,15 @@ namespace Xiyu.UniDeepSeek.Tools
         #region FUNCTIONNAME
 
 #if ODIN_INSPECTOR
-        [Sirenix.OdinInspector.ShowInInspector] [Sirenix.OdinInspector.ShowIf("FunctionCallModel", FunctionCallModel.Function)]
-#else
-[UnityEngine.SerializeField]
+        [Sirenix.OdinInspector.ShowIf("FunctionCallModel", FunctionCallModel.Function)]
 #endif
-        private string _functionName;
+        [UnityEngine.SerializeField]
+        private string functionName;
 
         public string FunctionName
         {
-            get => _functionName;
-            set => _functionName = value;
+            get => functionName;
+            set => functionName = value;
         }
 
         #endregion

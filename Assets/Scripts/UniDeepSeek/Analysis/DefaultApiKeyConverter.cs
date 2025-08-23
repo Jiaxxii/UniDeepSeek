@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
 namespace Xiyu.UniDeepSeek
 {
@@ -10,12 +11,20 @@ namespace Xiyu.UniDeepSeek
 
         public DefaultApiKeyConverter(string apiKey)
         {
-            _apiKey = Convert.FromBase64String(apiKey);
+            var bytes = Encoding.UTF8.GetBytes(apiKey);
+            var base64String = Convert.ToBase64String(bytes);
+            _apiKey = Encoding.UTF8.GetBytes(base64String);
         }
 
         private readonly byte[] _apiKey;
 
-        public string GetApiKey() => System.Text.Encoding.UTF8.GetString(_apiKey);
+
+        public string GetApiKey()
+        {
+            var base64String = Encoding.UTF8.GetString(_apiKey);
+            var bytes = Convert.FromBase64String(base64String);
+            return Encoding.UTF8.GetString(bytes);
+        }
 
         public bool ValidateApiKey(string apiKey)
         {

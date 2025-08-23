@@ -5,7 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8dc74092-d10d-470c-8ee2-01be99c0ea2b" name="更改" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/RequestJsonData/Samples.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/RequestJsonData/Samples/ChatRequestBody.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/RequestJsonData/Samples/ChatRequestBody.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/RequestJsonData/Samples/Tools.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/RequestJsonData/Samples/Tools/FunctionDefine.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/RequestJsonData/Samples/Tools/FunctionDefine.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/RequestJsonData/Samples/Tools/ToolChoice.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/RequestJsonData/Samples/Tools/ToolChoice.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/RequestJsonData/Samples/Tools/ToolInstance.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/RequestJsonData/Samples/Tools/ToolInstance.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UniDeepSeek/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UniDeepSeek/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Analysis/DefaultApiKeyConverter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Analysis/DefaultApiKeyConverter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/RequestJsonData/ChatRequestParameter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/RequestJsonData/ChatRequestParameter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/RequestJsonData/Tools/FunctionDefine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/RequestJsonData/Tools/FunctionDefine.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/RequestJsonData/Tools/ToolChoice.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/RequestJsonData/Tools/ToolChoice.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/RequestJsonData/Tools/ToolInstance.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/RequestJsonData/Tools/ToolInstance.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-6000.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-6000.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -197,6 +212,11 @@
       <workItem from="1755859649822" duration="4598000" />
       <workItem from="1755864765673" duration="178000" />
       <workItem from="1755920126843" duration="1419000" />
+      <workItem from="1755944362906" duration="693000" />
+      <workItem from="1755945092317" duration="30000" />
+      <workItem from="1755945141459" duration="47000" />
+      <workItem from="1755946580314" duration="306000" />
+      <workItem from="1755948231499" duration="4088000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -382,7 +402,15 @@
       <option name="project" value="LOCAL" />
       <updated>1755864929892</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="feat(ctor):为 `ChatProcessor` 的两个派生类 `DeepSeekChat` 和 `FimDeepSeekChat` 添加了新的构造函数，允许传入自定义的 `IApiKeyConverter`">
+      <option name="closed" value="true" />
+      <created>1755944545814</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1755944545814</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -435,7 +463,8 @@
     <MESSAGE value="log(unity reference refresh)" />
     <MESSAGE value="chore(EnhancedApiKeyConverter)&#10;&#10;`Assets\Scripts\UniDeepSeek\SecureApiKeyConverter.cs` move to 'Assets\Scripts\UniDeepSeek\Analysis\SecureApiKeyConverter.cs'" />
     <MESSAGE value="fix(doc): `ChatProcessor` 中 通过 `IApiKeyConverter` 初始化的代码注解错误" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix(doc): `ChatProcessor` 中 通过 `IApiKeyConverter` 初始化的代码注解错误" />
+    <MESSAGE value="feat(ctor):为 `ChatProcessor` 的两个派生类 `DeepSeekChat` 和 `FimDeepSeekChat` 添加了新的构造函数，允许传入自定义的 `IApiKeyConverter`" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(ctor):为 `ChatProcessor` 的两个派生类 `DeepSeekChat` 和 `FimDeepSeekChat` 添加了新的构造函数，允许传入自定义的 `IApiKeyConverter`" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

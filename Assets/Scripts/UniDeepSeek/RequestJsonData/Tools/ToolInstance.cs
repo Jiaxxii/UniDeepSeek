@@ -14,17 +14,12 @@ namespace Xiyu.UniDeepSeek.Tools
 
         #region FUNCTIONDEFINE
 
-#if ODIN_INSPECTOR
-        [Sirenix.OdinInspector.ShowInInspector]
-#else
-[UnityEngine.SerializeField]
-#endif
-        private FunctionDefine _functionDefine = new();
+        [UnityEngine.SerializeField] private FunctionDefine functionDefine = new();
 
         public FunctionDefine FunctionDefine
         {
-            get => _functionDefine;
-            set => _functionDefine = value;
+            get => functionDefine;
+            set => functionDefine = value;
         }
 
         #endregion

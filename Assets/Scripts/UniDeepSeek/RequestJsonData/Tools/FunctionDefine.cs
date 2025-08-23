@@ -1,13 +1,11 @@
 ﻿using System.Collections.Generic;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using UnityEngine;
 using Xiyu.UniDeepSeek.MessagesType;
 
 #if ODIN_INSPECTOR
 using Sirenix.OdinInspector;
-
-#else
-using UnityEngine;
 #endif
 
 namespace Xiyu.UniDeepSeek.Tools
@@ -18,16 +16,15 @@ namespace Xiyu.UniDeepSeek.Tools
         #region FUNCTIONNAME
 
 #if ODIN_INSPECTOR
-        [ShowInInspector, LabelText("方法名称")]
-#else
-        [SerializeField]
+        [LabelText("方法名称")]
 #endif
-        private string _functionName;
+        [SerializeField]
+        private string functionName;
 
         public string FunctionName
         {
-            get => _functionName;
-            set => _functionName = value;
+            get => functionName;
+            set => functionName = value;
         }
 
         #endregion
@@ -36,16 +33,15 @@ namespace Xiyu.UniDeepSeek.Tools
         #region DESCRIPTION
 
 #if ODIN_INSPECTOR
-        [ShowInInspector, LabelText("方法描述")]
-#else
-        [SerializeField, TextArea(1, 2)]
+        [LabelText("方法描述")]
 #endif
-        private string _description;
+        [SerializeField, TextArea(1, 2)]
+        private string description;
 
         public string Description
         {
-            get => _description;
-            set => _description = value;
+            get => description;
+            set => description = value;
         }
 
         #endregion
@@ -53,16 +49,16 @@ namespace Xiyu.UniDeepSeek.Tools
         #region JSONPARAMETERS
 
 #if ODIN_INSPECTOR
-        [ShowInInspector, LabelText("Json参数描述")]
-#else
-        [SerializeField] [TextArea(5, 10)]
+        [LabelText("Json参数描述")]
 #endif
-        private string _jsonParameters;
+        [SerializeField]
+        [TextArea(5, 10)]
+        private string jsonParameters;
 
         public string JsonParameters
         {
-            get => _jsonParameters;
-            set => _jsonParameters = value;
+            get => jsonParameters;
+            set => jsonParameters = value;
         }
 
         #endregion
@@ -70,16 +66,15 @@ namespace Xiyu.UniDeepSeek.Tools
         #region REQUIREDPARAMETERS
 
 #if ODIN_INSPECTOR
-        [ShowInInspector] [LabelText("必要参数")]
-#else
-        [SerializeField]
+        [LabelText("必要参数")]
 #endif
-        private List<string> _requiredParameters;
+        [SerializeField]
+        private List<string> requiredParameters;
 
         public List<string> RequiredParameters
         {
-            get => _requiredParameters;
-            set => _requiredParameters = value;
+            get => requiredParameters;
+            set => requiredParameters = value;
         }
 
         #endregion
