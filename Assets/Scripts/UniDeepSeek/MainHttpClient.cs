@@ -1,8 +1,6 @@
-﻿using System;
-using System.Net.Http;
+﻿using System.Net.Http;
 using System.Threading;
 using Cysharp.Threading.Tasks;
-using UnityEngine;
 
 namespace Xiyu.UniDeepSeek
 {
@@ -36,17 +34,5 @@ namespace Xiyu.UniDeepSeek
         {
             Client?.Dispose();
         }
-
-
-//         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
-//         private static void Initialize()
-//         {
-// #if UNITY_EDITOR
-//             var apiKey = Resources.Load<TextAsset>("DeepSeek-ApiKey").text;
-//             Client.DefaultRequestHeaders.Add("Authorization", $"Bearer {apiKey}");
-// #else
-//             throw new System.Exception("DeepSeek API key is not set in the project settings.");
-// #endif
-//         }
     }
 }

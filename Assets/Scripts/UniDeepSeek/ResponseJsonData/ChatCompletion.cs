@@ -8,6 +8,7 @@ using Sirenix.OdinInspector;
 
 #if RIDER
 using JetBrains.Annotations;
+
 #else
 using Xiyu.UniDeepSeek.Annotations;
 #endif
@@ -15,6 +16,9 @@ using Xiyu.UniDeepSeek.Annotations;
 namespace Xiyu.UniDeepSeek
 {
     [Serializable]
+#if ODIN_INSPECTOR
+    [HideReferenceObjectPicker]
+#endif
     public partial class ChatCompletion
     {
         public ChatCompletion(List<Choice> choices, string id, int created, ChatModel model, [CanBeNull] string systemFingerprint, string @object, [CanBeNull] Usage usage)
