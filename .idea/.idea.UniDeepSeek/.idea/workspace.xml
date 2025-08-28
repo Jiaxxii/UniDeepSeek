@@ -4,40 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8dc74092-d10d-470c-8ee2-01be99c0ea2b" name="更改" comment="feat(ChatCompletion):流式消息事件（更方便的处理思考链内容）&#10;&#10;1. 新的功能类 `ChatCompletionEvent` ，它会将ChatCompletion片段进行简单的判断以分辨那些是思考内容（开始与结束），并提供事件接口。&#10;&#10;2. `static async UniTask DisplayChatStreamWithEventsAsync(this TMPro.TMP_Text ,UniTaskCancelableAsyncEnumerable&lt;ChatCompletion&gt; ,...)` 拓展方法它会创建一个 `ChatCompletionEvent` 实例并且添加一些回调，在方法完成时 `await` 之后会返回一个 `ChatCompletionEvent` 实例，请妥善保管。&#10;&#10;3. `DisplayChatStreamBasicAsync` 是一个对更加简单暴力的实现，它的内部没有然后类就完成了 `DisplayChatStreamWithEventsAsync` 通用的实现，但是它并不灵活（它们底层的解析器几乎相同，只是前者更加泛化）。">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletion.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletion/Interface.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletion/Interface/IChatCompletionContentEvent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletion/Interface/IChatCompletionContentEvent.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletion/Interface/IChatCompletionEvent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletion/Interface/IChatCompletionEvent.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletion/Interface/IChatCompletionInvoke.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletion/Interface/IChatCompletionInvoke.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletion/Interface/IChatCompletionReasoningEvent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletion/Interface/IChatCompletionReasoningEvent.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletion/Interface/IChatCompletionRunning.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletion/Interface/IChatCompletionRunning.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletion/Interface/IEventLifecycleHooks.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletion/Interface/IEventLifecycleHooks.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletion/Modle.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletion/Modle/ChatCompletionContentEvent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletion/Modle/ChatCompletionContentEvent.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletion/Modle/ChatCompletionEvent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletion/Modle/ChatCompletionEvent.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletion/Modle/ChatCompletionEvnet_DisplayChatStreamProcessor.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletion/Modle/ChatCompletionEvnet_DisplayChatStreamProcessor.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletion/Modle/ChatCompletionReasoningEvent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletion/Modle/ChatCompletionReasoningEvent.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Expands/UnityTextMeshProUGUI.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Expands/UnityTextMeshProUGUI/UnityTextMeshProUGUIExpand.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Expands/UnityTextMeshProUGUI/UnityTextMeshProUGUIExpand.cs.meta" afterDir="false" />
+    <list default="true" id="8dc74092-d10d-470c-8ee2-01be99c0ea2b" name="更改" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Example/StreamChatCompletionEvent.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Example/StreamChatCompletionEvent/StreamCompletionEvent.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Example/StreamChatCompletionEvent/StreamCompletionEvent.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Example/StreamChatCompletionEvent/StreamCompletionEvent.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UniDeepSeek/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UniDeepSeek/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/MainHttpClient.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/MainHttpClient.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/ResponseJsonData/ChatCompletion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/ResponseJsonData/ChatCompletion.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/UniDeepSeek.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/UniDeepSeek.asmdef" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UniDeepSeek.csproj.DotSettings" beforeDir="false" afterPath="$PROJECT_DIR$/UniDeepSeek.csproj.DotSettings" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-6000.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-6000.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,6 +64,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Expands/ChatCompletionExpand.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/ResponseJsonData/Logprobs/LogprobItem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@f3fac7af1578/Runtime/UGUI/UI/Core/Text.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://F:/Unity/MyProject/UniDeepSeek/UserSettings/EditorUserSettings.asset" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
@@ -237,7 +211,7 @@
       <workItem from="1755953000467" duration="7311000" />
       <workItem from="1756013781358" duration="3362000" />
       <workItem from="1756134609495" duration="3730000" />
-      <workItem from="1756357781678" duration="12282000" />
+      <workItem from="1756357781678" duration="14151000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -439,7 +413,15 @@
       <option name="project" value="LOCAL" />
       <updated>1755952722681</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="feat(ChatCompletion):流式消息事件（更方便的处理思考链内容）&#10;&#10;1. 新的功能类 `ChatCompletionEvent` ，它会将ChatCompletion片段进行简单的判断以分辨那些是思考内容（开始与结束），并提供事件接口。&#10;&#10;2. `static async UniTask DisplayChatStreamWithEventsAsync(this TMPro.TMP_Text ,UniTaskCancelableAsyncEnumerable&lt;ChatCompletion&gt; ,...)` 拓展方法它会创建一个 `ChatCompletionEvent` 实例并且添加一些回调，在方法完成时 `await` 之后会返回一个 `ChatCompletionEvent` 实例，请妥善保管。&#10;&#10;3. `DisplayChatStreamBasicAsync` 是一个对更加简单暴力的实现，它的内部没有然后类就完成了 `DisplayChatStreamWithEventsAsync` 通用的实现，但是它并不灵活（它们底层的解析器几乎相同，只是前者更加泛化）。">
+      <option name="closed" value="true" />
+      <created>1756370108338</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1756370108338</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
