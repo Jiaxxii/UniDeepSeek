@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using UnityEngine.Serialization;
 
 #if ODIN_INSPECTOR
 using Sirenix.OdinInspector;
@@ -8,6 +9,7 @@ using Sirenix.OdinInspector;
 
 #if RIDER
 using JetBrains.Annotations;
+
 #else
 using Xiyu.UniDeepSeek.Annotations;
 #endif
@@ -19,7 +21,7 @@ namespace Xiyu.UniDeepSeek.MessagesType
     {
         public FunctionCallMessage([NotNull] UniDeepSeek.Message callMessage)
         {
-            _callMessage = callMessage;
+            this.callMessage = callMessage;
             Content = HideContent;
         }
 
@@ -32,13 +34,12 @@ namespace Xiyu.UniDeepSeek.MessagesType
         #region CallMessage
 
 #if ODIN_INSPECTOR
-        [ShowInInspector, InlineProperty, ReadOnly]
-#else
-        [UnityEngine.SerializeField]
+        [InlineProperty, ReadOnly]
 #endif
-        private UniDeepSeek.Message _callMessage;
+        [UnityEngine.SerializeField]
+        private UniDeepSeek.Message callMessage;
 
-        [JsonIgnore] public UniDeepSeek.Message CallMessage => _callMessage;
+        [JsonIgnore] public UniDeepSeek.Message CallMessage => callMessage;
 
         #endregion
 

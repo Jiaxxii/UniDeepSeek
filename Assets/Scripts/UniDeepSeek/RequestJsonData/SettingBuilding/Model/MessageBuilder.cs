@@ -30,16 +30,19 @@ namespace Xiyu.UniDeepSeek.SettingBuilding
 
         public IAssistantMessage AddAssistantMessage(string message, string name = null)
         {
-            _messages.Add(new AssistantMessage(message, name));
+            _messages.Add(AssistantMessage.CreateMessage(message, name));
             return this;
         }
 
         public IAssistantMessage AddAssistantPrefixMessage(string message, bool prefix, string name = null)
         {
-            _messages.Add(new AssistantMessage(message, name)
-            {
-                Prefix = prefix
-            });
+            _messages.Add(AssistantMessage.CreatePrefixMessage(message, name));
+            return this;
+        }
+
+        public IAssistantMessage AddReasoningPrefixMessage(string reasoningContent, string content, string name = null)
+        {
+            _messages.Add(AssistantMessage.CreateReasoningPrefixMessage(reasoningContent, content, name));
             return this;
         }
     }

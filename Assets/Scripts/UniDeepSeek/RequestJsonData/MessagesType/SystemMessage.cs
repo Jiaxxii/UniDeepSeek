@@ -1,9 +1,5 @@
 ﻿using Newtonsoft.Json;
 
-#if ODIN_INSPECTOR
-using Sirenix.OdinInspector;
-#endif
-
 namespace Xiyu.UniDeepSeek.MessagesType
 {
     [System.Serializable]
@@ -32,18 +28,13 @@ namespace Xiyu.UniDeepSeek.MessagesType
 
         #region UserName
 
-#if ODIN_INSPECTOR
-        [ShowInInspector]
-#else
-        [UnityEngine.SerializeField]
-#endif
-        private string _userName;
+        [UnityEngine.SerializeField] private string userName;
 
         [JsonProperty("name")]
         public string UserName
         {
-            get => _userName;
-            set => _userName = value;
+            get => userName;
+            set => userName = value;
         }
 
         #endregion

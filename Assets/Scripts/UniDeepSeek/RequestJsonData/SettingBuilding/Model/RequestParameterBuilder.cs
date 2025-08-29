@@ -12,7 +12,7 @@ namespace Xiyu.UniDeepSeek.SettingBuilding
             Message = message ?? new MessageBuilder(this, _requestParameter.Messages);
             Tool = tool ?? new ToolConfigurator(this, _requestParameter.ToolInstances, _requestParameter.ToolChoice);
         }
-
+  
 
         public IRequestParameter SetModel(ChatModel model)
         {

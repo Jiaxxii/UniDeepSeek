@@ -32,16 +32,15 @@ namespace Xiyu.UniDeepSeek.MessagesType
         #region ToolCallId
 
 #if ODIN_INSPECTOR
-        [ShowInInspector] [ReadOnly]
-#else
-        [UnityEngine.SerializeField]
+        [ReadOnly]
 #endif
-        private string _toolCallId;
+        [UnityEngine.SerializeField]
+        private string toolCallId;
 
         public string ToolCallId
         {
-            get => _toolCallId;
-            set => _toolCallId = value;
+            get => toolCallId;
+            set => toolCallId = value;
         }
 
         #endregion

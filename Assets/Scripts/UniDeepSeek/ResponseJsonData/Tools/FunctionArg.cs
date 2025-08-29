@@ -1,6 +1,7 @@
 ﻿using System;
 using Newtonsoft.Json;
 using UnityEngine;
+using UnityEngine.Serialization;
 #if ODIN_INSPECTOR
 using Sirenix.OdinInspector;
 #endif
@@ -13,57 +14,51 @@ namespace Xiyu.UniDeepSeek.Tools
     {
         public FunctionArg(int index, string name, string arguments)
         {
-            _functionName = name;
-            _arguments = arguments;
+            functionName = name;
+            this.arguments = arguments;
         }
 
         #region FunctionName
 
 #if ODIN_INSPECTOR
-        [ShowInInspector, LabelText("方法名称"), LabelWidth(70), ReadOnly]
-#else
-        [SerializeField]
+        [LabelText("方法名称"), LabelWidth(70), ReadOnly]
 #endif
-        [Tooltip("模型要求调用的函数名称")]
-        private string _functionName;
+        [SerializeField, Tooltip("模型要求调用的函数名称")]
+        private string functionName;
 
         /// <summary>
         /// 模型要求调用的函数名称
         /// </summary>
 
         [JsonProperty("name")]
-        public string FunctionName => _functionName;
+        public string FunctionName => functionName;
 
         #endregion
 
         #region FunctionIndex
 
 #if ODIN_INSPECTOR
-        [ShowInInspector, LabelText("函数索引"), LabelWidth(70), ReadOnly]
-#else
-        [SerializeField]
+        [LabelText("函数索引"), LabelWidth(70), ReadOnly]
 #endif
-        [Tooltip("模型函数的索引")]
-        private int _functionIndex;
+        [SerializeField, Tooltip("模型函数的索引")]
+        private int functionIndex;
 
         /// <summary>
         /// 函数索引
         /// </summary>
 
         [JsonProperty("index")]
-        public int FunctionIndex => _functionIndex;
+        public int FunctionIndex => functionIndex;
 
         #endregion
 
         #region Arguments
 
 #if ODIN_INSPECTOR
-        [ShowInInspector, LabelText("参数"), ReadOnly]
-#else
-        [SerializeField]
+        [LabelText("参数"), ReadOnly]
 #endif
-        [TextArea, Tooltip("函数入参")]
-        private string _arguments;
+        [SerializeField, TextArea, Tooltip("函数入参")]
+        private string arguments;
 
         /// <summary>
         /// 函数入参
@@ -71,8 +66,8 @@ namespace Xiyu.UniDeepSeek.Tools
 
         public string Arguments
         {
-            get => _arguments;
-            private set => _arguments = value;
+            get => arguments;
+            private set => arguments = value;
         }
 
         #endregion

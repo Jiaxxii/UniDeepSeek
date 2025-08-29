@@ -40,51 +40,39 @@ namespace Xiyu.UniDeepSeek.MessagesType
         #region NAME
 
 #if ODIN_INSPECTOR
-        [ShowInInspector, ReadOnly]
-#else
-        [SerializeField]
+        [ReadOnly]
 #endif
-        private string _name;
+        [SerializeField]
+        private string name;
 
         public string Name
         {
-            get => _name;
-            set => _name = value;
+            get => name;
+            set => name = value;
         }
 
         #endregion
 
         #region Prefix
 
-#if ODIN_INSPECTOR
-        [ShowInInspector]
-#else
-        [SerializeField]
-#endif
-        private bool _prefix;
+        [SerializeField] private bool prefix;
 
         public bool Prefix
         {
-            get => _prefix;
-            set => _prefix = value;
+            get => prefix;
+            set => prefix = value;
         }
 
         #endregion
 
         #region ReasoningContent
 
-#if ODIN_INSPECTOR
-        [ShowInInspector]
-#else
-        [SerializeField]
-#endif
-        [TextArea(10, 20)]
-        private string _reasoningContent;
+        [SerializeField, TextArea(10, 20)] private string reasoningContent;
 
         public string ReasoningContent
         {
-            get => _reasoningContent;
-            set => _reasoningContent = value;
+            get => reasoningContent;
+            set => reasoningContent = value;
         }
 
         #endregion

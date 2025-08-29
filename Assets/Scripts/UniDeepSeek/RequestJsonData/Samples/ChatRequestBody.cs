@@ -319,9 +319,9 @@ namespace Xiyu.UniDeepSeek.Samples
         #endregion
 
 
-        public static implicit operator Xiyu.UniDeepSeek.ChatRequestParameter(ChatRequestBody requestBody)
+        public static implicit operator ChatRequestParameter(ChatRequestBody requestBody)
         {
-            return new Xiyu.UniDeepSeek.ChatRequestParameter
+            return new ChatRequestParameter
             {
                 Model = requestBody.model,
                 Messages = requestBody.Messages,
@@ -335,9 +335,9 @@ namespace Xiyu.UniDeepSeek.Samples
                 Stop = requestBody.stop.ToHashSet(),
                 ResponseFormat = requestBody.responseFormat,
                 StreamIncludedUsage = requestBody.streamIncludedUsage,
-                ToolInstances = requestBody.toolInstances.Select(ins => new UniDeepSeek.Tools.ToolInstance
+                ToolInstances = requestBody.toolInstances.Select(ins => new ToolInstance
                 {
-                    FunctionDefine = new UniDeepSeek.Tools.FunctionDefine
+                    FunctionDefine = new FunctionDefine
                     {
                         FunctionName = ins.functionDefine.functionName,
                         Description = ins.functionDefine.description,

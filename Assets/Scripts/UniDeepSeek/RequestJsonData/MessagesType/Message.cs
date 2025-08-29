@@ -1,13 +1,13 @@
 ﻿using Newtonsoft.Json;
+using UnityEngine;
+
 #if ODIN_INSPECTOR
 using Sirenix.OdinInspector;
-
-#else
-using UnityEngine;
 #endif
 
 namespace Xiyu.UniDeepSeek.MessagesType
 {
+    [System.Serializable]
     public abstract class Message : ISerializeParameters
     {
         protected const string HideContent = "HIDE_CONTENT";
@@ -24,11 +24,10 @@ namespace Xiyu.UniDeepSeek.MessagesType
         #region Content
 
 #if ODIN_INSPECTOR
-        [ShowInInspector, HideIf("@Content == \"HIDE_CONTENT\""), LabelText("内容"), ReadOnly]
-#else
-        [SerializeField, TextArea(5, 10)]
+        [HideIf("@Content == \"HIDE_CONTENT\""), LabelText("内容"), ReadOnly]
 #endif
-        private string _content;
+        [SerializeField, TextArea(5, 10)]
+        private string content;
 
         /// <summary>
         /// 内容。
@@ -36,8 +35,8 @@ namespace Xiyu.UniDeepSeek.MessagesType
 
         public string Content
         {
-            get => _content;
-            set => _content = value;
+            get => content;
+            set => content = value;
         }
 
         #endregion

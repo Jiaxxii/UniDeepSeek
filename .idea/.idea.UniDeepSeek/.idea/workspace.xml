@@ -5,55 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8dc74092-d10d-470c-8ee2-01be99c0ea2b" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Expands/ChatRequestParameterExpand.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Expands/ChatRequestParameterExpand.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Expands/DeepSeekChatExpand.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Expands/DeepSeekChatExpand.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/RequestJsonData/SettingBuilding.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/RequestJsonData/SettingBuilding/Interface.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/RequestJsonData/SettingBuilding/Interface/IAssistantMessage.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/RequestJsonData/SettingBuilding/Interface/IAssistantMessage.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/RequestJsonData/SettingBuilding/Interface/IBuilding.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/RequestJsonData/SettingBuilding/Interface/IBuilding.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/RequestJsonData/SettingBuilding/Interface/IMessage.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/RequestJsonData/SettingBuilding/Interface/IMessage.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/RequestJsonData/SettingBuilding/Interface/IRequestParameter.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/RequestJsonData/SettingBuilding/Interface/IRequestParameter.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/RequestJsonData/SettingBuilding/Interface/ISystemMessage.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/RequestJsonData/SettingBuilding/Interface/ISystemMessage.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/RequestJsonData/SettingBuilding/Interface/IThenableMessage.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/RequestJsonData/SettingBuilding/Interface/IThenableMessage.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/RequestJsonData/SettingBuilding/Interface/ITool.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/RequestJsonData/SettingBuilding/Interface/ITool.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/RequestJsonData/SettingBuilding/Interface/IToolChoice.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/RequestJsonData/SettingBuilding/Interface/IToolChoice.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/RequestJsonData/SettingBuilding/Interface/IToolInstances.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/RequestJsonData/SettingBuilding/Interface/IToolInstances.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/RequestJsonData/SettingBuilding/Interface/IUserMessage.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/RequestJsonData/SettingBuilding/Interface/IUserMessage.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/RequestJsonData/SettingBuilding/Model.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/RequestJsonData/SettingBuilding/Model/MessageBuilder.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/RequestJsonData/SettingBuilding/Model/MessageBuilder.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/RequestJsonData/SettingBuilding/Model/RequestParameterBuilder.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/RequestJsonData/SettingBuilding/Model/RequestParameterBuilder.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/RequestJsonData/SettingBuilding/Model/ToolConfigurator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/RequestJsonData/SettingBuilding/Model/ToolConfigurator.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UniDeepSeek/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UniDeepSeek/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Example/StreamChatCompletionEvent/StreamCompletionEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Example/StreamChatCompletionEvent/StreamCompletionEvent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/DeepSeekChat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/DeepSeekChat.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletion/Modle.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletion/Model.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletion/Modle/ChatCompletionContentEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletion/Model/ChatCompletionContentEvent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletion/Modle/ChatCompletionContentEvent.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletion/Model/ChatCompletionContentEvent.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletion/Modle/ChatCompletionEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletion/Model/ChatCompletionEvent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletion/Modle/ChatCompletionEvent.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletion/Model/ChatCompletionEvent.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletion/Modle/ChatCompletionEvnet_DisplayChatStreamProcessor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletion/Model/ChatCompletionEvnet_DisplayChatStreamProcessor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletion/Modle/ChatCompletionEvnet_DisplayChatStreamProcessor.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletion/Model/ChatCompletionEvnet_DisplayChatStreamProcessor.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletion/Modle/ChatCompletionReasoningEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletion/Model/ChatCompletionReasoningEvent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletion/Modle/ChatCompletionReasoningEvent.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletion/Model/ChatCompletionReasoningEvent.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Expands/UnityTextMeshProUGUI/UnityTextMeshProUGUIExpand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Expands/UnityTextMeshProUGUI/UnityTextMeshProUGUIExpand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UniDeepSeek.csproj.DotSettings" beforeDir="false" afterPath="$PROJECT_DIR$/UniDeepSeek.csproj.DotSettings" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-6000.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-6000.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/RequestJsonData/SettingBuilding/Model/RequestParameterBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/RequestJsonData/SettingBuilding/Model/RequestParameterBuilder.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -253,7 +206,7 @@
       <workItem from="1756013781358" duration="3362000" />
       <workItem from="1756134609495" duration="3730000" />
       <workItem from="1756357781678" duration="14939000" />
-      <workItem from="1756456621356" duration="15852000" />
+      <workItem from="1756456621356" duration="17216000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -471,7 +424,15 @@
       <option name="project" value="LOCAL" />
       <updated>1756372017076</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="feat: 添加 `RequestParameterBuilder` 类，用于快速构建请求参数。">
+      <option name="closed" value="true" />
+      <created>1756473124933</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1756473124933</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -501,7 +462,6 @@
       <path value="$PROJECT_DIR$/Assets" />
     </ignored-roots>
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="[update] 请求配置更新" />
     <MESSAGE value="feat(chat): 完善DeepSeek接口.&#10;&#10;- 实现普通非流式于流式异步调用方法&#10;- 实现对话前缀续写功能（包含流式调用）&#10;- 自动处理 `FunctionCall`&#10;- 自动记录对话结果&#10;- 自动清理不再有效的 `Xiyu.UniDeepSeek.MessagesType.ToolMessage` 消息" />
     <MESSAGE value="fix(chat): 修复了无法捕获`OperationCanceledException`的bug&#10;&#10;- 未在流式反序列化中检查任务的取消状态，导致取消令牌被忽略，任务无法正常取消。" />
     <MESSAGE value="docs(null): 添加了一些使用示例。&#10;&#10;- 添加了非流式调用、流式调用、FunctionCall、对话前缀续写功能的示例场景。" />
@@ -526,7 +486,8 @@
     <MESSAGE value="fix(inspector): 修复 `ChatRequestParameter.cs` 序列化丢失的问题，以及修复默认的 `DefaultApiKeyConverter` 验证api key逻辑错误。" />
     <MESSAGE value="feat(ChatCompletion):流式消息事件（更方便的处理思考链内容）&#10;&#10;1. 新的功能类 `ChatCompletionEvent` ，它会将ChatCompletion片段进行简单的判断以分辨那些是思考内容（开始与结束），并提供事件接口。&#10;&#10;2. `static async UniTask DisplayChatStreamWithEventsAsync(this TMPro.TMP_Text ,UniTaskCancelableAsyncEnumerable&lt;ChatCompletion&gt; ,...)` 拓展方法它会创建一个 `ChatCompletionEvent` 实例并且添加一些回调，在方法完成时 `await` 之后会返回一个 `ChatCompletionEvent` 实例，请妥善保管。&#10;&#10;3. `DisplayChatStreamBasicAsync` 是一个对更加简单暴力的实现，它的内部没有然后类就完成了 `DisplayChatStreamWithEventsAsync` 通用的实现，但是它并不灵活（它们底层的解析器几乎相同，只是前者更加泛化）。" />
     <MESSAGE value="docs(example): 流式消息事件简单示例" />
-    <option name="LAST_COMMIT_MESSAGE" value="docs(example): 流式消息事件简单示例" />
+    <MESSAGE value="feat: 添加 `RequestParameterBuilder` 类，用于快速构建请求参数。" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: 添加 `RequestParameterBuilder` 类，用于快速构建请求参数。" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

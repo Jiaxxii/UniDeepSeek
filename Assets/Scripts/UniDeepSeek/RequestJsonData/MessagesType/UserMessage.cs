@@ -25,12 +25,7 @@
 
         public override RoleType Role => RoleType.User;
 
-#if ODIN_INSPECTOR
-        [Sirenix.OdinInspector.ShowInInspector]
-#else
-        [UnityEngine.SerializeField]
-#endif
-        private string _userName;
+        [UnityEngine.SerializeField] private string userName;
 
         [Newtonsoft.Json.JsonProperty("name")] public string UserName { get; set; }
 
