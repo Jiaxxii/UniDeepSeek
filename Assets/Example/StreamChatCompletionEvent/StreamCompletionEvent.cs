@@ -40,7 +40,7 @@ namespace Example.StreamChatCompletionEvent
             // 你可以在 Inspector 中设置颜色
             // 这个颜色表示深度思考内容的颜色
             var colorHex = ColorUtility.ToHtmlStringRGB(new Color(1, 0, 1));
-            ChatCompletionEvent chatCompletionEvent = await chatText.DisplayChatStreamWithEventsAsync(asyncEnumerable, colorHex: colorHex);
+            ChatCompletionEvent chatCompletionEvent = await chatText.DisplayReasoningStreamWithEventsAsync(asyncEnumerable, colorHex: colorHex);
         }
 
         private async UniTaskVoid StreamChatCompletionCustomizeAsync()

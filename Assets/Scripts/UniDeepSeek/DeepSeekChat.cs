@@ -18,7 +18,7 @@ using Xiyu.UniDeepSeek.Annotations;
 
 namespace Xiyu.UniDeepSeek
 {
-    public class DeepSeekChat : ChatProcessor
+    public partial class DeepSeekChat : ChatProcessor
     {
         public DeepSeekChat([NotNull] ChatRequestParameter setting, [NotNull] string apiKey) : base(apiKey)
         {
