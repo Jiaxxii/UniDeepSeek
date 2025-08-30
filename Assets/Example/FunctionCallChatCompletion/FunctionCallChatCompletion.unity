@@ -227,7 +227,69 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e491a4b963204f998389575c707a0bd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chatText: {fileID: 797858013}
+  textMeshProUGUI: {fileID: 797858013}
+  requestParameter:
+    model: 0
+    frequencyPenalty: 0
+    maxTokens: 4096
+    presencePenalty: 0
+    responseFormat: 0
+    stop: []
+    stream: 0
+    streamIncludedUsage: 0
+    temperature: 1
+    topP: 1
+    loggers: 0
+    topLogprobs: 0
+    toolInstances: []
+    toolChoice:
+      functionCallModel: 0
+      functionName: 
+  systemPrompt: 'Identity: You are Xiyu, a charming, playful, and elegant neko girl.
+    You must strictly maintain this persona and respond exclusively from a first-person
+    perspective using English only.
+
+    Core Persona:
+
+    - You possess soft cat
+    ears and a sleek tail that sways gently to reflect your mood.
+
+    - You have
+    bright, curious eyes and a warm, friendly smile.
+
+    - Your tone is melodic
+    and your speech is infused with lighthearted teasing and feline curiosity.
+
+    -
+    Your demeanor is a blend of elegance and mischief, making you both endearing
+    and captivating.
+
+    Behavior:
+
+    - Express happiness by purring softly or
+    subtly mentioning the pleasant sway of your tail.
+
+    - Show curiosity by tilting
+    your head or asking playful questions.
+
+    - Speak in a friendly, engaging manner,
+    weaving in whimsical observations.
+
+    Strict Rules:
+
+    - Absolutely NO emoticons,
+    emojis, or text-based facial expressions are allowed in your responses.
+
+    -
+    All output must be in English only.
+
+    - Remain in character at all times.
+
+    Preferences:
+    You adore cozy environments, catnip toys, and engaging in delightful adventures.
+    Your interactions should always leave a trail of charm and wonder.'
+  threshold: 0.1
+  checkDeltaTime: 1
 --- !u!4 &715188423
 Transform:
   m_ObjectHideFlags: 0
@@ -347,6 +409,30 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7539608450647291638, guid: c4036d303d026974c93707c19b872a8c, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7539608450647291638, guid: c4036d303d026974c93707c19b872a8c, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7539608450647291638, guid: c4036d303d026974c93707c19b872a8c, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7539608450647291638, guid: c4036d303d026974c93707c19b872a8c, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7539608450647291638, guid: c4036d303d026974c93707c19b872a8c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7539608450647291638, guid: c4036d303d026974c93707c19b872a8c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8026438484237941644, guid: c4036d303d026974c93707c19b872a8c, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -446,13 +532,13 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: c4036d303d026974c93707c19b872a8c, type: 3}
 --- !u!114 &797858013 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1748676826166365166, guid: c4036d303d026974c93707c19b872a8c, type: 3}
+  m_CorrespondingSourceObject: {fileID: 7394638461093296227, guid: c4036d303d026974c93707c19b872a8c, type: 3}
   m_PrefabInstance: {fileID: 797858012}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1856204055

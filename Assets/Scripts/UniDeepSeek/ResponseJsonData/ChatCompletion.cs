@@ -23,137 +23,123 @@ namespace Xiyu.UniDeepSeek
     {
         public ChatCompletion(List<Choice> choices, string id, int created, ChatModel model, [CanBeNull] string systemFingerprint, string @object, [CanBeNull] Usage usage)
         {
-            _id = id;
-            _created = created;
-            _model = model;
-            _systemFingerprint = systemFingerprint;
-            _object = @object;
-            _usage = usage;
-            _choices = choices;
+            this.id = id;
+            this.created = created;
+            this.model = model;
+            this.systemFingerprint = systemFingerprint;
+            this.@object = @object;
+            this.usage = usage;
+            this.choices = choices;
         }
 
         #region Choices
 
 #if ODIN_INSPECTOR
-        [ShowInInspector, LabelText("对话结果"), BoxGroup("信息"), ReadOnly]
-#else
-        [SerializeField]
+        [LabelText("对话结果"), BoxGroup("信息"), ReadOnly]
 #endif
-        [Tooltip("模型生成的 completion 的选择列表。")]
-        private List<Choice> _choices;
+        [SerializeField, Tooltip("模型生成的 completion 的选择列表。")]
+        private List<Choice> choices;
 
         /// <summary>
         /// 模型生成的 completion 的选择列表。
         /// </summary>
-        public List<Choice> Choices => _choices;
+        public List<Choice> Choices => choices;
 
         #endregion
 
         #region ID
 
-        private string _id;
+#if ODIN_INSPECTOR
+        [BoxGroup("信息"), ReadOnly]
+#endif
+        [SerializeField, Tooltip("对话的唯一标识符。")]
+        private string id;
 
         /// <summary>
         /// 对话的唯一标识符。
         /// </summary>
-#if ODIN_INSPECTOR
-        [ShowInInspector, BoxGroup("信息"), ReadOnly]
-#else
-        [SerializeField]
-#endif
-        [Tooltip("对话的唯一标识符。")]
-        public string ID => _id;
+
+        public string ID => id;
 
         #endregion
 
         #region Created
 
 #if ODIN_INSPECTOR
-        [ShowInInspector, BoxGroup("信息"), ReadOnly]
-#else
-        [SerializeField]
+        [BoxGroup("信息"), ReadOnly]
 #endif
-        [Tooltip("创建聊天完成时的 Unix 时间戳（以秒为单位）。")]
-        private int _created;
+        [SerializeField, Tooltip("创建聊天完成时的 Unix 时间戳（以秒为单位）。")]
+        private int created;
 
         /// <summary>
         /// 创建聊天完成时的 Unix 时间戳（以秒为单位）。
         /// </summary>
 
-        public int Created => _created;
+        public int Created => created;
 
         #endregion
 
         #region Model
 
 #if ODIN_INSPECTOR
-        [ShowInInspector, BoxGroup("信息"), ReadOnly]
-#else
-        [SerializeField]
+        [BoxGroup("信息"), ReadOnly]
 #endif
-        [Tooltip("创建聊天完成时的 Unix 时间戳（以秒为单位）。")]
-        private ChatModel _model;
+        [SerializeField, Tooltip("创建聊天完成时的 Unix 时间戳（以秒为单位）。")]
+        private ChatModel model;
 
         /// <summary>
         /// 创建聊天完成时的 Unix 时间戳（以秒为单位）。
         /// </summary>
-        public ChatModel Model => _model;
+        public ChatModel Model => model;
 
         #endregion
-
 
         #region SystemFingerprint
 
 #if ODIN_INSPECTOR
-        [ShowInInspector, BoxGroup("信息"), ReadOnly]
-#else
-        [SerializeField]
+        [BoxGroup("信息"), ReadOnly]
 #endif
-        [Tooltip("此指纹表示模型运行时使用的后端配置。")]
-        private string _systemFingerprint;
+        [SerializeField, Tooltip("此指纹表示模型运行时使用的后端配置。")]
+        private string systemFingerprint;
 
         /// <summary>
         /// 此指纹表示模型运行时使用的后端配置。
         /// </summary>
 
         [CanBeNull]
-        public string SystemFingerprint => _systemFingerprint;
+        public string SystemFingerprint => systemFingerprint;
 
         #endregion
 
         #region Object
 
 #if ODIN_INSPECTOR
-        [ShowInInspector, BoxGroup("信息"), ReadOnly]
-#else
-        [SerializeField]
+        [BoxGroup("信息"), ReadOnly]
 #endif
-        [Tooltip("对象的类型, 其值为 chat.completion。")]
-        private string _object;
+        [SerializeField, Tooltip("对象的类型, 其值为 chat.completion。")]
+        private string @object;
 
         /// <summary>
         /// 对象的类型, 其值为 chat.completion。
         /// </summary>
 
-        public string Object => _object;
+        public string Object => @object;
 
         #endregion
 
         #region Usage
 
 #if ODIN_INSPECTOR
-        [ShowInInspector, HideLabel, ReadOnly]
-#else
-        [SerializeField]
+        [HideLabel, ReadOnly]
 #endif
-        [Tooltip("该对话补全请求的用量信息。")]
-        private Usage _usage;
+        [SerializeField, Tooltip("该对话补全请求的用量信息。")]
+        private Usage usage;
 
         /// <summary>
         /// 该对话补全请求的用量信息。
         /// </summary>
         [CanBeNull]
-        public Usage Usage => _usage;
+        public Usage Usage => usage;
 
         #endregion
     }

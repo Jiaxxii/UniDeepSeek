@@ -53,5 +53,7 @@ namespace Xiyu.UniDeepSeek.MessagesType
             if (string.IsNullOrWhiteSpace(UserName)) UserName = null;
             return ParamsStandardError.Success;
         }
+
+        public static implicit operator SystemMessage(string content) => new(content);
     }
 }

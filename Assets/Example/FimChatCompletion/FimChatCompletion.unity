@@ -119,17 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &275849007 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1748676826166365166, guid: c4036d303d026974c93707c19b872a8c, type: 3}
-  m_PrefabInstance: {fileID: 1874688652}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &560851024
 GameObject:
   m_ObjectHideFlags: 0
@@ -311,10 +300,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbbfefdbca0e46ff8ec88f184a880742, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textComponent: {fileID: 275849007}
-  prompt: "```csharp\n// \u6700\u5C11\u4EE3\u7801\u7684\u5192\u6CE1\u6392\u5E8F\npublic
-    void BubbleSort(int[] source)"
-  suffix: '```'
+  textComponent: {fileID: 1874688653}
 --- !u!1 &1358794494
 GameObject:
   m_ObjectHideFlags: 0
@@ -490,6 +476,30 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7539608450647291638, guid: c4036d303d026974c93707c19b872a8c, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7539608450647291638, guid: c4036d303d026974c93707c19b872a8c, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7539608450647291638, guid: c4036d303d026974c93707c19b872a8c, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7539608450647291638, guid: c4036d303d026974c93707c19b872a8c, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7539608450647291638, guid: c4036d303d026974c93707c19b872a8c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7539608450647291638, guid: c4036d303d026974c93707c19b872a8c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8026438484237941644, guid: c4036d303d026974c93707c19b872a8c, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -587,6 +597,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4036d303d026974c93707c19b872a8c, type: 3}
+--- !u!114 &1874688653 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7394638461093296227, guid: c4036d303d026974c93707c19b872a8c, type: 3}
+  m_PrefabInstance: {fileID: 1874688652}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

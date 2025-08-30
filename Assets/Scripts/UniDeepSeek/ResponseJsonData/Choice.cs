@@ -7,6 +7,7 @@ using Sirenix.OdinInspector;
 
 #if RIDER
 using JetBrains.Annotations;
+
 #else
 using Xiyu.UniDeepSeek.Annotations;
 #endif
@@ -22,47 +23,43 @@ namespace Xiyu.UniDeepSeek
         [JsonConstructor]
         public Choice(FinishReasonType? finishReason, int index, [CanBeNull] Message message, [CanBeNull] Message delta, [CanBeNull] Logprobs logprobs)
         {
-            _finishReason = finishReason ?? FinishReasonType.Null;
-            _index = index;
+            this.finishReason = finishReason ?? FinishReasonType.Null;
+            this.index = index;
             if (message != null)
                 Message = message;
             if (delta != null)
                 Delta = delta;
-            _logprobs = logprobs;
+            this.logprobs = logprobs;
         }
 
         #region FinishReason
 
 #if ODIN_INSPECTOR
-        [ShowInInspector, HorizontalGroup("info"), LabelText("停止原因"), ReadOnly]
-#else
-        [SerializeField]
+        [HorizontalGroup("info"), LabelText("停止原因"), ReadOnly]
 #endif
-        [Tooltip("模型停止生成 token 的原因。")]
-        private FinishReasonType _finishReason;
+        [SerializeField, Tooltip("模型停止生成 token 的原因。")]
+        private FinishReasonType finishReason;
 
         /// <summary>
         /// 模型停止生成 token 的原因。
         /// </summary>
-        public FinishReasonType FinishReason => _finishReason;
+        public FinishReasonType FinishReason => finishReason;
 
         #endregion
 
         #region Index
 
 #if ODIN_INSPECTOR
-        [ShowInInspector, HorizontalGroup("info"), ReadOnly]
-#else
-        [SerializeField]
+        [HorizontalGroup("info"), ReadOnly]
 #endif
-        [Tooltip("该 completion 在模型生成的 completion 的选择列表中的索引。")]
-        private int _index;
+        [SerializeField, Tooltip("该 completion 在模型生成的 completion 的选择列表中的索引。")]
+        private int index;
 
         /// <summary>
         /// 该 completion 在模型生成的 completion 的选择列表中的索引。
         /// </summary>
 
-        public int Index => _index;
+        public int Index => index;
 
         #endregion
 
@@ -70,12 +67,10 @@ namespace Xiyu.UniDeepSeek
         #region Message
 
 #if ODIN_INSPECTOR
-        [ShowInInspector, InlineProperty, HideLabel, ReadOnly]
-#else
-        [SerializeField]
+        [InlineProperty, HideLabel, ReadOnly]
 #endif
-        [Tooltip("模型生成的 completion 消息。")]
-        private Message _sourceMessage;
+        [SerializeField, Tooltip("模型生成的 completion 消息。")]
+        private Message sourceMessage;
 
         /// <summary>
         /// 模型生成的 completion 消息。
@@ -83,8 +78,8 @@ namespace Xiyu.UniDeepSeek
         [JsonIgnore]
         public Message SourcesMessage
         {
-            get => _sourceMessage;
-            private set => _sourceMessage = value;
+            get => sourceMessage;
+            private set => sourceMessage = value;
         }
 
         #endregion
@@ -107,19 +102,17 @@ namespace Xiyu.UniDeepSeek
         #region Logprobs
 
 #if ODIN_INSPECTOR
-        [ShowInInspector, ReadOnly, InlineProperty, HideLabel, ShowIf("@this.Logprobs!= null && this.Logprobs.Content != null && this.Logprobs.Content.Length > 0")]
-#else
-        [SerializeField]
+        [ReadOnly, InlineProperty, HideLabel, ShowIf("@this.Logprobs!= null && this.Logprobs.Content != null && this.Logprobs.Content.Length > 0")]
 #endif
-        [Tooltip("该 choice 的对数概率信息")]
-        private Logprobs _logprobs;
+        [SerializeField, Tooltip("该 choice 的对数概率信息")]
+        private Logprobs logprobs;
 
         /// <summary>
         /// 该 choice 的对数概率信息。
         /// </summary>
 
         [CanBeNull]
-        public Logprobs Logprobs => _logprobs;
+        public Logprobs Logprobs => logprobs;
 
         #endregion
     }

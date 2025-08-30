@@ -68,7 +68,7 @@ namespace Xiyu.UniDeepSeek.UnityTextMeshProUGUI
             {
                 if (stringBuilder.Length == 0) return;
 
-                textMeshPro.text = stringBuilder.ToString();
+                textMeshPro.text += stringBuilder.ToString();
                 stringBuilder.Clear();
                 contentLengthCounter = 0;
             }
@@ -122,7 +122,7 @@ namespace Xiyu.UniDeepSeek.UnityTextMeshProUGUI
             {
                 if (stringBuilder.Length == 0) return;
 
-                textMeshPro.text = stringBuilder.ToString();
+                textMeshPro.text += stringBuilder.ToString();
                 stringBuilder.Clear();
                 contentLengthCounter = 0;
             }
@@ -197,7 +197,7 @@ namespace Xiyu.UniDeepSeek.UnityTextMeshProUGUI
             {
                 if (stringBuilder.Length == 0) return;
 
-                textMeshPro.text = stringBuilder.ToString();
+                textMeshPro.text += stringBuilder.ToString();
                 stringBuilder.Clear();
                 contentLengthCounter = 0;
             }
@@ -213,7 +213,7 @@ namespace Xiyu.UniDeepSeek.UnityTextMeshProUGUI
         /// <param name="flushThreshold">内容刷新阈值，达到此值时将内容推送到 UI</param>
         /// <param name="flushCriteria">内容刷新标准，决定如何计算内容长度</param>
         /// <exception cref="ArgumentOutOfRangeException"> <paramref name="flushCriteria"/> 不是有效的枚举值 </exception>
-        public static async UniTask DisplayChatStreamBasicAsync(
+        public static async UniTask DisplayReasoningChatStreamBasicAsync(
             this TMPro.TMP_Text textMeshPro,
             UniTaskCancelableAsyncEnumerable<ChatCompletion> asyncEnumerable,
             [CanBeNull] string colorHex = null,
@@ -252,7 +252,7 @@ namespace Xiyu.UniDeepSeek.UnityTextMeshProUGUI
                 // 处理直接回答（无思考阶段）
                 else if (!isThinking && hasContent)
                 {
-                    stringBuilder.Append("</color>\n\n");
+                    stringBuilder.Append(message.Content);
                     FlushContentToTextMesh();
                 }
             }
@@ -282,7 +282,7 @@ namespace Xiyu.UniDeepSeek.UnityTextMeshProUGUI
             {
                 if (stringBuilder.Length == 0) return;
 
-                textMeshPro.text = stringBuilder.ToString();
+                textMeshPro.text += stringBuilder.ToString();
                 stringBuilder.Clear();
                 contentLengthCounter = 0;
             }

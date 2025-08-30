@@ -52,7 +52,7 @@ namespace Xiyu.UniDeepSeek.FillInTheMiddle
         /// <param name="suffix">指定补全内容后缀</param>
         /// <param name="cancellationToken">取消令牌</param>
         /// <returns></returns>
-        public async UniTask<FimChatCompletion> ChatCompletionAsync([CanBeNull] string prompt, [CanBeNull] string suffix = null, CancellationToken? cancellationToken = null)
+        public async UniTask<FimChatCompletion> ChatCompletionAsync([NotNull] string prompt, [CanBeNull] string suffix = null, CancellationToken? cancellationToken = null)
         {
             var requestJson = GetRequestJson(false, prompt, suffix);
             var responseJson = await GetChatCompletionStringAsync(RequestPath, requestJson, cancellationToken);
@@ -73,7 +73,7 @@ namespace Xiyu.UniDeepSeek.FillInTheMiddle
         /// <param name="cancellationToken">取消令牌</param>
         /// <returns></returns>
         public UniTaskCancelableAsyncEnumerable<FimChatCompletion> StreamChatCompletionsEnumerableAsync(
-            [CanBeNull] string prompt,
+            [NotNull] string prompt,
             [CanBeNull] string suffix = null,
             Action<FimChatCompletion> onCompletion = null,
             CancellationToken? cancellationToken = null)
@@ -99,7 +99,7 @@ namespace Xiyu.UniDeepSeek.FillInTheMiddle
         }
 
 
-        private string GetRequestJson(bool isStream, [CanBeNull] string prompt, [CanBeNull] string suffix = null)
+        private string GetRequestJson(bool isStream, [NotNull] string prompt, [CanBeNull] string suffix = null)
         {
             if (!string.IsNullOrEmpty(prompt)) Setting.Prompt = prompt;
             else if (string.IsNullOrEmpty(Setting.Prompt)) throw new ArgumentNullException(nameof(prompt), "Prompt cannot be null or empty.");

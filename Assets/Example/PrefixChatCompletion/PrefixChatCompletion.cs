@@ -1,66 +1,30 @@
-﻿using Cysharp.Threading.Tasks;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using System.Threading;
+using Cysharp.Threading.Tasks;
+using Example.Base;
 using Xiyu.UniDeepSeek;
 using Xiyu.UniDeepSeek.MessagesType;
 
 namespace Example.PrefixChatCompletion
 {
-    public class PrefixChatCompletion : MonoBehaviour
+    public class PrefixChatCompletion : ChatBase
     {
-        [SerializeField] private Text chatText;
-
-        private bool _isRunning;
-
-        private void Start()
+        protected override async UniTaskVoid StartForget(CancellationToken cancellationToken)
         {
-            PrefixChatCompletionAsync().Forget();
-        }
+            requestParameter.Messages.Add(new SystemMessage(systemPrompt));
+            requestParameter.Messages.Add(new UserMessage("I hate you~baby~"));
 
+            // 哈？我从来没有喜欢过你，你个变态 Zako
+            // 如果你的前缀本身就是一句完整的话，那么AI可能不会进行续写，或者直接添加句号。
+            const string prefix = "ha? When did I ever like you, ";
 
-#if ODIN_INSPECTOR
-        [Sirenix.OdinInspector.Button("启动", DrawResult = false)]
-#endif
-        private async UniTaskVoid PrefixChatCompletionAsync()
-        {
-            if (_isRunning)
+            // 接下来Ai将会以prefix为开头，尝试完成剩余的句子
+            textMeshProUGUI.text = "chat assistance with chat completion start with prefix: " + prefix;
+
+            var (state, chatCompletion) = await _deepSeekChat.ChatPrefixCompletionAsync(prefix, cancellationToken: cancellationToken);
+            if (state == ChatState.Success)
             {
-                Debug.Log("正在运行中，请勿重复启动！");
-                return;
+                textMeshProUGUI.text = chatCompletion.GetMessage().Content;
             }
-
-            _isRunning = true;
-
-            // 使用你自己的 API Key
-            var apiKey = Resources.Load<TextAsset>("DeepSeek-ApiKey").text;
-
-            var requestParameter = new ChatRequestParameter();
-            var deepSeekChat = new DeepSeekChat(requestParameter, apiKey);
-
-            requestParameter.Messages.Add(new UserMessage("你好，我叫“西”你叫什么呀？"));
-            Debug.Log($"发送消息：{requestParameter.Messages[^1].Content}");
-
-            const string prefix = "你好呀，西，你可以叫我小深。";
-            Debug.Log($"AI的回答将尝试以“{prefix}”开头");
-
-            var (state, chatCompletion) = await deepSeekChat.ChatPrefixCompletionAsync(prefix: "你好呀，西，你可以叫我小深。");
-
-            if (Application.isPlaying)
-            {
-                chatText.text = $"request state: <color=#E08E4A>{state}</color>";
-
-                if (state == ChatState.Success)
-                    chatText.text = $"{chatCompletion.Choices[0].SourcesMessage.Content}";
-            }
-            else
-            {
-                Debug.Log($"request state: {state}");
-                if (state == ChatState.Success)
-                    Debug.Log($"AI回复: {chatCompletion.Choices[0].SourcesMessage.Content}");
-            }
-
-
-            _isRunning = false;
         }
     }
 }

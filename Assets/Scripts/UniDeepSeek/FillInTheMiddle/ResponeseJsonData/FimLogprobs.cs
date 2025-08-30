@@ -13,48 +13,33 @@ namespace Xiyu.UniDeepSeek.FillInTheMiddle
         [JsonConstructor]
         public FimLogprobs(int[] textOffset, float[] tokenLogprobs, string[] tokens, FimLogprobs[] topLogprobs)
         {
-            _textOffsets = textOffset;
-            _tokenLogprobs = tokenLogprobs;
-            _tokens = tokens;
+            textOffsets = textOffset;
+            this.tokenLogprobs = tokenLogprobs;
+            this.tokens = tokens;
             _topLogprobs = topLogprobs;
         }
 
         #region TextOffset
 
-#if ODIN_INSPECTOR
-        [ShowInInspector]
-#else
-        [UnityEngine.SerializeField]
-#endif
-        private int[] _textOffsets;
+        [UnityEngine.SerializeField] private int[] textOffsets;
 
-        public int[] TextTextOffset => _textOffsets;
+        public int[] TextTextOffset => textOffsets;
 
         #endregion
 
         #region TokenLogprobs
 
-#if ODIN_INSPECTOR
-        [ShowInInspector]
-#else
-        [UnityEngine.SerializeField]
-#endif
-        private float[] _tokenLogprobs;
+        [UnityEngine.SerializeField] private float[] tokenLogprobs;
 
-        public float[] TokenLogprobs => _tokenLogprobs;
+        public float[] TokenLogprobs => tokenLogprobs;
 
         #endregion
 
         #region Tokens
 
-#if ODIN_INSPECTOR
-        [ShowInInspector]
-#else
-        [UnityEngine.SerializeField]
-#endif
-        private string[] _tokens;
+        [UnityEngine.SerializeField] private string[] tokens;
 
-        public string[] Tokens => _tokens;
+        public string[] Tokens => tokens;
 
         #endregion
 

@@ -1,70 +1,48 @@
 ﻿using System;
+using System.Threading;
 using Cysharp.Threading.Tasks;
+using Example.Base;
 using UnityEngine;
-using UnityEngine.UI;
 using Xiyu.UniDeepSeek;
 using Xiyu.UniDeepSeek.MessagesType;
 
 namespace Example.StreamPrefixChatCompletion
 {
-    public class StreamPrefixChatCompletion : MonoBehaviour
+    public class StreamPrefixChatCompletion : ChatBase
     {
-        [SerializeField] private Text chatText;
+        [SerializeField] private ChatCompletion chatCompletion;
 
-
-        private bool _isRunning;
-
-        private void Start()
+        protected override async UniTaskVoid StartForget(CancellationToken cancellationToken)
         {
-            StreamPrefixChatCompletionAsync().Forget();
-        }
+            requestParameter.Messages.Add(new SystemMessage(systemPrompt));
+            requestParameter.Messages.Add(new UserMessage("I hate you~baby~"));
 
+            // 哈？你这么说的时候，我
+            // 如果你的前缀本身就是一句完整的话，那么AI可能不会进行续写，或者直接添加句号
+            const string prefix = "ha? When you say that, my tail";
 
-#if ODIN_INSPECTOR
-        [Sirenix.OdinInspector.Button("启动", DrawResult = false)]
-#endif
-        private async UniTaskVoid StreamPrefixChatCompletionAsync()
-        {
-            if (_isRunning)
-            {
-                Debug.Log("正在运行中，请勿重复启动！");
-                return;
-            }
+            // 接下来Ai将会以prefix为开头，尝试完成剩余的句子
+            textMeshProUGUI.text = $"wait for 3 seconds,chat assistance with chat completion start with prefix: <color=#D8A0DF>{prefix}</color>";
 
-            _isRunning = true;
+            await UniTask.WaitForSeconds(3, cancellationToken: cancellationToken);
 
-            // 使用你自己的 API Key
-            var apiKey = Resources.Load<TextAsset>("DeepSeek-ApiKey").text;
+            textMeshProUGUI.text = prefix;
 
-            var requestParameter = new ChatRequestParameter();
-            var deepSeekChat = new DeepSeekChat(requestParameter, apiKey);
-
-            requestParameter.Messages.Add(new UserMessage("你好，我叫“西”你叫什么呀？"));
-            Debug.Log($"发送消息：{requestParameter.Messages[^1].Content}");
-
-            if (!Application.isPlaying)
-                chatText.text = "...";
             try
             {
-                const string prefix = "你好呀，西，你可以叫我小深。";
-
-                chatText.text = prefix;
-                Xiyu.UniDeepSeek.ChatCompletion completion = null;
-                await foreach (var chatCompletion in deepSeekChat.ChatPrefixStreamCompletionsEnumerableAsync(prefix, null, onCompletion: c => completion = c))
+                await foreach (var extract in _deepSeekChat.ChatPrefixStreamCompletionsEnumerableAsync(prefix, null,
+                                   onCompletion: completion => chatCompletion = completion,
+                                   cancellationToken: cancellationToken))
                 {
-                    if (Application.isPlaying)
-                        chatText.text += chatCompletion.Choices[0].SourcesMessage.Content;
-                    else Debug.Log($"收到消息：{chatCompletion.Choices[0].SourcesMessage.Content}");
+                    textMeshProUGUI.text += extract.GetMessage().Content;
                 }
 
-                Debug.Log("完整消息：" + completion.Choices[0].SourcesMessage.Content);
+                Debug.Log($"完整消息:{chatCompletion.GetMessage().Content}");
             }
-            catch (OperationCanceledException exception)
+            catch (OperationCanceledException e)
             {
-                Debug.LogWarning("StreamChatCompletionAsync canceled: " + exception.Message);
+                Debug.LogError($"stream cancelled: {e.Message}");
             }
-
-            _isRunning = false;
         }
     }
 }

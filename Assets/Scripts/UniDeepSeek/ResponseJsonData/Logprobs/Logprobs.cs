@@ -10,19 +10,18 @@ namespace Xiyu.UniDeepSeek
     {
         public Logprobs(LogprobItem[] content)
         {
-            _content = content;
+            this.content = content;
         }
 
         public LogprobItem this[int index] => Content[index];
 
 #if ODIN_INSPECTOR
-        [ShowInInspector, LabelText("choice 的对数概率信息"), ReadOnly]
-#else
-        [UnityEngine.SerializeField]
+        [LabelText("choice 的对数概率信息"), ReadOnly]
 #endif
-        private LogprobItem[] _content;
+        [UnityEngine.SerializeField]
+        private LogprobItem[] content;
 
 
-        public LogprobItem[] Content => _content;
+        public LogprobItem[] Content => content;
     }
 }

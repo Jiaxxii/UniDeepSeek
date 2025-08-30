@@ -246,9 +246,9 @@ namespace Xiyu.UniDeepSeek
         public UniTaskCancelableAsyncEnumerable<ChatCompletion> StreamChatCompletionsEnumerableAsync(Action<ChatCompletion> onCompletion = null,
             CancellationToken? cancellation = null)
         {
-            return UniTaskAsyncEnumerable.Create<ChatCompletion>(Create).WithCancellation(cancellation ?? CancellationToken.None);
+            return UniTaskAsyncEnumerable.Create<ChatCompletion>(CreateLocal).WithCancellation(cancellation ?? CancellationToken.None);
 
-            async UniTask Create(IAsyncWriter<ChatCompletion> writer, CancellationToken cst)
+            async UniTask CreateLocal(IAsyncWriter<ChatCompletion> writer, CancellationToken cst)
             {
                 var maxFunctionCallCount = MaxFunctionCallCount;
                 var toolsUsage = new List<Usage>();
@@ -354,9 +354,9 @@ namespace Xiyu.UniDeepSeek
             Action<ChatCompletion> onCompletion = null,
             CancellationToken? cancellationToken = null)
         {
-            return UniTaskAsyncEnumerable.Create<ChatCompletion>(Create).WithCancellation(cancellationToken ?? CancellationToken.None);
+            return UniTaskAsyncEnumerable.Create<ChatCompletion>(CreateLocal).WithCancellation(cancellationToken ?? CancellationToken.None);
 
-            async UniTask Create(IAsyncWriter<ChatCompletion> writer, CancellationToken ct)
+            async UniTask CreateLocal(IAsyncWriter<ChatCompletion> writer, CancellationToken ct)
             {
                 var (_, usageCompletion) = await ExecuteWithModelAsync(think, async cancelToken =>
                 {

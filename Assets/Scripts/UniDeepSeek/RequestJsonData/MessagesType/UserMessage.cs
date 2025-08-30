@@ -43,5 +43,7 @@
             if (string.IsNullOrWhiteSpace(UserName)) UserName = null;
             return ParamsStandardError.Success;
         }
+        
+        public static implicit operator UserMessage(string content) => new(content);
     }
 }

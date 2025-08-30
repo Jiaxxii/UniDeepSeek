@@ -1,6 +1,8 @@
-﻿using Cysharp.Threading.Tasks;
+﻿using System.Threading;
+using Cysharp.Threading.Tasks;
+using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
+using Xiyu.UniDeepSeek;
 using Xiyu.UniDeepSeek.FillInTheMiddle;
 
 #if ODIN_INSPECTOR
@@ -11,54 +13,41 @@ namespace Example.FimChatCompletion
 {
     public class FimChatCompletion : MonoBehaviour
     {
-        [SerializeField] private Text textComponent;
+        [SerializeField] private TextMeshProUGUI textComponent;
+
+
+        [SerializeField] private FimRequestParameter fimRequestParameter;
 
 #if ODIN_INSPECTOR
-        [ShowInInspector, /*InlineProperty,*/ HideLabel]
+        [ShowIf("@fimChatCompletion.Id != \"\"")]
 #endif
-        private Xiyu.UniDeepSeek.FillInTheMiddle.FimChatCompletion _fimChatCompletion;
+        [SerializeField]
+        private Xiyu.UniDeepSeek.FillInTheMiddle.FimChatCompletion fimChatCompletion;
 
-        private bool _isRunning;
+        private FimDeepSeekChat _fimDeepSeekChat;
 
         private void Start()
         {
-            FimChatCompletionAsync().Forget();
+            _fimDeepSeekChat = new FimDeepSeekChat(Resources.Load<TextAsset>("DeepSeek-ApiKey").text);
+            _fimDeepSeekChat.Setting = fimRequestParameter;
+            StartForget(destroyCancellationToken).Forget();
         }
 
-        [SerializeField] [TextArea(3, 5)] private string prompt;
-        [SerializeField] [TextArea(3, 5)] private string suffix;
-
-#if ODIN_INSPECTOR
-        [Button("启动", DrawResult = false)]
-#endif
-        private async UniTaskVoid FimChatCompletionAsync()
+        private async UniTaskVoid StartForget(CancellationToken cancellationToken)
         {
-            if (_isRunning)
-            {
-                Debug.LogWarning("正在运行中，请等待。");
-                return;
-            }
+            const string prefix = "// Swap the i-th and j-th elements of array arr.\r\n" +
+                                  "private void Swap<T>(T[] arr, int i, int j)\r\n" +
+                                  "{";
 
-            _isRunning = true;
+            const string suffix = "}";
 
-            // 使用你自己的 API Key
-            var apiKey = Resources.Load<TextAsset>("DeepSeek-ApiKey").text;
-            var fimDeepSeekChat = new FimDeepSeekChat(apiKey)
-            {
-                Setting =
-                {
-                    Echo = true
-                }
-            };
+            textComponent.text = prefix;
 
+            var chatCompletion = await _fimDeepSeekChat.ChatCompletionAsync(prefix, suffix, cancellationToken);
 
-            _fimChatCompletion = await fimDeepSeekChat.ChatCompletionAsync(prompt, suffix, this.GetCancellationTokenOnDestroy());
+            textComponent.text += chatCompletion.GetMessage().Text + suffix;
 
-            if (Application.isPlaying)
-                textComponent.text = _fimChatCompletion.Choices[0].Text;
-            else Debug.Log(_fimChatCompletion.Choices[0].Text);
-
-            _isRunning = false;
+            fimChatCompletion = chatCompletion;
         }
     }
 }

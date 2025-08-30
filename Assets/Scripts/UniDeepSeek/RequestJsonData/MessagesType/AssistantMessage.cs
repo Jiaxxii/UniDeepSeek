@@ -130,5 +130,7 @@ namespace Xiyu.UniDeepSeek.MessagesType
         {
             return new AssistantMessage { Content = content, Name = name, Prefix = true, ReasoningContent = reasoningContent };
         }
+        
+        public static implicit operator AssistantMessage(string content) => new(content);
     }
 }
