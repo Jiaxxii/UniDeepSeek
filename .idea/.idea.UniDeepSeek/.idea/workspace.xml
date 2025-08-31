@@ -5,10 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8dc74092-d10d-470c-8ee2-01be99c0ea2b" name="更改" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/README.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/README/en.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/README/en/REDME.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/README/en/REDME.md.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/README/jp.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/README/jp/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/README/jp/README.md.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UniDeepSeek/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UniDeepSeek/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Example/Special/ReasonerStreamChatCompletion/ReasonerStreamChatCompletion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Example/Special/ReasonerStreamChatCompletion/ReasonerStreamChatCompletion.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-6000.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-6000.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -212,7 +216,7 @@
       <workItem from="1756483844840" duration="4896000" />
       <workItem from="1756528986513" duration="26542000" />
       <workItem from="1756572924170" duration="4887000" />
-      <workItem from="1756617620609" duration="4709000" />
+      <workItem from="1756617620609" duration="5410000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -454,7 +458,15 @@
       <option name="project" value="LOCAL" />
       <updated>1756577772232</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="doc(README.md)">
+      <option name="closed" value="true" />
+      <created>1756622614693</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1756622614693</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -484,7 +496,6 @@
       <path value="$PROJECT_DIR$/Assets" />
     </ignored-roots>
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="docs(null): 添加了一些使用示例。&#10;&#10;- 添加了非流式调用、流式调用、FunctionCall、对话前缀续写功能的示例场景。" />
     <MESSAGE value="fix(usage): 修复对话请求 `Usage` 中不正确的统计。&#10;&#10;- 触发 `FunctionCall` 时只返回了最终对话的Token统计未记录FunctionCall的Token统计。" />
     <MESSAGE value="test(Example.FunctionCallChatCompletion.FunctionCallChatCompletion): 恢复随机返回结果" />
     <MESSAGE value="test(Example.FunctionCallChatCompletion.FunctionCallChatCompletion): 删除插件(`Sirenix`)不存在时导致保持的代码" />
@@ -509,7 +520,8 @@
     <MESSAGE value="feat: 添加 `RequestParameterBuilder` 类，用于快速构建请求参数。" />
     <MESSAGE value="fix(unity inspector): 将部分基本类型交还给Unity序列化而不是Odin Serializer，并且添加确实的深度思考对话前缀续写接口。" />
     <MESSAGE value="fix(unity inspector): 将更多的类从Odin中交还给Unity序列化，以及更新了所有的示例代码。" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix(unity inspector): 将更多的类从Odin中交还给Unity序列化，以及更新了所有的示例代码。" />
+    <MESSAGE value="doc(README.md)" />
+    <option name="LAST_COMMIT_MESSAGE" value="doc(README.md)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
