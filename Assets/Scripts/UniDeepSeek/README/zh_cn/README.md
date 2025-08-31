@@ -97,7 +97,7 @@ await textMeshProUGUI.DisplayReasoningChatStreamBasicAsync(asyncEnumerable, colo
 比如，我希望深度思考的消息显示为红色，那么我可能想要在 `await foreach` 中进行各种判断，为此我你可以使用
 `ChatCompletionEvent` 类来将消息流转换为事件流。
 
-这里，我将使用 `TMP_Text` 的拓展方法 `DisplayReasoningStreamWithEventsAsync` 来将聊天结果实时显示到 `TextMeshProUGUI`
+这里，我将使用 `TMP_Text` 的拓展方法 `DisplayReasoningStreamWithEvent` 来将聊天结果实时显示到 `TextMeshProUGUI`
 上，并将消息流转换为事件流。
 你可以将 `chatCompletionEvent` 保存为全局变量，然后在之后的请求中复用它。
 
@@ -112,19 +112,18 @@ DeepSeekChat deepSeekChat = builder.Message
 
 var asyncEnumerable = deepSeekChat.StreamChatCompletionsEnumerableAsync(completion => chatCompletion = completion, cancellationToken);
 
-ChatCompletionEvent chatCompletionEvent = await textMeshProUGUI.DisplayReasoningStreamWithEventsAsync(asyncEnumerable, colorHex: ColorToHex(reasoningColor));
+// 将消息流转换为事件流
+ChatCompletionEvent chatCompletionEvent = textMeshProUGUI.DisplayReasoningStreamWithEvents(colorHex: ColorToHex(reasoningColor));
 
+// 触发事件流 （不要 await foreach asyncEnumerable）
+await chatCompletionEvent.DisplayChatStreamAsync(asyncEnumerable);
 ```
 
 如果你需要完全自定义事件流，可以直接使用 `ChatCompletionEvent` 类，
-以下这个例子几乎等价于 `textMeshProUGUI.DisplayReasoningStreamWithEventsAsync` 的实现。
+以下这个例子几乎等价于 `textMeshProUGUI.DisplayReasoningStreamWithEvents` 的实现。
 
 理论上，非深度思考的流式消息也可以转换为事件流，但是我建议你不要这么做，直接进行 `await foreach` 是最佳的方式。
 如果转换为事件流会引入额外的开销，而且非深度思考的流式消息相对简单。
-
-总之，我 `TMP_Text` 的拓展方法提供了 `非深度思考的流式消息` 转换为 事件流的方法，但是我建议您还是不要使用它，
-由于拓展方法都接收 `UniTaskCancelableAsyncEnumerable<ChatCompletion>` 作为参数，你需要看清楚看清楚方法名称，错误的
-将深度思考和非深度思考的流式消息混在一起使用可能会引起不必要的开销。
 
 ```csharp
 RequestParameterBuilder builder = DeepSeekChat.Create();

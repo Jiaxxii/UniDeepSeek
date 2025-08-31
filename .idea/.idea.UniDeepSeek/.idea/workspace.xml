@@ -5,37 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8dc74092-d10d-470c-8ee2-01be99c0ea2b" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletionGeneric.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletionGeneric/Interface.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletionGeneric/Interface/IChatCompletionContentEvent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletionGeneric/Interface/IChatCompletionContentEvent.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletionGeneric/Interface/IChatCompletionEvent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletionGeneric/Interface/IChatCompletionEvent.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletionGeneric/Interface/IChatCompletionInvoke.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletionGeneric/Interface/IChatCompletionInvoke.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletionGeneric/Interface/IChatCompletionReasoningEvent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletionGeneric/Interface/IChatCompletionReasoningEvent.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletionGeneric/Interface/IChatCompletionRunning.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletionGeneric/Interface/IChatCompletionRunning.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletionGeneric/Interface/IEventLifecycleHooks.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletionGeneric/Interface/IEventLifecycleHooks.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletionGeneric/Model.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletionGeneric/Model/ChatCompletionContentEvent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletionGeneric/Model/ChatCompletionContentEvent.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletionGeneric/Model/ChatCompletionEvent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletionGeneric/Model/ChatCompletionEvent.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletionGeneric/Model/ChatCompletionEvnet_DisplayChatStreamProcessor.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletionGeneric/Model/ChatCompletionEvnet_DisplayChatStreamProcessor.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletionGeneric/Model/ChatCompletionReasoningEvent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletionGeneric/Model/ChatCompletionReasoningEvent.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.UniDeepSeek/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UniDeepSeek/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Example/Special/ReasonerStreamChatCompletion/ReasonerStreamChatCompletion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Example/Special/ReasonerStreamChatCompletion/ReasonerStreamChatCompletion.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Example/StreamChatCompletionEvent/StreamCompletionEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Example/StreamChatCompletionEvent/StreamCompletionEvent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletion/Model/ChatCompletionContentEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletion/Model/ChatCompletionContentEvent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletion/Model/ChatCompletionReasoningEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletion/Model/ChatCompletionReasoningEvent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Expands/UnityTextMeshProUGUI/UnityTextMeshProUGUIExpand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Expands/UnityTextMeshProUGUI/UnityTextMeshProUGUIExpand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UniDeepSeek.csproj.DotSettings" beforeDir="false" afterPath="$PROJECT_DIR$/UniDeepSeek.csproj.DotSettings" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/README/zh_cn/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/README/zh_cn/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,6 +56,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/b583e7d8f82a4d824fae2e16e2af7f00dc92a5cddd53375c554aee1980d145/JContainer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Editor/ManifestJsonEditor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Analysis/SampleDeserializeCompletion.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://F:/Unity/MyProject/UniDeepSeek/Assets/Scripts/UniDeepSeek/Events/ChatCompletion/Model/ChatCompletionContentEvent.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Expands/ChatCompletionExpand.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock://F:/Unity/MyProject/UniDeepSeek/Assets/Scripts/UniDeepSeek/Expands/UnityTextMeshProUGUI/UnityTextMeshProUGUIExpand.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/ResponseJsonData/Logprobs/LogprobItem.cs" root0="FORCE_HIGHLIGHTING" />
@@ -241,7 +212,7 @@
       <workItem from="1756528986513" duration="26542000" />
       <workItem from="1756572924170" duration="4887000" />
       <workItem from="1756617620609" duration="8459000" />
-      <workItem from="1756635425993" duration="22763000" />
+      <workItem from="1756635425993" duration="23175000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -507,7 +478,15 @@
       <option name="project" value="LOCAL" />
       <updated>1756623627095</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="fix(UnityTextMeshProUGUI): 流式处理打印拓展方法现在不直接执行，而是返回 `ChatCompletionEvent` 将控控制权交给外部代码。&#10;&#10;1. `DisplayChatStreamWithEventsAsync` 方法改名为 `DisplayChatStreamWithEvents` 并且移除 参数 `UniTaskCancelableAsyncEnumerable&lt;ChatCompletion&gt; asyncEnumerable` ，改为返回 `ChatCompletionEvent` 事件，而不是 `UniTask&lt;ChatCompletionEvent&gt;`&#10;&#10;2. `DisplayReasoningStreamWithEventsAsync` 方法改名为 `DisplayReasoningStreamWithEvents` 并且移除 参数 `UniTaskCancelableAsyncEnumerable&lt;ReasoningCompletion&gt; asyncEnumerable`，改为返回 `ChatCompletionEvent` 事件，而不是 `UniTask&lt;ChatCompletionEvent&gt;`&#10;&#10;3. 现在 `ChatCompletionEvent` 事件的泛型参数 `ChatCompletionEvent&lt;T&gt;`。">
+      <option name="closed" value="true" />
+      <created>1756659172161</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1756659172161</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -537,7 +516,6 @@
       <path value="$PROJECT_DIR$/Assets" />
     </ignored-roots>
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="test(Example.FunctionCallChatCompletion.FunctionCallChatCompletion): 删除插件(`Sirenix`)不存在时导致保持的代码" />
     <MESSAGE value="feat(fim): 新增加FIM（Fill-In-the-Middle）功能。&#10;&#10;- `FimDeepSeekChat` 对话补全功能类，使用方法与`DeepSeekChat`类似&#10;&#10;- 接口 `IAnalysisChatCompletion` 泛型化为 `IAnalysisCompletion&lt;out T&gt;`。&#10;&#10;- 接口 `IAnalysisChatCompletionsAsync` 泛型化为 `IAnalysisCompletionsAsync&lt;T&gt;`。" />
     <MESSAGE value="docs: add file EADME.md" />
     <MESSAGE value="test: FimChatCompletion.unity 添加引用" />
@@ -562,7 +540,8 @@
     <MESSAGE value="doc(README.md)" />
     <MESSAGE value="doc:添加了英文和日文的README.md文件" />
     <MESSAGE value="doc: 命名错误" />
-    <option name="LAST_COMMIT_MESSAGE" value="doc: 命名错误" />
+    <MESSAGE value="fix(UnityTextMeshProUGUI): 流式处理打印拓展方法现在不直接执行，而是返回 `ChatCompletionEvent` 将控控制权交给外部代码。&#10;&#10;1. `DisplayChatStreamWithEventsAsync` 方法改名为 `DisplayChatStreamWithEvents` 并且移除 参数 `UniTaskCancelableAsyncEnumerable&lt;ChatCompletion&gt; asyncEnumerable` ，改为返回 `ChatCompletionEvent` 事件，而不是 `UniTask&lt;ChatCompletionEvent&gt;`&#10;&#10;2. `DisplayReasoningStreamWithEventsAsync` 方法改名为 `DisplayReasoningStreamWithEvents` 并且移除 参数 `UniTaskCancelableAsyncEnumerable&lt;ReasoningCompletion&gt; asyncEnumerable`，改为返回 `ChatCompletionEvent` 事件，而不是 `UniTask&lt;ChatCompletionEvent&gt;`&#10;&#10;3. 现在 `ChatCompletionEvent` 事件的泛型参数 `ChatCompletionEvent&lt;T&gt;`。" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix(UnityTextMeshProUGUI): 流式处理打印拓展方法现在不直接执行，而是返回 `ChatCompletionEvent` 将控控制权交给外部代码。&#10;&#10;1. `DisplayChatStreamWithEventsAsync` 方法改名为 `DisplayChatStreamWithEvents` 并且移除 参数 `UniTaskCancelableAsyncEnumerable&lt;ChatCompletion&gt; asyncEnumerable` ，改为返回 `ChatCompletionEvent` 事件，而不是 `UniTask&lt;ChatCompletionEvent&gt;`&#10;&#10;2. `DisplayReasoningStreamWithEventsAsync` 方法改名为 `DisplayReasoningStreamWithEvents` 并且移除 参数 `UniTaskCancelableAsyncEnumerable&lt;ReasoningCompletion&gt; asyncEnumerable`，改为返回 `ChatCompletionEvent` 事件，而不是 `UniTask&lt;ChatCompletionEvent&gt;`&#10;&#10;3. 现在 `ChatCompletionEvent` 事件的泛型参数 `ChatCompletionEvent&lt;T&gt;`。" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
