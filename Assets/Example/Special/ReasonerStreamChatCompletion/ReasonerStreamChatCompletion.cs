@@ -41,7 +41,7 @@ namespace Example.Special.ReasonerStreamChatCompletion
             await textMeshProUGUI.DisplayReasoningChatStreamBasicAsync(asyncEnumerable, colorHex: ColorToHex(reasoningColor));
             _running = false;
         }
-        
+
 
 #if ODIN_INSPECTOR
         private bool IsPlaying => Application.isPlaying;
@@ -68,13 +68,17 @@ namespace Example.Special.ReasonerStreamChatCompletion
             textMeshProUGUI.text = string.Empty;
 
             // 如果你需要添加自己的事件处理，可以使用 `DisplayReasoningStreamWithEventsAsync` 方法，他会返回一个 `ChatCompletionEvent` 对象，你可以通过它来添加自己的事件处理
-            var chatCompletionEvent = await textMeshProUGUI.DisplayReasoningStreamWithEventsAsync(asyncEnumerable);
+            var chatCompletionEvent = textMeshProUGUI.DisplayReasoningStreamWithEvents();
 
             chatCompletionEvent.ReasoningEventSetting
                 .AppendEnter(_ => Debug.Log("深度思考开始"))
                 .AppendExit(_ => Debug.Log("深度思考结束"));
 
             chatCompletionEvent.ContentEventSetting.AppendExit(_ => Debug.Log("回答结束"));
+
+            // 触发打印
+            await chatCompletionEvent.DisplayChatStreamAsync(asyncEnumerable);
+
             _running = false;
         }
 

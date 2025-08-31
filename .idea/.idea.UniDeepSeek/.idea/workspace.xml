@@ -5,14 +5,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8dc74092-d10d-470c-8ee2-01be99c0ea2b" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/README.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/README/en.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/README/en/REDME.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/README/en/REDME.md.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/README/jp.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/README/jp/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/README/jp/README.md.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletionGeneric.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletionGeneric/Interface.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletionGeneric/Interface/IChatCompletionContentEvent.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletionGeneric/Interface/IChatCompletionContentEvent.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletionGeneric/Interface/IChatCompletionEvent.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletionGeneric/Interface/IChatCompletionEvent.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletionGeneric/Interface/IChatCompletionInvoke.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletionGeneric/Interface/IChatCompletionInvoke.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletionGeneric/Interface/IChatCompletionReasoningEvent.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletionGeneric/Interface/IChatCompletionReasoningEvent.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletionGeneric/Interface/IChatCompletionRunning.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletionGeneric/Interface/IChatCompletionRunning.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletionGeneric/Interface/IEventLifecycleHooks.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletionGeneric/Interface/IEventLifecycleHooks.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletionGeneric/Model.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletionGeneric/Model/ChatCompletionContentEvent.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletionGeneric/Model/ChatCompletionContentEvent.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletionGeneric/Model/ChatCompletionEvent.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletionGeneric/Model/ChatCompletionEvent.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletionGeneric/Model/ChatCompletionEvnet_DisplayChatStreamProcessor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletionGeneric/Model/ChatCompletionEvnet_DisplayChatStreamProcessor.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletionGeneric/Model/ChatCompletionReasoningEvent.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletionGeneric/Model/ChatCompletionReasoningEvent.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UniDeepSeek/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UniDeepSeek/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Example/Special/ReasonerStreamChatCompletion/ReasonerStreamChatCompletion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Example/Special/ReasonerStreamChatCompletion/ReasonerStreamChatCompletion.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Example/StreamChatCompletionEvent/StreamCompletionEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Example/StreamChatCompletionEvent/StreamCompletionEvent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletion/Model/ChatCompletionContentEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletion/Model/ChatCompletionContentEvent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletion/Model/ChatCompletionReasoningEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/ChatCompletion/Model/ChatCompletionReasoningEvent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Expands/UnityTextMeshProUGUI/UnityTextMeshProUGUIExpand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Expands/UnityTextMeshProUGUI/UnityTextMeshProUGUIExpand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniDeepSeek.csproj.DotSettings" beforeDir="false" afterPath="$PROJECT_DIR$/UniDeepSeek.csproj.DotSettings" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,8 +87,9 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Editor/ManifestJsonEditor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Analysis/SampleDeserializeCompletion.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Expands/ChatCompletionExpand.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/RequestJsonData/FluentInterface/Model/ToolConfigurator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://F:/Unity/MyProject/UniDeepSeek/Assets/Scripts/UniDeepSeek/Expands/UnityTextMeshProUGUI/UnityTextMeshProUGUIExpand.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/ResponseJsonData/Logprobs/LogprobItem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@f3fac7af1578/Runtime/TMP/TMP_Text.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@f3fac7af1578/Runtime/UGUI/UI/Core/Text.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
@@ -216,7 +240,8 @@
       <workItem from="1756483844840" duration="4896000" />
       <workItem from="1756528986513" duration="26542000" />
       <workItem from="1756572924170" duration="4887000" />
-      <workItem from="1756617620609" duration="5410000" />
+      <workItem from="1756617620609" duration="8459000" />
+      <workItem from="1756635425993" duration="22763000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -466,7 +491,23 @@
       <option name="project" value="LOCAL" />
       <updated>1756622614693</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="doc:添加了英文和日文的README.md文件">
+      <option name="closed" value="true" />
+      <created>1756623256221</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1756623256221</updated>
+    </task>
+    <task id="LOCAL-00033" summary="doc: 命名错误">
+      <option name="closed" value="true" />
+      <created>1756623627095</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1756623627095</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -496,8 +537,6 @@
       <path value="$PROJECT_DIR$/Assets" />
     </ignored-roots>
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="fix(usage): 修复对话请求 `Usage` 中不正确的统计。&#10;&#10;- 触发 `FunctionCall` 时只返回了最终对话的Token统计未记录FunctionCall的Token统计。" />
-    <MESSAGE value="test(Example.FunctionCallChatCompletion.FunctionCallChatCompletion): 恢复随机返回结果" />
     <MESSAGE value="test(Example.FunctionCallChatCompletion.FunctionCallChatCompletion): 删除插件(`Sirenix`)不存在时导致保持的代码" />
     <MESSAGE value="feat(fim): 新增加FIM（Fill-In-the-Middle）功能。&#10;&#10;- `FimDeepSeekChat` 对话补全功能类，使用方法与`DeepSeekChat`类似&#10;&#10;- 接口 `IAnalysisChatCompletion` 泛型化为 `IAnalysisCompletion&lt;out T&gt;`。&#10;&#10;- 接口 `IAnalysisChatCompletionsAsync` 泛型化为 `IAnalysisCompletionsAsync&lt;T&gt;`。" />
     <MESSAGE value="docs: add file EADME.md" />
@@ -521,7 +560,9 @@
     <MESSAGE value="fix(unity inspector): 将部分基本类型交还给Unity序列化而不是Odin Serializer，并且添加确实的深度思考对话前缀续写接口。" />
     <MESSAGE value="fix(unity inspector): 将更多的类从Odin中交还给Unity序列化，以及更新了所有的示例代码。" />
     <MESSAGE value="doc(README.md)" />
-    <option name="LAST_COMMIT_MESSAGE" value="doc(README.md)" />
+    <MESSAGE value="doc:添加了英文和日文的README.md文件" />
+    <MESSAGE value="doc: 命名错误" />
+    <option name="LAST_COMMIT_MESSAGE" value="doc: 命名错误" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

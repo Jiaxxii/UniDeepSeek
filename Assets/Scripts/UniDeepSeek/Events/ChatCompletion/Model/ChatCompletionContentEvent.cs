@@ -108,9 +108,5 @@ namespace Xiyu.UniDeepSeek.Events
             _onExit?.Invoke(chatCompletion);
         }
 
-        public override string ToString()
-        {
-            return $"count-(enter:{_onEnter.GetInvocationList().Length},exit:{_onExit.GetInvocationList().Length},update:{_onUpdate.GetInvocationList().Length})";
-        }
     }
 }

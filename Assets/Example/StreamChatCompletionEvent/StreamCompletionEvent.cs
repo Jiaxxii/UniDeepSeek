@@ -26,7 +26,7 @@ namespace Example.StreamChatCompletionEvent
 
             var requestParameter = new ChatRequestParameter();
             var deepSeekChat = new DeepSeekChat(requestParameter, apiKey);
-            
+
             // 使用深度思考模型才有意义
             requestParameter.Model = ChatModel.Reasoner;
 
@@ -40,7 +40,10 @@ namespace Example.StreamChatCompletionEvent
             // 你可以在 Inspector 中设置颜色
             // 这个颜色表示深度思考内容的颜色
             var colorHex = ColorUtility.ToHtmlStringRGB(new Color(1, 0, 1));
-            ChatCompletionEvent chatCompletionEvent = await chatText.DisplayReasoningStreamWithEventsAsync(asyncEnumerable, colorHex: colorHex);
+            ChatCompletionEvent chatCompletionEvent = chatText.DisplayReasoningStreamWithEvents(colorHex: colorHex);
+
+            // 触发打印
+            await chatCompletionEvent.DisplayChatStreamAsync(asyncEnumerable);
         }
 
         private async UniTaskVoid StreamChatCompletionCustomizeAsync()
@@ -53,7 +56,7 @@ namespace Example.StreamChatCompletionEvent
 
             // 使用深度思考模型才有意义
             requestParameter.Model = ChatModel.Reasoner;
-            
+
             requestParameter.Messages.Add(new SystemMessage("Answer me in English without using any emojis"));
             requestParameter.Messages.Add(new UserMessage("Hello, my name is \"Xi\". What's your name?"));
             Debug.Log($"发送消息：{requestParameter.Messages[^1].Content}");
