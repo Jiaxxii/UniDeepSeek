@@ -32,7 +32,7 @@ namespace Xiyu.UniDeepSeek
                         Debug.LogWarning("Keep-alive message received.");
                         break;
                     }
-
+                    
                     var chatCompletion = JsonConvert.DeserializeObject<ChatCompletion>(data, settings);
                     await writer.YieldAsync(chatCompletion);
                 }

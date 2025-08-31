@@ -15,6 +15,7 @@ namespace Xiyu.UniDeepSeek
         /// <param name="chatModel"></param>
         /// <returns></returns>
         /// <exception cref="ArgumentOutOfRangeException"></exception>
+        // [Obsolete("DeepSeek官方 将在 2025 年 09 月 06 日 00:00 起取消夜间优惠 ")]
         public static decimal CalculatePrice(this Usage usage, ChatModel chatModel)
         {
             var utcNow = DateTime.UtcNow;

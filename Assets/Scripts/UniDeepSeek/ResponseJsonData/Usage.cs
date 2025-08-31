@@ -2,16 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
 #if ODIN_INSPECTOR
 using Sirenix.OdinInspector;
-#endif
-
-#if RIDER
-using JetBrains.Annotations;
-
-#else
-using Xiyu.UniDeepSeek.Annotations;
 #endif
 
 namespace Xiyu.UniDeepSeek
@@ -19,13 +11,16 @@ namespace Xiyu.UniDeepSeek
     [Serializable]
     public class Usage
     {
-        public Usage(int completionTokens, int promptTokens, int promptCacheHitTokens, int promptCacheMissTokens, int totalTokens)
+        public Usage(int completionTokens, int promptTokens, int promptCacheHitTokens, int promptCacheMissTokens, int totalTokens,
+            CompletionTokensDetails completionTokensDetails, PromptTokensDetails promptTokensDetails)
         {
             CompletionTokens = completionTokens;
             PromptTokens = promptTokens;
             PromptCacheHitTokens = promptCacheHitTokens;
             PromptCacheMissTokens = promptCacheMissTokens;
             TotalTokens = totalTokens;
+            CompletionTokensDetails = completionTokensDetails;
+            PromptTokensDetails = promptTokensDetails;
         }
 
         #region CompletionTokens
@@ -140,6 +135,18 @@ namespace Xiyu.UniDeepSeek
             private set => completionTokensDetails = value;
         }
 
+#if ODIN_INSPECTOR
+        [ReadOnly, InlineProperty, BoxGroup("Usage"), HideLabel, ShowIf("@this.PromptTokensDetails!= null")]
+#endif
+        [SerializeField, Tooltip("promptTokens details 的详细信息。")]
+        private PromptTokensDetails promptTokensDetails;
+
+        public PromptTokensDetails PromptTokensDetails
+        {
+            get => promptTokensDetails;
+            private set => promptTokensDetails = value;
+        }
+
 
         public void AppendUsage(IEnumerable<Usage> usages)
         {
@@ -151,41 +158,8 @@ namespace Xiyu.UniDeepSeek
                 PromptCacheMissTokens += usage.PromptCacheMissTokens;
                 TotalTokens += usage.TotalTokens;
                 CompletionTokensDetails?.Append(usage.CompletionTokensDetails);
+                PromptTokensDetails?.Append(usage.PromptTokensDetails);
             }
-        }
-    }
-
-    [Serializable]
-    public class CompletionTokensDetails
-    {
-        public CompletionTokensDetails(int reasoningTokens)
-        {
-            ReasoningTokens = reasoningTokens;
-        }
-
-        #region ReasoningTokens
-
-#if ODIN_INSPECTOR
-        [ReadOnly]
-#endif
-        [SerializeField, Tooltip("推理模型所产生的思维链 token 数量。")]
-        private int reasoningTokens;
-
-        /// <summary>
-        /// 推理模型所产生的思维链 token 数量。
-        /// </summary>
-        public int ReasoningTokens
-        {
-            get => reasoningTokens;
-            private set => reasoningTokens = value;
-        }
-
-        #endregion
-
-        public void Append([CanBeNull] CompletionTokensDetails details)
-        {
-            if (details == null) return;
-            ReasoningTokens += details.ReasoningTokens;
         }
     }
 }

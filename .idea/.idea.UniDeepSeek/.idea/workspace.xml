@@ -5,7 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8dc74092-d10d-470c-8ee2-01be99c0ea2b" name="更改" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/README/zh_cn/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/README/zh_cn/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/ResponseJsonData/CompletionTokensDetails.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/ResponseJsonData/CompletionTokensDetails.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/ResponseJsonData/PromptTokensDetails.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/ResponseJsonData/PromptTokensDetails.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.UniDeepSeek/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UniDeepSeek/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Analysis/StreamDeserializeCompletions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Analysis/StreamDeserializeCompletions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Expands/TokenPricingCalculatorExpand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Expands/TokenPricingCalculatorExpand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/ResponseJsonData/Usage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/ResponseJsonData/Usage.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +65,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Analysis/SampleDeserializeCompletion.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock://F:/Unity/MyProject/UniDeepSeek/Assets/Scripts/UniDeepSeek/Events/ChatCompletion/Model/ChatCompletionContentEvent.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Expands/ChatCompletionExpand.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://F:/Unity/MyProject/UniDeepSeek/Assets/Scripts/UniDeepSeek/Expands/TokenPricingCalculatorExpand.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://F:/Unity/MyProject/UniDeepSeek/Assets/Scripts/UniDeepSeek/Expands/UnityTextMeshProUGUI/UnityTextMeshProUGUIExpand.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/ResponseJsonData/Logprobs/LogprobItem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@f3fac7af1578/Runtime/TMP/TMP_Text.cs" root0="SKIP_HIGHLIGHTING" />
@@ -116,13 +124,15 @@
       <option name="PTY_MODE" value="Auto" />
       <method v="2" />
     </configuration>
-    <configuration name="附加到 Unity 编辑器" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="附加到 Unity 编辑器" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="20316">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="20316" />
       <option name="projectPathOnTarget" />
       <option name="runtimes">
-        <list />
+        <list>
+          <MonoRuntime />
+        </list>
       </option>
       <option name="selectedOptions">
         <list />
@@ -212,7 +222,7 @@
       <workItem from="1756528986513" duration="26542000" />
       <workItem from="1756572924170" duration="4887000" />
       <workItem from="1756617620609" duration="8459000" />
-      <workItem from="1756635425993" duration="23175000" />
+      <workItem from="1756635425993" duration="27279000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -486,7 +496,15 @@
       <option name="project" value="LOCAL" />
       <updated>1756659172161</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="doc(README.md) updated README.md files">
+      <option name="closed" value="true" />
+      <created>1756659970871</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1756659970871</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -516,7 +534,6 @@
       <path value="$PROJECT_DIR$/Assets" />
     </ignored-roots>
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="feat(fim): 新增加FIM（Fill-In-the-Middle）功能。&#10;&#10;- `FimDeepSeekChat` 对话补全功能类，使用方法与`DeepSeekChat`类似&#10;&#10;- 接口 `IAnalysisChatCompletion` 泛型化为 `IAnalysisCompletion&lt;out T&gt;`。&#10;&#10;- 接口 `IAnalysisChatCompletionsAsync` 泛型化为 `IAnalysisCompletionsAsync&lt;T&gt;`。" />
     <MESSAGE value="docs: add file EADME.md" />
     <MESSAGE value="test: FimChatCompletion.unity 添加引用" />
     <MESSAGE value="test(Example/*): 调整测试用例&#10;&#10;- 有 `Odin` 插件的情况下可直接运行" />
@@ -541,7 +558,8 @@
     <MESSAGE value="doc:添加了英文和日文的README.md文件" />
     <MESSAGE value="doc: 命名错误" />
     <MESSAGE value="fix(UnityTextMeshProUGUI): 流式处理打印拓展方法现在不直接执行，而是返回 `ChatCompletionEvent` 将控控制权交给外部代码。&#10;&#10;1. `DisplayChatStreamWithEventsAsync` 方法改名为 `DisplayChatStreamWithEvents` 并且移除 参数 `UniTaskCancelableAsyncEnumerable&lt;ChatCompletion&gt; asyncEnumerable` ，改为返回 `ChatCompletionEvent` 事件，而不是 `UniTask&lt;ChatCompletionEvent&gt;`&#10;&#10;2. `DisplayReasoningStreamWithEventsAsync` 方法改名为 `DisplayReasoningStreamWithEvents` 并且移除 参数 `UniTaskCancelableAsyncEnumerable&lt;ReasoningCompletion&gt; asyncEnumerable`，改为返回 `ChatCompletionEvent` 事件，而不是 `UniTask&lt;ChatCompletionEvent&gt;`&#10;&#10;3. 现在 `ChatCompletionEvent` 事件的泛型参数 `ChatCompletionEvent&lt;T&gt;`。" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix(UnityTextMeshProUGUI): 流式处理打印拓展方法现在不直接执行，而是返回 `ChatCompletionEvent` 将控控制权交给外部代码。&#10;&#10;1. `DisplayChatStreamWithEventsAsync` 方法改名为 `DisplayChatStreamWithEvents` 并且移除 参数 `UniTaskCancelableAsyncEnumerable&lt;ChatCompletion&gt; asyncEnumerable` ，改为返回 `ChatCompletionEvent` 事件，而不是 `UniTask&lt;ChatCompletionEvent&gt;`&#10;&#10;2. `DisplayReasoningStreamWithEventsAsync` 方法改名为 `DisplayReasoningStreamWithEvents` 并且移除 参数 `UniTaskCancelableAsyncEnumerable&lt;ReasoningCompletion&gt; asyncEnumerable`，改为返回 `ChatCompletionEvent` 事件，而不是 `UniTask&lt;ChatCompletionEvent&gt;`&#10;&#10;3. 现在 `ChatCompletionEvent` 事件的泛型参数 `ChatCompletionEvent&lt;T&gt;`。" />
+    <MESSAGE value="doc(README.md) updated README.md files" />
+    <option name="LAST_COMMIT_MESSAGE" value="doc(README.md) updated README.md files" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
