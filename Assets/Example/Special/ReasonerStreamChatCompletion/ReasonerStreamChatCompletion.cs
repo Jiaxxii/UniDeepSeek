@@ -41,6 +41,7 @@ namespace Example.Special.ReasonerStreamChatCompletion
             await textMeshProUGUI.DisplayReasoningChatStreamBasicAsync(asyncEnumerable, colorHex: ColorToHex(reasoningColor));
             _running = false;
         }
+        
 
 #if ODIN_INSPECTOR
         private bool IsPlaying => Application.isPlaying;

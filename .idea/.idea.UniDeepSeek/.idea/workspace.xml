@@ -5,52 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8dc74092-d10d-470c-8ee2-01be99c0ea2b" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Example/Base.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Example/Base/ChatBase.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Example/Base/ChatBase.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Example/ChatCompletion_KeyPoint/ChatCompletion.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Example/SteamChatCompletion_KeyPoint/StreamChatCompletion.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UniDeepSeek/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UniDeepSeek/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Canvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Canvas.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Example/ChatCompletion.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Example/ChatCompletion_KeyPoint.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Example/ChatCompletion/ChatCompletion.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Example/ChatCompletion/ChatCompletion.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Example/ChatCompletion_KeyPoint/ChatCompletion.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Example/ChatCompletion/ChatCompletion.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Example/ChatCompletion_KeyPoint/ChatCompletion.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Example/ChatCompletion/ChatCompletion.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Example/ChatCompletion_KeyPoint/ChatCompletion.unity.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Example/FimChatCompletion/FimChatCompletion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Example/FimChatCompletion/FimChatCompletion.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Example/FimChatCompletion/FimChatCompletion.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Example/FimChatCompletion/FimChatCompletion.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Example/FunctionCallChatCompletion/FunctionCallChatCompletion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Example/FunctionCallChatCompletion/FunctionCallChatCompletion.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Example/FunctionCallChatCompletion/FunctionCallChatCompletion.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Example/FunctionCallChatCompletion/FunctionCallChatCompletion.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Example/PrefixChatCompletion/PrefixChatCompletion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Example/PrefixChatCompletion/PrefixChatCompletion.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Example/PrefixChatCompletion/PrefixChatCompletion.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Example/PrefixChatCompletion/PrefixChatCompletion.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Example/Special/PrefixReasonerStreamChatCompletion/PrefixReasonerStreamChatCompletion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Example/Special/PrefixReasonerStreamChatCompletion/PrefixReasonerStreamChatCompletion.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Example/Special/PrefixReasonerStreamChatCompletion/PrefixReasonerStreamChatCompletion.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Example/Special/PrefixReasonerStreamChatCompletion/PrefixReasonerStreamChatCompletion.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Example/Special/ReasonerStreamChatCompletion/ReasonerStreamChatCompletion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Example/Special/ReasonerStreamChatCompletion/ReasonerStreamChatCompletion.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Example/Special/ReasonerStreamChatCompletion/ReasonerStreamChatCompletion.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Example/Special/ReasonerStreamChatCompletion/ReasonerStreamChatCompletion.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Example/SteamChatCompletion.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Example/SteamChatCompletion_KeyPoint.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Example/SteamChatCompletion/StreamChatCompletion.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Example/SteamChatCompletion/StreamChatCompletion.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Example/SteamChatCompletion_KeyPoint/StreamChatCompletion.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Example/SteamChatCompletion/StreamChatCompletion.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Example/SteamChatCompletion_KeyPoint/StreamChatCompletion.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Example/SteamChatCompletion/StreamChatCompletion.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Example/SteamChatCompletion_KeyPoint/StreamChatCompletion.unity.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Example/StreamPrefixChatCompletion/StreamPrefixChatCompleiton.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Example/StreamPrefixChatCompletion/StreamPrefixChatCompleiton.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Example/StreamPrefixChatCompletion/StreamPrefixChatCompletion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Example/StreamPrefixChatCompletion/StreamPrefixChatCompletion.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/DeepSeekChat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/DeepSeekChat.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Expands/UnityTextMeshProUGUI/UnityTextMeshProUGUIExpand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Expands/UnityTextMeshProUGUI/UnityTextMeshProUGUIExpand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/FillInTheMiddle/FimDeepSeekChat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/FillInTheMiddle/FimDeepSeekChat.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/FillInTheMiddle/RequestJsonData/FimRequestParameter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/FillInTheMiddle/RequestJsonData/FimRequestParameter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/FillInTheMiddle/ResponeseJsonData/FimChatCompletion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/FillInTheMiddle/ResponeseJsonData/FimChatCompletion.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/FillInTheMiddle/ResponeseJsonData/FimChoice.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/FillInTheMiddle/ResponeseJsonData/FimChoice.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/FillInTheMiddle/ResponeseJsonData/FimLogprobs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/FillInTheMiddle/ResponeseJsonData/FimLogprobs.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/RequestJsonData/MessagesType/AssistantMessage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/RequestJsonData/MessagesType/AssistantMessage.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/RequestJsonData/MessagesType/SystemMessage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/RequestJsonData/MessagesType/SystemMessage.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/RequestJsonData/MessagesType/UserMessage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/RequestJsonData/MessagesType/UserMessage.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/ResponseJsonData/ChatCompletion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/ResponseJsonData/ChatCompletion.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/ResponseJsonData/Choice.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/ResponseJsonData/Choice.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/ResponseJsonData/Logprobs/LogprobItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/ResponseJsonData/Logprobs/LogprobItem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/ResponseJsonData/Logprobs/Logprobs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/ResponseJsonData/Logprobs/Logprobs.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/ResponseJsonData/Logprobs/TopLogprob.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/ResponseJsonData/Logprobs/TopLogprob.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/ResponseJsonData/Usage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/ResponseJsonData/Usage.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-6000.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-6000.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -254,7 +211,8 @@
       <workItem from="1756456621356" duration="17216000" />
       <workItem from="1756483844840" duration="4896000" />
       <workItem from="1756528986513" duration="26542000" />
-      <workItem from="1756572924170" duration="4545000" />
+      <workItem from="1756572924170" duration="4887000" />
+      <workItem from="1756617620609" duration="4709000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -488,7 +446,15 @@
       <option name="project" value="LOCAL" />
       <updated>1756485353340</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="fix(unity inspector): 将更多的类从Odin中交还给Unity序列化，以及更新了所有的示例代码。">
+      <option name="closed" value="true" />
+      <created>1756577772232</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1756577772232</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -518,7 +484,6 @@
       <path value="$PROJECT_DIR$/Assets" />
     </ignored-roots>
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="fix(chat): 修复了无法捕获`OperationCanceledException`的bug&#10;&#10;- 未在流式反序列化中检查任务的取消状态，导致取消令牌被忽略，任务无法正常取消。" />
     <MESSAGE value="docs(null): 添加了一些使用示例。&#10;&#10;- 添加了非流式调用、流式调用、FunctionCall、对话前缀续写功能的示例场景。" />
     <MESSAGE value="fix(usage): 修复对话请求 `Usage` 中不正确的统计。&#10;&#10;- 触发 `FunctionCall` 时只返回了最终对话的Token统计未记录FunctionCall的Token统计。" />
     <MESSAGE value="test(Example.FunctionCallChatCompletion.FunctionCallChatCompletion): 恢复随机返回结果" />
@@ -543,7 +508,8 @@
     <MESSAGE value="docs(example): 流式消息事件简单示例" />
     <MESSAGE value="feat: 添加 `RequestParameterBuilder` 类，用于快速构建请求参数。" />
     <MESSAGE value="fix(unity inspector): 将部分基本类型交还给Unity序列化而不是Odin Serializer，并且添加确实的深度思考对话前缀续写接口。" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix(unity inspector): 将部分基本类型交还给Unity序列化而不是Odin Serializer，并且添加确实的深度思考对话前缀续写接口。" />
+    <MESSAGE value="fix(unity inspector): 将更多的类从Odin中交还给Unity序列化，以及更新了所有的示例代码。" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix(unity inspector): 将更多的类从Odin中交还给Unity序列化，以及更新了所有的示例代码。" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
