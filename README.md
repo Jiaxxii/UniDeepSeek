@@ -1,8 +1,15 @@
 # `UniDeepSeek` 使用说明
 
+---
+
+### 🌐 其他语言版本 / Other Language Versions
+
+[![English](https://img.shields.io/badge/Document-English-blue)](https://github.com/Jiaxxii/UniDeepSeek/blob/master/Assets/Scripts/UniDeepSeek/README/en/README.md)
+[![日本語](https://img.shields.io/badge/ドキュメント-日本語-red)](https://github.com/Jiaxxii/UniDeepSeek/blob/master/Assets/Scripts/UniDeepSeek/README/jp/README.md)
 [![Version](https://img.shields.io/badge/version-v1.0.0-blue.svg)](https://github.com/Jiaxxii/UniDeepSeek)
 
 ---
+
 
 ### 前言
 
