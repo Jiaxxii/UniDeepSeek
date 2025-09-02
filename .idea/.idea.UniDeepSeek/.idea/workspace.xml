@@ -6,6 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="8dc74092-d10d-470c-8ee2-01be99c0ea2b" name="更改" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UniDeepSeek/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UniDeepSeek/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/README/zh_cn/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/README/zh_cn/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-6000.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-6000.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,10 +59,8 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/b583e7d8f82a4d824fae2e16e2af7f00dc92a5cddd53375c554aee1980d145/JContainer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Editor/ManifestJsonEditor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Analysis/SampleDeserializeCompletion.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://F:/Unity/MyProject/UniDeepSeek/Assets/Scripts/UniDeepSeek/Events/ChatCompletion/Model/ChatCompletionContentEvent.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://F:/Unity/MyProject/UniDeepSeek/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Interface/IStreamCompletionEvent.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Expands/ChatCompletionExpand.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://F:/Unity/MyProject/UniDeepSeek/Assets/Scripts/UniDeepSeek/Expands/TokenPricingCalculatorExpand.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://F:/Unity/MyProject/UniDeepSeek/Assets/Scripts/UniDeepSeek/Expands/UnityTextMeshProUGUI/UnityTextMeshProUGUIExpand.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/ResponseJsonData/Logprobs/LogprobItem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@f3fac7af1578/Runtime/TMP/TMP_Text.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@f3fac7af1578/Runtime/UGUI/UI/Core/Text.cs" root0="SKIP_HIGHLIGHTING" />
@@ -89,7 +90,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;SolutionBuilderGeneralOptionsPage&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.uml&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;,
     &quot;附加到 Unity 编辑器.附加到 Unity 编辑器.executor&quot;: &quot;Debug&quot;
   }
@@ -216,6 +217,9 @@
       <workItem from="1756635425993" duration="27918000" />
       <workItem from="1756705002243" duration="24248000" />
       <workItem from="1756786412120" duration="25888000" />
+      <workItem from="1756812535542" duration="2015000" />
+      <workItem from="1756817180022" duration="1109000" />
+      <workItem from="1756818837620" duration="455000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -513,7 +517,15 @@
       <option name="project" value="LOCAL" />
       <updated>1756812168185</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="refactor: 将接口分离到各自的文件中">
+      <option name="closed" value="true" />
+      <created>1756812804855</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1756812804855</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -543,7 +555,6 @@
       <path value="$PROJECT_DIR$/Assets" />
     </ignored-roots>
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="test(Example/*): 调整测试用例&#10;&#10;- 有 `Odin` 插件的情况下可直接运行" />
     <MESSAGE value="fix(global): 错误的使用 `if` 宏&#10;&#10;- 低级错误，错误的将 #if ODIN_INSPECTOR 写成了 #if UNITY_EDITOR，导致未安装Odin Inspector时编译器会报错。" />
     <MESSAGE value="fix(unity Inspector): 不使用 `Odin` 插件也提供了简单的序列化显示" />
     <MESSAGE value="fix(doc):为`ChatProcessor` 添加了一些注释。" />
@@ -568,7 +579,8 @@
     <MESSAGE value="doc(README.md) updated README.md files" />
     <MESSAGE value="fix(token calculate): 忘记将一个对象放到构造函数中导致空引用异常，并且从单文件中分离了一些类。" />
     <MESSAGE value="refactor!(project): 重构了 `Xiyu.UniDeepSeek.Events` 下的所有类型进行了重构。" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor!(project): 重构了 `Xiyu.UniDeepSeek.Events` 下的所有类型进行了重构。" />
+    <MESSAGE value="refactor: 将接口分离到各自的文件中" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: 将接口分离到各自的文件中" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

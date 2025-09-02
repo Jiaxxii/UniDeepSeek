@@ -1,4 +1,7 @@
-﻿## `UniDeepSeek` Usage Instructions
+﻿# `UniDeepSeek` Usage Instructions
+
+[![Version](https://img.shields.io/badge/version-v1.0.0-blue.svg)](https://github.com/Jiaxxii/UniDeepSeek)
+
 
 ---
 
