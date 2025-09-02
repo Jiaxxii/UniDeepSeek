@@ -1,15 +1,15 @@
-﻿## `UniDeepSeek` User Manual
+﻿## `UniDeepSeek` Usage Instructions
 
 ---
 
 ### Preface
 
-1. [You must learn some basic operations in `UniTask`. If you have used `Task` and are switching to `UniTask`, the transition should feel almost seamless.](https://github.com/Cysharp/UniTask)
-2. It is recommended that you use the `Odin` plugin. ***This will make parameters in the Unity Inspector more intuitive.***
+1. [You must learn some basic operations in `UniTask`. If you have used `Task` and are switching to `UniTask`, the transition may feel almost seamless.](https://github.com/Cysharp/UniTask)
+2. It is recommended that you use the `Odin` plugin, ***which will make parameters in the Unity Inspector more intuitive***.
 3. `UniDeepSeek` depends on the `UniTask` asynchronous library and the `Newtonsoft.Json` parsing library. Please ensure these two libraries are added to your project.
 4. You need to add `TextMeshPro`.
 5. Use the highest possible version of `Unity`, with a minimum requirement of supporting `C# 9.0`.
-6. Functional usage examples are provided in the Example folder.
+6. Functional usage examples are provided in the `Example` folder.
 
 ---
 
@@ -17,7 +17,7 @@
 
 #### 1.1 Non-Streaming Requests
 
-I will quickly create a chat request using the streaming interface, which is useful when you only need to make a single request without engaging in multi-turn conversations.
+I will quickly create a chat request using the streaming interface, which is useful when you only need to make a single request without engaging in multiple rounds of conversation.
 
 ```csharp
 RequestParameterBuilder builder = DeepSeekChat.Create();
@@ -38,9 +38,11 @@ if (state == ChatState.Success)
 
 #### 1.2 Streaming Requests
 
-If you need to get chat results in real time, you should use the streaming method. The following code demonstrates how to use the streaming method to obtain chat results.  
-Handling streaming requests for non-reasoning models is relatively simple. You can directly use the `StreamChatCompletionsEnumerableAsync` method and manually iterate through it.  
-However, I have also prepared an extension method `DisplayChatStreamBasicAsync` to simplify the processing of streaming requests.  
+If you need to obtain chat results in real time, you should use the streaming method. The following code demonstrates how to use the streaming method to retrieve chat results.
+
+For non-reasoning streaming requests, the handling is relatively simple. You can directly use the `StreamChatCompletionsEnumerableAsync` method and manually iterate through it.
+
+However, I have also prepared an extension method `DisplayChatStreamBasicAsync` to simplify the handling of streaming requests.  
 Here, I use the extension method `DisplayChatStreamBasicAsync` for `TMP_Text` to display the chat results in real time on a `TextMeshProUGUI` component.
 
 ```csharp
@@ -59,21 +61,21 @@ textMeshProUGUI.text = string.Empty;
 await textMeshProUGUI.DisplayChatStreamBasicAsync(asyncEnumerable);
 ```
 
-If you need custom processing, you can manually iterate through `asyncEnumerable` and handle it.
+If you need custom handling, you can manually iterate through `asyncEnumerable` and process it.
 
 ```csharp
 await foreach (var chatCompletion in deepSeekChat.StreamChatCompletionsEnumerableAsync(
-                           onCompletion: completion => { /* When streaming is complete, all streams will be merged */ },
+                           onCompletion: completion => { /* All streams will be merged when the streaming is complete */ },
                            cancellation: CancellationToken.None /* It is recommended to pass a CancellationToken to cancel the request */ ))
             {
                 // Process the chat result
             }
 ```
 
-#### 1.3 Reasoning Streaming Processing
+#### 1.3 Reasoning Streaming Handling
 
-For reasoning streaming requests, I have prepared extension methods. You can still call them via the `TMP_Text` extension method.  
-You can specify the `colorHex` parameter to set the color for the reasoning content.
+For reasoning streaming requests, I have prepared extension methods. You can still call them using the `TMP_Text` extension method.  
+You can specify the `colorHex` parameter to set the color for reasoning content.
 
 ```csharp
 RequestParameterBuilder builder = DeepSeekChat.Create();
@@ -89,13 +91,12 @@ var asyncEnumerable = deepSeekChat.StreamChatCompletionsEnumerableAsync(completi
 await textMeshProUGUI.DisplayReasoningChatStreamBasicAsync(asyncEnumerable, colorHex: ColorToHex(reasoningColor));
 ```
 
-### 1.4 Convert Reasoning Streaming to Event Stream
+### 1.4 Converting Reasoning Streaming to Event Stream
 
-If you directly iterate through `deepSeekChat.StreamChatCompletionsEnumerableAsync` in `Reasoning Streaming Mode`, you may find it difficult to distinguish between the `Content` and `ReasoningContent` fields in the message.  
-For example, if I want reasoning messages to be displayed in red, I might need to make various judgments inside `await foreach`. To address this, you can use the `ChatCompletionEvent` class to convert the message stream into an event stream.
+If you directly iterate through `deepSeekChat.StreamChatCompletionsEnumerableAsync` in `Reasoning Streaming Mode`, you may find it difficult to distinguish between the `Content` and `ReasoningContent` fields in the messages.  
+For example, if you want reasoning messages to be displayed in red, you might need to make various judgments within the `await foreach` loop. To address this, you can use the `StreamCompletionEventFacade` class to convert the message stream into an event stream.
 
-Here, I will use the `TMP_Text` extension method `DisplayReasoningStreamWithEvent` to display the chat results in real time on a `TextMeshProUGUI` component and convert the message stream into an event stream.  
-You can save `chatCompletionEvent` as a global variable and reuse it in subsequent requests.
+Here, I will use the `TMP_Text` extension method `DisplayReasoningStreamWithEvents` to display the chat results in real time on a `TextMeshProUGUI` component and convert the message stream into an event stream.
 
 ```csharp
 RequestParameterBuilder builder = DeepSeekChat.Create();
@@ -108,17 +109,17 @@ DeepSeekChat deepSeekChat = builder.Message
 
 var asyncEnumerable = deepSeekChat.StreamChatCompletionsEnumerableAsync(completion => chatCompletion = completion, cancellationToken);
 
-// Convert the message stream to an event stream
-ChatCompletionEvent chatCompletionEvent = textMeshProUGUI.DisplayReasoningStreamWithEvents(colorHex: ColorToHex(reasoningColor));
+// Convert the message stream into an event stream
+StreamCompletionEventFacade eventFacade = textMeshProUGUI.DisplayReasoningStreamWithEvents(colorHex: ColorToHex(reasoningColor));
 
-// Trigger the event stream (Do not use await foreach on asyncEnumerable)
-await chatCompletionEvent.DisplayChatStreamAsync(asyncEnumerable);
+// Trigger the event stream (do not use await foreach on asyncEnumerable)
+await eventFacade.Builder().DisplayChatStreamAsync(asyncEnumerable);
 ```
 
-If you need to fully customize the event stream, you can directly use the `ChatCompletionEvent` class.  
+If you need to fully customize the event stream, you can directly use the `StreamCompletionEventFacade` class.  
 The following example is almost equivalent to the implementation of `textMeshProUGUI.DisplayReasoningStreamWithEvents`.
 
-In theory, non-reasoning streaming messages can also be converted into event streams, but I recommend against it. Using `await foreach` directly is the best approach.  
+In theory, non-reasoning streaming messages can also be converted into an event stream, but I recommend against it. Directly using `await foreach` is the best approach.  
 Converting to an event stream would introduce additional overhead, and non-reasoning streaming messages are relatively simple.
 
 ```csharp
@@ -127,7 +128,7 @@ RequestParameterBuilder builder = DeepSeekChat.Create();
 DeepSeekChat deepSeekChat = builder.Message
     .AddSystemMessage(systemPrompt)
     .AddUserMessage("hi,my name is player!")
-        .Base.SetModel(ChatModel.Reasoner)
+    .Base.SetModel(ChatModel.Reasoner)
     .Build(youApiKey);
 
 
@@ -137,14 +138,15 @@ var asyncEnumerable = await deepSeekChat.StreamChatCompletionsEnumerableAsync(de
 // This color represents the reasoning content color
 var colorHex = ColorUtility.ToHtmlStringRGB(new Color(1, 0, 1));
 
-// You can also create a custom ChatCompletionEvent directly via the constructor
+// You can also create a custom StreamCompletionEventFacade via the constructor
 
-// If needed, you can inherit the `IChatCompletionRunning` interface to change the behavior
-var chatCompletionEvent = new ChatCompletionEvent();
+// If needed, you can pass an implementation of the `IStreamCompletionConsumer` interface via the constructor to change the behavior
+var eventFacade = StreamCompletionEventFacade.CreateByDefaultConsumer();
 
-chatCompletionEvent.ReasoningEventSetting
-    // Event when starting to receive reasoning content
-    // Methods starting with 'Set' will overwrite the delegate. Use methods starting with 'Append' if you need to add.
+
+eventFacade.ReasoningEvent
+    // Event when reasoning content starts being received
+    // Methods starting with "Set" will override the delegate. Use methods starting with "Append" if you want to add to the delegate.
     .SetEnter(completion =>
     {
         var message = completion.GetMessage();
@@ -152,26 +154,26 @@ chatCompletionEvent.ReasoningEventSetting
             ? message.ReasoningContent
             : $"<color={(colorHex.StartsWith('#') ? colorHex : $"#{colorHex}")}>{message.ReasoningContent}";
     })
-    // Event when receiving content (excluding the first piece)
+    // Event when content is received (excluding the first piece)
     .SetUpdate(completion => chatText.text += completion.GetMessage().ReasoningContent)
     // Event when reception ends (completion is the same as the last piece, i.e., the last update)
     .SetExit(_ => chatText.text += "</color>\n\n");
 
 
-chatCompletionEvent.ContentEventSetting.SetEnter(completion => chatText.text += completion.GetMessage().Content)
+eventFacade.ReasoningEvent.SetEnter(completion => chatText.text += completion.GetMessage().Content)
     .SetUpdate(completion => chatText.text += completion.GetMessage().Content);
 
-// Trigger the event stream (Do not use await foreach on asyncEnumerable)
-await chatCompletionEvent.DisplayChatStreamAsync(asyncEnumerable);
+// Trigger the event stream (do not use await foreach on asyncEnumerable)
+await eventFacade.Builder().DisplayChatStreamAsync(asyncEnumerable);
 ```
 
 ---
 
-### 2. Multi-Turn Chat Requires Declaring Some Classes in This Section
+### 2. For Multi-Turn Chats, Declare Some Classes as Follows
 
 #### 2.1 Request Configurator
 
-First, you need to create a *Request Configurator* where you can set model parameters such as `MaxToken`, `Temperature`, `TopK`, etc.  
+First, you need to create a *request configurator* where you can set parameters for the model, such as `MaxToken`, `Temperature`, `TopK`, etc.  
 If your project uses the `Odin` plugin, you can use the `[ShowInInspector]` attribute to display the request configurator.
 
 ```csharp
@@ -179,8 +181,8 @@ If your project uses the `Odin` plugin, you can use the `[ShowInInspector]` attr
 public Xiyu.UniDeepSeek.ChatRequestParameter _setting = new();
 ```
 
-Now you need a *Requester*, which is responsible for sending requests and receiving responses. During initialization, you should pass the ***Request Configurator*** and your ***API Key*** respectively.  
-If you want to reuse the `DeepSeekChat` class, declare it as a field of the class.
+Now you need a *requester*, which is responsible for sending requests and receiving responses. During initialization, you should pass the ***request configurator*** and your ***API key*** respectively.  
+If you plan to reuse the `DeepSeekChat` class, declare it as a field of the class.
 
 ```csharp
 private Xiyu.UniDeepSeek.DeepSeekChat _deepSeekChat;
@@ -190,7 +192,7 @@ private void Awake()
 }
 ```
 
-Now you can start calling the `ChatCompletionAsync` method of the `DeepSeekChat` class to get chat results. Oh, and don’t forget to add messages in `ChatRequestParameter`.
+Now you can start calling the `ChatCompletionAsync` method of the `DeepSeekChat` class to get chat results. Don’t forget to add messages to the `ChatRequestParameter` beforehand.
 
 You can pass a `CancellationToken` to cancel the request. When a cancellation is requested, the method will cancel at an appropriate time.
 
@@ -207,19 +209,19 @@ private async UniTaskVoid ChatCompletionAsync()
 
 `deepSeekChat.ChatCompletionAsync()` returns a `UniTask<(ChatState, ChatCompletion)>`, where `ChatState` is an enum representing the chat state, and `ChatCompletion` is a `ChatCompletion` object containing the chat result.
 
-You can quickly get the chat result via `chatCompletion.GetMessage().Content`, which is equivalent to `chatCompletion.Choices[0].SourcesMessage.Content`.  
+You can quickly retrieve the chat result via `chatCompletion.GetMessage().Content`, which is equivalent to `chatCompletion.Choices[0].SourcesMessage.Content`.  
 It is worth mentioning that if you have the `Odin` plugin installed, the return value `ChatCompletion` is serializable. You can assign it to a member variable and view it in the `Unity Inspector`.
 
 ---
 
 #### 2.2 Streaming Requests
 
-When you need real-time chat results, you should use the streaming method:  
+When you need to obtain chat results in real time, you should use the streaming method:  
 `StreamChatCompletionsEnumerableAsync(Action<ChatCompletion> onCompletion, CancellationToken cancellation)`
 
-`onCompletion` is a callback function that merges all streams from this request and creates a new `ChatCompletion` object to return.
+The `onCompletion` callback function will merge all streams from this request and return a new `ChatCompletion` object.
 
-***When the streaming method is canceled, it will throw an `OperationCanceledException`, whereas the regular asynchronous method will not throw an exception but return a `ChatState` enum instead.***
+***When the streaming method is canceled, it will throw an `OperationCanceledException`, whereas the regular asynchronous method will not throw an exception but instead return a `ChatState` enum.***
 
 ```csharp
 public async void Start()
@@ -237,12 +239,12 @@ public async void Start()
             Debug.Log(chatCompletion.GetMessage().Content);
         }
 
-        // Calculate your result
-        Debug.Log($"Cost: {completion.Usage.CalculatePrice(ChatModel.Chat):F3} CNY");
+        // Calculate your results
+        Debug.Log($"Cost: {completion.Usage.CalculatePrice(ChatModel.Chat):F3} yuan");
     }
     catch (OperationCanceledException e)
     {
-        Debug.LogWarning("Chat request canceled:" + e.Message);
+        Debug.LogWarning("Chat request canceled: " + e.Message);
     }
 }
 ```

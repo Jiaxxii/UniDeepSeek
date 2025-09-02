@@ -12,7 +12,7 @@ namespace Example.SteamChatCompletion_KeyPoint
 {
     public class StreamChatCompletion : ChatBase
     {
-        [SerializeField] private Xiyu.UniDeepSeek.ChatCompletion chatCompletion;
+        [SerializeField] private ChatCompletion chatCompletion;
 
         // 标准流式处理
         // This is the standard streaming processing
@@ -86,7 +86,7 @@ namespace Example.SteamChatCompletion_KeyPoint
         private bool IsPlaying => Application.isPlaying;
 
         [Sirenix.OdinInspector.Button(DrawResult = false, Name = "流畅接口形式 + 拓展方法")]
-        [Sirenix.OdinInspector.ShowIf("@IsPlaying == false")]
+        [Sirenix.OdinInspector.ShowIf("@IsPlaying == true")]
 #endif
         // 流畅接口形式 + 拓展方法
         // This is the fluent interface form with extension methods

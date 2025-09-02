@@ -6,6 +6,7 @@ using TMPro;
 using UnityEngine;
 using Xiyu.UniDeepSeek;
 using Xiyu.UniDeepSeek.Events;
+using Xiyu.UniDeepSeek.Events.StreamChatCompletion;
 using Xiyu.UniDeepSeek.MessagesType;
 using Xiyu.UniDeepSeek.UnityTextMeshProUGUI;
 
@@ -37,7 +38,6 @@ namespace Example.Special.ReasonerStreamChatCompletion
 
             textMeshProUGUI.text = string.Empty;
 
-            // 这几乎等价下面的 `ReasonerStreamChatCompletionAsync` 方法
             await textMeshProUGUI.DisplayReasoningChatStreamBasicAsync(asyncEnumerable, colorHex: ColorToHex(reasoningColor));
             _running = false;
         }
@@ -67,17 +67,18 @@ namespace Example.Special.ReasonerStreamChatCompletion
 
             textMeshProUGUI.text = string.Empty;
 
-            // 如果你需要添加自己的事件处理，可以使用 `DisplayReasoningStreamWithEventsAsync` 方法，他会返回一个 `ChatCompletionEvent` 对象，你可以通过它来添加自己的事件处理
-            var chatCompletionEvent = textMeshProUGUI.DisplayReasoningStreamWithEvents();
+            // 如果你需要添加自己的事件处理，可以使用 `DisplayReasoningStreamWithEvents` 方法，
+            // 他会返回一个 `StreamCompletionEventFacade` 对象，你可以通过它来添加自己的事件处理
+            StreamCompletionEventFacade eventFacade = textMeshProUGUI.DisplayReasoningStreamWithEvents();
 
-            chatCompletionEvent.ReasoningEventSetting
+            eventFacade.ReasoningEvent
                 .AppendEnter(_ => Debug.Log("深度思考开始"))
                 .AppendExit(_ => Debug.Log("深度思考结束"));
 
-            chatCompletionEvent.ContentEventSetting.AppendExit(_ => Debug.Log("回答结束"));
+            eventFacade.ContentEvent.AppendExit(_ => Debug.Log("回答结束"));
 
             // 触发打印
-            await chatCompletionEvent.DisplayChatStreamAsync(asyncEnumerable);
+            await eventFacade.Builder().DisplayChatStreamAsync(asyncEnumerable);
 
             _running = false;
         }
@@ -104,10 +105,10 @@ namespace Example.Special.ReasonerStreamChatCompletion
 
             textMeshProUGUI.text = string.Empty;
 
-            var chatCompletionEvent = new ChatCompletionEvent();
+            var eventFacade = StreamCompletionEventFacade.CreateByDefaultConsumer();
 
             // 配置推理事件处理
-            chatCompletionEvent.ReasoningEventSetting
+            eventFacade.ReasoningEvent
                 .SetEnter(completion =>
                 {
                     var message = completion.GetMessage();
@@ -117,14 +118,14 @@ namespace Example.Special.ReasonerStreamChatCompletion
                 .SetExit(_ => textMeshProUGUI.text += "</color>\n\n");
 
             // 配置内容事件处理
-            chatCompletionEvent.ContentEventSetting
+            eventFacade.ContentEvent
                 .SetEnter(completion => textMeshProUGUI.text += completion.GetMessage().Content)
                 .SetUpdate(completion => textMeshProUGUI.text += completion.GetMessage().Content);
 
-            chatCompletionEvent.ContentEventSetting.AppendExit(_ => Debug.Log("回答结束"));
+            eventFacade.ContentEvent.AppendExit(_ => Debug.Log("回答结束"));
 
             // 触发打印
-            await chatCompletionEvent.DisplayChatStreamAsync(asyncEnumerable);
+            await eventFacade.Builder().DisplayChatStreamAsync(asyncEnumerable);
             _running = false;
         }
 
