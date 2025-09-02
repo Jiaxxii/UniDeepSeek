@@ -1,4 +1,6 @@
-## `UniDeepSeek` 使用说明
+# `UniDeepSeek` 使用说明
+
+[![Version](https://img.shields.io/badge/version-v1.0.0-blue.svg)](https://github.com/Jiaxxii/UniDeepSeek)
 
 ---
 
