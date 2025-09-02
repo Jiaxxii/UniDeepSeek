@@ -2,15 +2,6 @@
 
 ---
 
----
-
-### 🌐 其他语言版本 / Other Language Versions
-
-[![English](https://img.shields.io/badge/Document-English-blue)](https://github.com/Jiaxxii/UniDeepSeek/blob/master/Assets/Scripts/UniDeepSeek/README/en/README.md)
-[![日本語](https://img.shields.io/badge/ドキュメント-日本語-red)](https://github.com/Jiaxxii/UniDeepSeek/blob/master/Assets/Scripts/UniDeepSeek/README/jp/README.md)
-
----
-
 ### 前言
 
 1. [您必须学会 `UniTask` 中的一些基本操作，如果您使用过 `Task` 切换到
@@ -19,7 +10,7 @@
 3. `UniDeepSeek` 依赖 `UniTask` 异步库与 `Newtonsoft.Json` 解析库，请确保您的项目中已经添加了这两个库。
 4. 你需要添加 `TextMeshPro`
 5. 使用尽可能高的 `Unity` 版本，最低需支持 `C# 9.0` 版本。
-6. 示例中Example中有功能使用示例，请务必进行查看
+6. 示例中Example中有功能使用示例
 
 ---
 
@@ -49,7 +40,9 @@ if (state == ChatState.Success)
 #### 1.2 流式请求
 
 如果你需要实时获取聊天结果，你应该使用流式方法，以下代码展示了如何使用流式方法来获取聊天结果。  
-对于非深度思考的流式请求处理起来相对简单，你可以直接使用 `StreamChatCompletionsEnumerableAsync` 方法然后手动遍历它。  
+
+对于非深度思考的流式请求处理起来相对简单，你可以直接使用 `StreamChatCompletionsEnumerableAsync` 方法然后手动遍历它。
+
 但是我还是准备了一个拓展方法 `DisplayChatStreamBasicAsync` 来简化流式请求的处理。  
 这里我使用了对 `TMP_Text` 的拓展方法 `DisplayChatStreamBasicAsync` 来将聊天结果实时显示到 `TextMeshProUGUI` 上。
 
@@ -104,11 +97,10 @@ await textMeshProUGUI.DisplayReasoningChatStreamBasicAsync(asyncEnumerable, colo
 如果你在 `深度思考流式模式` 的情况下直接遍历 `deepSeekChat.StreamChatCompletionsEnumerableAsync` 会发现想要分辨消息中的
 `Content` 和 `ReasoningContaent` 字段是比较困难的。  
 比如，我希望深度思考的消息显示为红色，那么我可能想要在 `await foreach` 中进行各种判断，为此我你可以使用
-`ChatCompletionEvent` 类来将消息流转换为事件流。
+`StreamCompletionEventFacade` 类来将消息流转换为事件流。
 
-这里，我将使用 `TMP_Text` 的拓展方法 `DisplayReasoningStreamWithEventsAsync` 来将聊天结果实时显示到 `TextMeshProUGUI`
+这里，我将使用 `TMP_Text` 的拓展方法 `DisplayReasoningStreamWithEvents` 来将聊天结果实时显示到 `TextMeshProUGUI`
 上，并将消息流转换为事件流。
-你可以将 `chatCompletionEvent` 保存为全局变量，然后在之后的请求中复用它。
 
 ```csharp
 RequestParameterBuilder builder = DeepSeekChat.Create();
@@ -121,19 +113,18 @@ DeepSeekChat deepSeekChat = builder.Message
 
 var asyncEnumerable = deepSeekChat.StreamChatCompletionsEnumerableAsync(completion => chatCompletion = completion, cancellationToken);
 
-ChatCompletionEvent chatCompletionEvent = await textMeshProUGUI.DisplayReasoningStreamWithEventsAsync(asyncEnumerable, colorHex: ColorToHex(reasoningColor));
+// 将消息流转换为事件流
+StreamCompletionEventFacade eventFacade = textMeshProUGUI.DisplayReasoningStreamWithEvents(colorHex: ColorToHex(reasoningColor));
 
+// 触发事件流 （不要 await foreach asyncEnumerable）
+await eventFacade.Builder().DisplayChatStreamAsync(asyncEnumerable);
 ```
 
-如果你需要完全自定义事件流，可以直接使用 `ChatCompletionEvent` 类，
-以下这个例子几乎等价于 `textMeshProUGUI.DisplayReasoningStreamWithEventsAsync` 的实现。
+如果你需要完全自定义事件流，可以直接使用 `StreamCompletionEventFacade` 类，
+以下这个例子几乎等价于 `textMeshProUGUI.DisplayReasoningStreamWithEvents` 的实现。
 
 理论上，非深度思考的流式消息也可以转换为事件流，但是我建议你不要这么做，直接进行 `await foreach` 是最佳的方式。
 如果转换为事件流会引入额外的开销，而且非深度思考的流式消息相对简单。
-
-总之，我 `TMP_Text` 的拓展方法提供了 `非深度思考的流式消息` 转换为 事件流的方法，但是我建议您还是不要使用它，
-由于拓展方法都接收 `UniTaskCancelableAsyncEnumerable<ChatCompletion>` 作为参数，你需要看清楚看清楚方法名称，错误的
-将深度思考和非深度思考的流式消息混在一起使用可能会引起不必要的开销。
 
 ```csharp
 RequestParameterBuilder builder = DeepSeekChat.Create();
@@ -141,7 +132,7 @@ RequestParameterBuilder builder = DeepSeekChat.Create();
 DeepSeekChat deepSeekChat = builder.Message
     .AddSystemMessage(systemPrompt)
     .AddUserMessage("hi,my name is player!")
-        .Base.SetModel(ChatModel.Reasoner)
+    .Base.SetModel(ChatModel.Reasoner)
     .Build(youApiKey);
 
 
@@ -151,12 +142,13 @@ var asyncEnumerable = await deepSeekChat.StreamChatCompletionsEnumerableAsync(de
 // 这个颜色表示深度思考内容的颜色
 var colorHex = ColorUtility.ToHtmlStringRGB(new Color(1, 0, 1));
 
-// 你可以可以直接通过构造函数来创建自定义的 ChatCompletionEvent
+// 你可以可以直接通过构造函数来创建自定义的 StreamCompletionEventFacade
 
-// 如果有需要，你可以继承 `IChatCompletionRunning` 接口以改变工作方式
-var chatCompletionEvent = new ChatCompletionEvent();
+// 如果有需要，你可以通过构造函数传入 `IStreamCompletionConsumer` 接口的实现类以改变工作方式
+var eventFacade = StreamCompletionEventFacade.CreateByDefaultConsumer();
 
-chatCompletionEvent.ReasoningEventSetting
+
+eventFacade.ReasoningEvent
     // 开始接收到深度思考内容时的事件
     // Set 开头的方法会覆盖委托，如果需要追加请使用 Append 开头的方法
     .SetEnter(completion =>
@@ -172,11 +164,11 @@ chatCompletionEvent.ReasoningEventSetting
     .SetExit(_ => chatText.text += "</color>\n\n");
 
 
-chatCompletionEvent.ContentEventSetting.SetEnter(completion => chatText.text += completion.GetMessage().Content)
+eventFacade.ReasoningEvent.SetEnter(completion => chatText.text += completion.GetMessage().Content)
     .SetUpdate(completion => chatText.text += completion.GetMessage().Content);
 
 // 触发事件流 （不要 await foreach asyncEnumerable）
-await chatCompletionEvent.DisplayChatStreamAsync(asyncEnumerable);
+await eventFacade.Builder().DisplayChatStreamAsync(asyncEnumerable);
 ```
 
 ---
