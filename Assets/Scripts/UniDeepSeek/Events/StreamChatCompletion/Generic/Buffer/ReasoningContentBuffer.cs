@@ -5,29 +5,27 @@ namespace Xiyu.UniDeepSeek.Events.StreamChatCompletion.Generic.Buffer
 {
     public class ReasoningContentBuffer<TContext> : ContentBuffer<TContext>, IAggregationStreamHandler<TContext>
     {
-        public ReasoningContentBuffer(Action<string> onFinish, ReasoningOption? option, int bufferSize = 1024)
+        public ReasoningContentBuffer(Action<string, TContext> onFinish, ReasoningOption option = null, int bufferSize = 1024)
             : base(onFinish, option, bufferSize)
         {
-            option ??= ReasoningOption.Default;
-            _colorHex = option.Value.ColorHex;
-            _reasoningNewlineCount = option.Value.ReasoningNewlineCount;
+            _option = option ?? new ReasoningOption();
         }
 
-        private readonly string _colorHex;
-        private readonly int _reasoningNewlineCount;
+        private readonly ReasoningOption _option;
+
 
         public void ReasoningEnter(ChatCompletion completion, TContext context)
         {
             var message = completion.GetMessage();
-            var formattedContent = string.IsNullOrEmpty(_colorHex)
+            var formattedContent = string.IsNullOrEmpty(_option.ColorHex)
                 ? message.ReasoningContent
-                : $"<color={(_colorHex.StartsWith('#') ? _colorHex : $"#{_colorHex}")}>{message.ReasoningContent}";
-            AppendContent(formattedContent);
+                : $"<color={_option.ColorHex}>{message.ReasoningContent}";
+            AppendContent(formattedContent, context);
         }
 
         public void ReasoningUpdate(ChatCompletion completion, TContext context)
         {
-            AppendContent(completion.GetMessage().ReasoningContent);
+            AppendContent(completion.GetMessage().ReasoningContent, context);
         }
 
         public void ReasoningExit(ChatCompletion completion, TContext context)
@@ -35,19 +33,19 @@ namespace Xiyu.UniDeepSeek.Events.StreamChatCompletion.Generic.Buffer
             string appendContent;
             if (completion == null)
             {
-                appendContent = new string('\n', _reasoningNewlineCount) + "</color>";
+                appendContent = new string('\n', _option.ReasoningNewlineCount) + "</color>";
             }
-            else if (string.IsNullOrEmpty(_colorHex))
+            else if (string.IsNullOrEmpty(_option.ColorHex))
             {
-                appendContent = new string('\n', _reasoningNewlineCount) + completion.GetMessage().Content;
+                appendContent = new string('\n', _option.ReasoningNewlineCount) + completion.GetMessage().Content;
             }
             else
             {
-                appendContent = new string('\n', _reasoningNewlineCount) + "</color>" + completion.GetMessage().ReasoningContent;
+                appendContent = new string('\n', _option.ReasoningNewlineCount) + "</color>" + completion.GetMessage().ReasoningContent;
             }
 
-            AppendContent(appendContent);
-            FlushContentToTextMesh();
+            AppendContent(appendContent, context);
+            FlushContentToTextMesh(context);
         }
     }
 }

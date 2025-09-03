@@ -1,26 +1,51 @@
-﻿namespace Xiyu.UniDeepSeek.Events.StreamChatCompletion.Buffer
+﻿using System;
+using UnityEngine;
+
+#if ODIN_INSPECTOR
+using Sirenix.OdinInspector;
+#endif
+
+namespace Xiyu.UniDeepSeek.Events.StreamChatCompletion.Buffer
 {
-    public readonly struct ReasoningOption
+    [Serializable]
+    public class ReasoningOption : ContentOption
     {
-        public ReasoningOption(string colorHex, int reasoningNewlineCount, int flushThreshold, ContentFlushCriteriaOption flushCriteriaOption)
+#if ODIN_INSPECTOR
+        [BoxGroup("reasoning", LabelText = "仅深度思考"), LabelText("忽略颜色")]
+#endif
+        [SerializeField]
+        private bool ignoreColor = true;
+
+#if ODIN_INSPECTOR
+        [ShowIf("@!ignoreColor"), BoxGroup("reasoning"), LabelText("深度思考颜色")]
+#endif
+
+        [SerializeField]
+        private Color thickColor = Color.white;
+
+
+        public string ColorHex
         {
-            ColorHex = colorHex;
-            ReasoningNewlineCount = reasoningNewlineCount;
-            FlushThreshold = flushThreshold;
-            FlushCriteriaOption = flushCriteriaOption;
+            get => ignoreColor ? null : '#' + ColorUtility.ToHtmlStringRGB(thickColor);
+            set
+            {
+                if (!ColorUtility.TryParseHtmlString(value, out thickColor))
+                {
+                    Debug.LogWarning("Invalid color hex code: " + value);
+                }
+            }
         }
 
-        public string ColorHex { get; }
-        public int ReasoningNewlineCount { get; }
-        public int FlushThreshold { get; }
-        public ContentFlushCriteriaOption FlushCriteriaOption { get; }
+#if ODIN_INSPECTOR
+        [BoxGroup("reasoning", LabelText = "仅深度思考"), LabelText("深度思考后换行数"), MinValue(0)]
+#endif
+        [SerializeField]
+        private int reasoningNewlineCount = 1;
 
-        public static ReasoningOption Default { get; } = new(null, 1, 10, ContentFlushCriteriaOption.ByCharacterCount);
-
-
-        public static implicit operator ContentOption(ReasoningOption option)
+        public int ReasoningNewlineCount
         {
-            return new ContentOption(option.FlushThreshold, option.FlushCriteriaOption);
+            get => reasoningNewlineCount;
+            set => reasoningNewlineCount = value;
         }
     }
 }

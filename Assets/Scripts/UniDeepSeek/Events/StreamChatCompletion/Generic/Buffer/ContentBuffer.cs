@@ -6,59 +6,56 @@ namespace Xiyu.UniDeepSeek.Events.StreamChatCompletion.Generic.Buffer
 {
     public class ContentBuffer<TContext> : IContentStreamHandler<TContext>
     {
-        public ContentBuffer(Action<string> onFinish, ContentOption? option = null, int bufferSize = 512)
+        public ContentBuffer(Action<string, TContext> onFinish, ContentOption option = null, int bufferSize = 512)
         {
             _builder = new StringBuilder(bufferSize);
-            option ??= ContentOption.Default;
-            _flushThreshold = option.Value.FlushThreshold;
-            _flushCriteriaOption = option.Value.FlushCriteriaOption;
-            _contentLengthCounter = 0;
             _onFinish = onFinish;
+            _option = option ?? new ContentOption();
         }
 
+        private readonly ContentOption _option;
         private readonly StringBuilder _builder;
+        private readonly Action<string, TContext> _onFinish;
+
         private int _contentLengthCounter;
-        private readonly int _flushThreshold;
-        private readonly ContentFlushCriteriaOption _flushCriteriaOption;
-        private readonly Action<string> _onFinish;
 
         public void ContentEnter(ChatCompletion completion, TContext context)
         {
-            AppendContent(completion.GetMessage().Content);
+            AppendContent(completion.GetMessage().Content, context);
         }
 
         public void ContentUpdate(ChatCompletion completion, TContext context)
         {
-            AppendContent(completion.GetMessage().Content);
+            AppendContent(completion.GetMessage().Content, context);
         }
 
         public void ContentExit(ChatCompletion completion, TContext context)
         {
             // 确保所有缓冲内容在退出时被刷新
-            FlushContentToTextMesh();
+            FlushContentToTextMesh(context);
         }
 
-        protected void AppendContent(string content)
+        protected void AppendContent(string content, TContext context)
         {
             if (string.IsNullOrEmpty(content)) return;
 
             _builder.Append(content);
-            _contentLengthCounter += _flushCriteriaOption switch
+            _contentLengthCounter += _option.FlushCriteriaOption switch
             {
                 ContentFlushCriteriaOption.ByCharacterCount => content.Length,
                 ContentFlushCriteriaOption.ByTokenCount => 1,
-                _ => throw new ArgumentOutOfRangeException(nameof(_flushCriteriaOption), _flushCriteriaOption, null)
+                _ => throw new ArgumentOutOfRangeException(nameof(_option.FlushCriteriaOption), _option.FlushCriteriaOption, null)
             };
 
-            if (_contentLengthCounter >= _flushThreshold)
-                FlushContentToTextMesh();
+            if (_contentLengthCounter >= _option.FlushThreshold)
+                FlushContentToTextMesh(context);
         }
 
-        protected void FlushContentToTextMesh()
+        protected void FlushContentToTextMesh(TContext context)
         {
             if (_builder.Length == 0) return;
 
-            _onFinish?.Invoke(_builder.ToString());
+            _onFinish?.Invoke(_builder.ToString(), context);
             _builder.Clear();
             _contentLengthCounter = 0;
         }

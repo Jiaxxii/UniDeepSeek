@@ -5,21 +5,18 @@ namespace Xiyu.UniDeepSeek.Events.StreamChatCompletion.Buffer
 {
     public class ContentBuffer : IContentStreamHandler
     {
-        public ContentBuffer(Action<string> onFinish, ContentOption? option = null, int bufferSize = 512)
+        public ContentBuffer(Action<string> onFinish, ContentOption option = null, int bufferSize = 512)
         {
             _builder = new StringBuilder(bufferSize);
-            option ??= ContentOption.Default;
-            _flushThreshold = option.Value.FlushThreshold;
-            _flushCriteriaOption = option.Value.FlushCriteriaOption;
-            _contentLengthCounter = 0;
             _onFinish = onFinish;
+            _option = option ?? new ContentOption();
         }
 
         private readonly StringBuilder _builder;
-        private int _contentLengthCounter;
-        private readonly int _flushThreshold;
-        private readonly ContentFlushCriteriaOption _flushCriteriaOption;
+        private readonly ContentOption _option;
         private readonly Action<string> _onFinish;
+
+        private int _contentLengthCounter;
 
         public void ContentEnter(ChatCompletion completion)
         {
@@ -42,14 +39,14 @@ namespace Xiyu.UniDeepSeek.Events.StreamChatCompletion.Buffer
             if (string.IsNullOrEmpty(content)) return;
 
             _builder.Append(content);
-            _contentLengthCounter += _flushCriteriaOption switch
+            _contentLengthCounter += _option.FlushCriteriaOption switch
             {
                 ContentFlushCriteriaOption.ByCharacterCount => content.Length,
                 ContentFlushCriteriaOption.ByTokenCount => 1,
-                _ => throw new ArgumentOutOfRangeException(nameof(_flushCriteriaOption), _flushCriteriaOption, null)
+                _ => throw new ArgumentOutOfRangeException(nameof(_option.FlushCriteriaOption), _option.FlushCriteriaOption, null)
             };
 
-            if (_contentLengthCounter >= _flushThreshold)
+            if (_contentLengthCounter >= _option.FlushThreshold)
                 FlushContentToTextMesh();
         }
 

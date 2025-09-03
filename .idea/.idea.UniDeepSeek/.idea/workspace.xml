@@ -6,8 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="8dc74092-d10d-470c-8ee2-01be99c0ea2b" name="更改" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UniDeepSeek/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UniDeepSeek/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/README/zh_cn/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/README/zh_cn/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Buffer/ContentBuffer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Buffer/ContentBuffer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Buffer/Options/ContentOption.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Buffer/Options/ContentOption.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Buffer/Options/ReasoningOption.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Buffer/Options/ReasoningOption.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Buffer/ReasoningContentBuffer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Buffer/ReasoningContentBuffer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Generic/Buffer/ContentBuffer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Generic/Buffer/ContentBuffer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Generic/Buffer/ReasoningContentBuffer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Generic/Buffer/ReasoningContentBuffer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Expands/UnityTextMeshProUGUI/TextMeshProPrintUtility.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Expands/UnityTextMeshProUGUI/TextMeshProPrintUtility.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-6000.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-6000.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -219,7 +224,8 @@
       <workItem from="1756786412120" duration="25888000" />
       <workItem from="1756812535542" duration="2015000" />
       <workItem from="1756817180022" duration="1109000" />
-      <workItem from="1756818837620" duration="455000" />
+      <workItem from="1756818837620" duration="706000" />
+      <workItem from="1756819577781" duration="3795000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -525,7 +531,15 @@
       <option name="project" value="LOCAL" />
       <updated>1756812804855</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="doc: 版本确定为 1.0.0">
+      <option name="closed" value="true" />
+      <created>1756819482648</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1756819482648</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -555,7 +569,6 @@
       <path value="$PROJECT_DIR$/Assets" />
     </ignored-roots>
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="fix(global): 错误的使用 `if` 宏&#10;&#10;- 低级错误，错误的将 #if ODIN_INSPECTOR 写成了 #if UNITY_EDITOR，导致未安装Odin Inspector时编译器会报错。" />
     <MESSAGE value="fix(unity Inspector): 不使用 `Odin` 插件也提供了简单的序列化显示" />
     <MESSAGE value="fix(doc):为`ChatProcessor` 添加了一些注释。" />
     <MESSAGE value="fix(download): 非 `Rider` 可能导致依赖缺少&#10;&#10;1.我们添加了自定义宏 `RIDER` 并且在`RiderSymbolDefiner` 中判断您是否是 `Rider` 用户。如果是将会开启宏定义，如果不是则会关闭，防止依赖缺少。&#10;&#10;2.我们添加了 `ManifestJsonEditor` 工具，你可以点击 `Unity -&gt; Tools -&gt; Xiyu -&gt; 添加 UniTask 和 Newtonsoft.Json 依赖` 中添加缺少的依赖" />
@@ -580,7 +593,8 @@
     <MESSAGE value="fix(token calculate): 忘记将一个对象放到构造函数中导致空引用异常，并且从单文件中分离了一些类。" />
     <MESSAGE value="refactor!(project): 重构了 `Xiyu.UniDeepSeek.Events` 下的所有类型进行了重构。" />
     <MESSAGE value="refactor: 将接口分离到各自的文件中" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: 将接口分离到各自的文件中" />
+    <MESSAGE value="doc: 版本确定为 1.0.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="doc: 版本确定为 1.0.0" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

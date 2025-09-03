@@ -23,7 +23,11 @@ namespace Xiyu.UniDeepSeek.UnityTextMeshProUGUI
             int flushThreshold = 10,
             ContentFlushCriteriaOption flushCriteriaOption = ContentFlushCriteriaOption.ByCharacterCount)
         {
-            var option = new ContentOption(flushThreshold, flushCriteriaOption);
+            var option = new ContentOption()
+            {
+                FlushThreshold = flushThreshold,
+                FlushCriteriaOption = flushCriteriaOption,
+            };
 
             var buffer = new ContentBuffer(text => textMeshPro.text += text, option);
 
@@ -48,7 +52,13 @@ namespace Xiyu.UniDeepSeek.UnityTextMeshProUGUI
             int flushThreshold = 10,
             ContentFlushCriteriaOption flushCriteriaOption = ContentFlushCriteriaOption.ByCharacterCount)
         {
-            var option = new ReasoningOption(colorHex, reasoningNewlineCount, flushThreshold, flushCriteriaOption);
+            var option = new ReasoningOption()
+            {
+                ColorHex = colorHex,
+                ReasoningNewlineCount = reasoningNewlineCount,
+                FlushThreshold = flushThreshold,
+                FlushCriteriaOption = flushCriteriaOption,
+            };
 
             var buffer = new ReasoningContentBuffer(text => textMeshPro.text += text, option);
 
@@ -67,7 +77,11 @@ namespace Xiyu.UniDeepSeek.UnityTextMeshProUGUI
             int flushThreshold = 10,
             ContentFlushCriteriaOption flushCriteriaOption = ContentFlushCriteriaOption.ByCharacterCount)
         {
-            var option = new ContentOption(flushThreshold, flushCriteriaOption);
+            var option = new ContentOption()
+            {
+                FlushThreshold = flushThreshold,
+                FlushCriteriaOption = flushCriteriaOption,
+            };
 
             var buffer = new ContentBuffer(text => textMeshPro.text += text, option);
 
@@ -90,7 +104,13 @@ namespace Xiyu.UniDeepSeek.UnityTextMeshProUGUI
             int flushThreshold = 10,
             ContentFlushCriteriaOption flushCriteriaOption = ContentFlushCriteriaOption.ByCharacterCount)
         {
-            var option = new ReasoningOption(colorHex, reasoningNewlineCount, flushThreshold, flushCriteriaOption);
+            var option = new ReasoningOption()
+            {
+                ColorHex = colorHex,
+                ReasoningNewlineCount = reasoningNewlineCount,
+                FlushThreshold = flushThreshold,
+                FlushCriteriaOption = flushCriteriaOption,
+            };
 
             var buffer = new ReasoningContentBuffer(text => textMeshPro.text += text, option);
 

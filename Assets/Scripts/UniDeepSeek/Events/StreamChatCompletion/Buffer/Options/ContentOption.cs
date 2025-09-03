@@ -1,17 +1,37 @@
-﻿namespace Xiyu.UniDeepSeek.Events.StreamChatCompletion.Buffer
+﻿using System;
+using UnityEngine;
+
+#if ODIN_INSPECTOR
+using Sirenix.OdinInspector;
+#endif
+
+namespace Xiyu.UniDeepSeek.Events.StreamChatCompletion.Buffer
 {
-    public readonly struct ContentOption
+    [Serializable]
+    public class ContentOption
     {
-        public ContentOption(int flushThreshold, ContentFlushCriteriaOption flushCriteriaOption)
+#if ODIN_INSPECTOR
+        [BoxGroup("universal", LabelText = "通用"), LabelText("刷新阔值"), MinValue(0)]
+#endif
+        [SerializeField]
+        private int flushInterval = 10;
+
+        public int FlushThreshold
         {
-            FlushThreshold = flushThreshold;
-            FlushCriteriaOption = flushCriteriaOption;
+            get => flushInterval;
+            set => flushInterval = value;
         }
 
-        public int FlushThreshold { get; }
-        public ContentFlushCriteriaOption FlushCriteriaOption { get; }
+#if ODIN_INSPECTOR
+        [BoxGroup("universal"), LabelText("刷新条件"), EnumToggleButtons]
+#endif
+        [SerializeField]
+        private ContentFlushCriteriaOption flushCriteriaOption = ContentFlushCriteriaOption.ByCharacterCount;
 
-
-        public static ContentOption Default => new(10, ContentFlushCriteriaOption.ByCharacterCount);
+        public ContentFlushCriteriaOption FlushCriteriaOption
+        {
+            get => flushCriteriaOption;
+            set => flushCriteriaOption = value;
+        }
     }
 }
