@@ -1,8 +1,6 @@
 ﻿using Cysharp.Threading.Tasks;
+using Xiyu.UniDeepSeek.Events;
 using Xiyu.UniDeepSeek.Events.Buffer;
-using Xiyu.UniDeepSeek.Events.StreamChatCompletion;
-using StreamCompletionConsumer = Xiyu.UniDeepSeek.Events.StreamCompletionConsumer;
-using StreamCompletionEventFacade = Xiyu.UniDeepSeek.Events.StreamCompletionEventFacade;
 
 namespace Xiyu.UniDeepSeek.UnityTextMeshProUGUI
 {

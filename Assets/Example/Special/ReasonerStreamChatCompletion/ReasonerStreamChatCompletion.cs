@@ -6,10 +6,8 @@ using TMPro;
 using UnityEngine;
 using Xiyu.UniDeepSeek;
 using Xiyu.UniDeepSeek.Events;
-using Xiyu.UniDeepSeek.Events.StreamChatCompletion;
 using Xiyu.UniDeepSeek.MessagesType;
 using Xiyu.UniDeepSeek.UnityTextMeshProUGUI;
-using StreamCompletionEventFacade = Xiyu.UniDeepSeek.Events.StreamCompletionEventFacade;
 
 namespace Example.Special.ReasonerStreamChatCompletion
 {
