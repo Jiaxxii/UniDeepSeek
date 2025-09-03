@@ -55,7 +55,7 @@ namespace Xiyu.UniDeepSeek
         /// <exception cref="HttpRequestException">当HTTP状态码表示失败时抛出</exception>
         public async UniTask<string> GetChatCompletionStringAsync([NotNull] string requestUri, [NotNull] string content, CancellationToken? cancellationToken = null)
         {
-            using var httpResponseMessage = await GetResponseMessageAsync(requestUri, content, HttpCompletionOption.ResponseContentRead, cancellationToken);
+            using var httpResponseMessage = await PostResponseMessageAsync(requestUri, content, HttpCompletionOption.ResponseContentRead, cancellationToken);
 
             var readAsString = await httpResponseMessage.Content.ReadAsStringAsync();
 
@@ -77,7 +77,7 @@ namespace Xiyu.UniDeepSeek
         /// <exception cref="HttpRequestException">当HTTP状态码表示失败时抛出</exception>
         public async UniTask<Stream> GetChatCompletionStreamAsync([NotNull] string requestUri, [NotNull] string content, CancellationToken? cancellationToken = null)
         {
-            using var httpResponseMessage = await GetResponseMessageAsync(requestUri, content, HttpCompletionOption.ResponseContentRead, cancellationToken);
+            using var httpResponseMessage = await PostResponseMessageAsync(requestUri, content, HttpCompletionOption.ResponseContentRead, cancellationToken);
 
             if (!httpResponseMessage.IsSuccessStatusCode)
             {
@@ -111,6 +111,25 @@ namespace Xiyu.UniDeepSeek
         }
 
         /// <summary>
+        /// 发送字符串请求并获取响应字符串
+        /// </summary>
+        /// <param name="requestUri">API请求路径</param>
+        /// <param name="cancellationToken">可选的取消令牌</param>
+        /// <returns>可异步枚举的字符串序列</returns>
+        public async UniTask<string> GetStringAsync([NotNull] string requestUri, CancellationToken? cancellationToken = null)
+        {
+            var httpResponseMessage = await GetResponseMessageAsync(requestUri, HttpCompletionOption.ResponseContentRead, cancellationToken);
+
+            if (!httpResponseMessage.IsSuccessStatusCode)
+            {
+                throw new HttpRequestException(await httpResponseMessage.Content.ReadAsStringAsync());
+            }
+
+            return await httpResponseMessage.Content.ReadAsStringAsync();
+        }
+
+
+        /// <summary>
         /// 发送流式请求并获取响应流
         /// </summary>
         /// <param name="requestUri">API请求路径</param>
@@ -120,7 +139,7 @@ namespace Xiyu.UniDeepSeek
         /// <exception cref="HttpRequestException">当HTTP状态码表示失败时抛出</exception>
         public async UniTask<Stream> SendStreamRequestAsync([NotNull] string requestUri, [NotNull] string content, CancellationToken? cancellationToken = null)
         {
-            var httpResponseMessage = await GetResponseMessageAsync(requestUri, content, HttpCompletionOption.ResponseHeadersRead, cancellationToken);
+            var httpResponseMessage = await PostResponseMessageAsync(requestUri, content, HttpCompletionOption.ResponseHeadersRead, cancellationToken);
 
             if (!httpResponseMessage.IsSuccessStatusCode)
             {
@@ -130,7 +149,7 @@ namespace Xiyu.UniDeepSeek
             return await httpResponseMessage.Content.ReadAsStreamAsync();
         }
 
-        private UniTask<HttpResponseMessage> GetResponseMessageAsync([NotNull] string requestUri, [NotNull] string content, HttpCompletionOption httpCompletionOption,
+        private UniTask<HttpResponseMessage> PostResponseMessageAsync([NotNull] string requestUri, [NotNull] string content, HttpCompletionOption httpCompletionOption,
             CancellationToken? cancellationToken = null)
         {
             var uri = GetUri(requestUri);
@@ -138,6 +157,17 @@ namespace Xiyu.UniDeepSeek
 
             using var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, uri);
             httpRequestMessage.Content = stringContent;
+            httpRequestMessage.Headers.Add("Authorization", $"Bearer {GetApiKey()}");
+
+            return MainHttpClient.SendAsync(httpRequestMessage, httpCompletionOption, cancellationToken);
+        }
+
+        private UniTask<HttpResponseMessage> GetResponseMessageAsync([NotNull] string requestUri, HttpCompletionOption httpCompletionOption,
+            CancellationToken? cancellationToken = null)
+        {
+            var uri = GetUri(requestUri);
+
+            using var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, uri);
             httpRequestMessage.Headers.Add("Authorization", $"Bearer {GetApiKey()}");
 
             return MainHttpClient.SendAsync(httpRequestMessage, httpCompletionOption, cancellationToken);
