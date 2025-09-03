@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Xiyu.UniDeepSeek.Events.StreamChatCompletion.Buffer
+namespace Xiyu.UniDeepSeek.Events.Buffer
 {
     public class ReasoningContentBuffer : ContentBuffer, IAggregationStreamHandler
     {

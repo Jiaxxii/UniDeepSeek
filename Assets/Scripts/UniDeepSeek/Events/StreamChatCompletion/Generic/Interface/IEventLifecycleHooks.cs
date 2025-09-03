@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Xiyu.UniDeepSeek.Events.StreamChatCompletion.Generic
+namespace Xiyu.UniDeepSeek.Events.Generic
 {
     public interface IEventLifecycleHooks<out T, out TContext>
     {

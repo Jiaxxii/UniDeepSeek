@@ -1,6 +1,4 @@
-﻿using Xiyu.UniDeepSeek.Events.StreamChatCompletion.Buffer;
-
-namespace Xiyu.UniDeepSeek.Events.StreamChatCompletion
+﻿namespace Xiyu.UniDeepSeek.Events
 {
     public partial class StreamCompletionEventFacade
     {

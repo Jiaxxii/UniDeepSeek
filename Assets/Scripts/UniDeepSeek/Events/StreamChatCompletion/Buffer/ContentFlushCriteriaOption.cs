@@ -1,4 +1,4 @@
-﻿namespace Xiyu.UniDeepSeek.Events.StreamChatCompletion.Buffer
+﻿namespace Xiyu.UniDeepSeek.Events.Buffer
 {
     public enum ContentFlushCriteriaOption
     {

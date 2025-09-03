@@ -5,15 +5,53 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8dc74092-d10d-470c-8ee2-01be99c0ea2b" name="更改" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Expands/DeepSeekModels.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Expands/DeepSeekModels/DeepSeekModelListRequest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Expands/DeepSeekModels/DeepSeekModelListRequest.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Expands/DeepSeekModels/ModelInfo.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Expands/DeepSeekModels/ModelInfo.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UniDeepSeek/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UniDeepSeek/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Example/Special/ReasonerStreamChatCompletion/ReasonerStreamChatCompletion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Example/Special/ReasonerStreamChatCompletion/ReasonerStreamChatCompletion.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Example/StreamChatCompletionEvent/StreamCompletionEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Example/StreamChatCompletionEvent/StreamCompletionEvent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/ChatModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/ChatModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/ChatProcessor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/ChatProcessor.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Buffer/ContentBuffer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Buffer/ContentBuffer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Buffer/ContentFlushCriteriaOption.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Buffer/ContentFlushCriteriaOption.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Buffer/Options/ContentOption.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Buffer/Options/ContentOption.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Buffer/Options/ReasoningOption.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Buffer/Options/ReasoningOption.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Buffer/ReasoningContentBuffer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Buffer/ReasoningContentBuffer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Generic/Buffer/ContentBuffer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Generic/Buffer/ContentBuffer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Generic/Buffer/ReasoningContentBuffer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Generic/Buffer/ReasoningContentBuffer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Generic/Interface/IAggregationStreamHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Generic/Interface/IAggregationStreamHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Generic/Interface/IContentStreamHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Generic/Interface/IContentStreamHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Generic/Interface/IEventLifecycleHooks.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Generic/Interface/IEventLifecycleHooks.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Generic/Interface/IInjectionExecuteEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Generic/Interface/IInjectionExecuteEvent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Generic/Interface/IStreamCompletionConsumer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Generic/Interface/IStreamCompletionConsumer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Generic/Interface/IStreamCompletionEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Generic/Interface/IStreamCompletionEvent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Generic/Interface/IStreamCompletionOnlyContentEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Generic/Interface/IStreamCompletionOnlyContentEvent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Generic/Interface/IStreamCompletionReasoningEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Generic/Interface/IStreamCompletionReasoningEvent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Generic/Model/ContentEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Generic/Model/ContentEvent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Generic/Model/ReasoningEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Generic/Model/ReasoningEvent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Generic/Model/StreamCompletionConsumer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Generic/Model/StreamCompletionConsumer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Generic/Model/StreamCompletionConsumer.partial.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Generic/Model/StreamCompletionConsumer.partial.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Generic/Model/StreamCompletionEventFacade.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Generic/Model/StreamCompletionEventFacade.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Generic/Model/StreamCompletionEventFacade.partial.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Generic/Model/StreamCompletionEventFacade.partial.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Interface/IAggregationStreamHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Interface/IAggregationStreamHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Interface/IContentStreamHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Interface/IContentStreamHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Interface/IEventLifecycleHooks.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Interface/IEventLifecycleHooks.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Interface/IInjectionExecuteEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Interface/IInjectionExecuteEvent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Interface/IStreamCompletionConsumer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Interface/IStreamCompletionConsumer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Interface/IStreamCompletionEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Interface/IStreamCompletionEvent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Interface/IStreamCompletionOnlyContentEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Interface/IStreamCompletionOnlyContentEvent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Interface/IStreamCompletionReasoningEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Interface/IStreamCompletionReasoningEvent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Model/ContentEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Model/ContentEvent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Model/ReasoningEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Model/ReasoningEvent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Model/StreamCompletionConsumer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Model/StreamCompletionConsumer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Model/StreamCompletionConsumer.partial.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Model/StreamCompletionConsumer.partial.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Model/StreamCompletionEventFacade.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Model/StreamCompletionEventFacade.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Model/StreamCompletionEventFacade.partial.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Model/StreamCompletionEventFacade.partial.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Expands/UnityTextMeshProUGUI/TextMeshProPrintUtility.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Expands/UnityTextMeshProUGUI/TextMeshProPrintUtility.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-6000.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-6000.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniDeepSeek.csproj.DotSettings" beforeDir="false" afterPath="$PROJECT_DIR$/UniDeepSeek.csproj.DotSettings" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +102,9 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/b583e7d8f82a4d824fae2e16e2af7f00dc92a5cddd53375c554aee1980d145/JContainer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Editor/ManifestJsonEditor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Analysis/SampleDeserializeCompletion.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://F:/Unity/MyProject/UniDeepSeek/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Interface/IStreamCompletionEvent.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://F:/Unity/MyProject/UniDeepSeek/Assets/Scripts/UniDeepSeek/ChatModel.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://F:/Unity/MyProject/UniDeepSeek/Assets/Scripts/UniDeepSeek/ChatProcessor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://F:/Unity/MyProject/UniDeepSeek/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Buffer/ContentBuffer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Expands/ChatCompletionExpand.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/ResponseJsonData/Logprobs/LogprobItem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@f3fac7af1578/Runtime/TMP/TMP_Text.cs" root0="SKIP_HIGHLIGHTING" />
@@ -226,6 +266,8 @@
       <workItem from="1756817180022" duration="1109000" />
       <workItem from="1756818837620" duration="706000" />
       <workItem from="1756819577781" duration="3795000" />
+      <workItem from="1756880474716" duration="662000" />
+      <workItem from="1756881175542" duration="4391000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -539,7 +581,15 @@
       <option name="project" value="LOCAL" />
       <updated>1756819482648</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="fix: `ContentOption.cs` 与 `ReasoningContentOption.cs` 变为可序列化的（Unity Inspector可编辑）。">
+      <option name="closed" value="true" />
+      <created>1756880618543</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1756880618543</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -569,7 +619,6 @@
       <path value="$PROJECT_DIR$/Assets" />
     </ignored-roots>
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="fix(unity Inspector): 不使用 `Odin` 插件也提供了简单的序列化显示" />
     <MESSAGE value="fix(doc):为`ChatProcessor` 添加了一些注释。" />
     <MESSAGE value="fix(download): 非 `Rider` 可能导致依赖缺少&#10;&#10;1.我们添加了自定义宏 `RIDER` 并且在`RiderSymbolDefiner` 中判断您是否是 `Rider` 用户。如果是将会开启宏定义，如果不是则会关闭，防止依赖缺少。&#10;&#10;2.我们添加了 `ManifestJsonEditor` 工具，你可以点击 `Unity -&gt; Tools -&gt; Xiyu -&gt; 添加 UniTask 和 Newtonsoft.Json 依赖` 中添加缺少的依赖" />
     <MESSAGE value="(fix:ctor): 为 `AssistantMessage` 与 `SystemMessage` 类添加构造函数。" />
@@ -594,7 +643,8 @@
     <MESSAGE value="refactor!(project): 重构了 `Xiyu.UniDeepSeek.Events` 下的所有类型进行了重构。" />
     <MESSAGE value="refactor: 将接口分离到各自的文件中" />
     <MESSAGE value="doc: 版本确定为 1.0.0" />
-    <option name="LAST_COMMIT_MESSAGE" value="doc: 版本确定为 1.0.0" />
+    <MESSAGE value="fix: `ContentOption.cs` 与 `ReasoningContentOption.cs` 变为可序列化的（Unity Inspector可编辑）。" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: `ContentOption.cs` 与 `ReasoningContentOption.cs` 变为可序列化的（Unity Inspector可编辑）。" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -613,11 +663,6 @@
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
-    <pin-to-top-manager>
-      <pinned-members>
-        <PinnedItemInfo parentTag="Type#Xiyu.UniDeepSeek.ChatCompletion" memberName="Choices" />
-      </pinned-members>
-    </pin-to-top-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -1,6 +1,6 @@
 ﻿using Cysharp.Threading.Tasks;
 
-namespace Xiyu.UniDeepSeek.Events.StreamChatCompletion
+namespace Xiyu.UniDeepSeek.Events
 {
     public partial class StreamCompletionConsumer : IStreamCompletionConsumer
     {
@@ -9,7 +9,7 @@ namespace Xiyu.UniDeepSeek.Events.StreamChatCompletion
 
         public UniTask DisplayChatStreamAsync(UniTaskCancelableAsyncEnumerable<ChatCompletion> asyncEnumerable)
         {
-            return ProcessStreamWithReasoningAsync(asyncEnumerable, _contentExecuteEvent, _reasoningEvent);
+            return StreamCompletionConsumer.ProcessStreamWithReasoningAsync(asyncEnumerable, _contentExecuteEvent, _reasoningEvent);
         }
         
 

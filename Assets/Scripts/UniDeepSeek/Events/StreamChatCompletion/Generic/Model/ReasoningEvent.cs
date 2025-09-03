@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Xiyu.UniDeepSeek.Events.StreamChatCompletion.Generic
+namespace Xiyu.UniDeepSeek.Events.Generic
 {
     public class ReasoningEvent<TContext> : IStreamCompletionReasoningEvent<TContext>
         , IReasoningStreamHandler<TContext>

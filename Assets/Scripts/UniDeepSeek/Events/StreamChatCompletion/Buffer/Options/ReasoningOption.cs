@@ -1,11 +1,8 @@
 ﻿using System;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
-#if ODIN_INSPECTOR
-using Sirenix.OdinInspector;
-#endif
-
-namespace Xiyu.UniDeepSeek.Events.StreamChatCompletion.Buffer
+namespace Xiyu.UniDeepSeek.Events.Buffer
 {
     [Serializable]
     public class ReasoningOption : ContentOption

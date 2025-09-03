@@ -1,7 +1,7 @@
 ﻿using System;
 using Cysharp.Threading.Tasks;
 
-namespace Xiyu.UniDeepSeek.Events.StreamChatCompletion
+namespace Xiyu.UniDeepSeek.Events
 {
     public partial class StreamCompletionConsumer
     {

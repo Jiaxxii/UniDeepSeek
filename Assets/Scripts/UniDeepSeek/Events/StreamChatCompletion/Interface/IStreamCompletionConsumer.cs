@@ -1,6 +1,6 @@
 ﻿using Cysharp.Threading.Tasks;
 
-namespace Xiyu.UniDeepSeek.Events.StreamChatCompletion
+namespace Xiyu.UniDeepSeek.Events
 {
     public interface IStreamCompletionConsumer : IInjectionExecuteEvent
     {

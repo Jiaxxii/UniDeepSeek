@@ -1,4 +1,4 @@
-﻿namespace Xiyu.UniDeepSeek.Events.StreamChatCompletion.Generic
+﻿namespace Xiyu.UniDeepSeek.Events.Generic
 {
     public partial class StreamCompletionEventFacade<TContext> : IStreamCompletionEvent<TContext>
     {

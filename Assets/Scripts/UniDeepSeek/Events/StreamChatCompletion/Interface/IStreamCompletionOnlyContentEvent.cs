@@ -1,4 +1,4 @@
-﻿namespace Xiyu.UniDeepSeek.Events.StreamChatCompletion
+﻿namespace Xiyu.UniDeepSeek.Events
 {
     public interface IStreamCompletionOnlyContentEvent :
         IEventLifecycleHooks<IStreamCompletionOnlyContentEvent>

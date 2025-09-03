@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 
-namespace Xiyu.UniDeepSeek.Events.StreamChatCompletion.Buffer
+namespace Xiyu.UniDeepSeek.Events.Buffer
 {
     public class ContentBuffer : IContentStreamHandler
     {
