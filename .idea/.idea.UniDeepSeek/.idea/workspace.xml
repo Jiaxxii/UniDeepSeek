@@ -5,15 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8dc74092-d10d-470c-8ee2-01be99c0ea2b" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Expands/DeepSeekModels.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Expands/DeepSeekModels/DeepSeekModelListRequest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Expands/DeepSeekModels/DeepSeekModelListRequest.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Expands/DeepSeekModels/ModelInfo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Expands/DeepSeekModels/ModelInfo.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Expands/Unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Expands/Unity/OneChat.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Expands/Unity/OneChat.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Expands/UnityColorUtility.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Expands/UnityColorUtility/ColorUtilityExpand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Expands/UnityColorUtility/ColorUtilityExpand.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UniDeepSeek/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UniDeepSeek/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/ChatProcessor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/ChatProcessor.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/DeepSeekChat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/DeepSeekChat.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/ResponseJsonData/ChatCompletionStatic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/ResponseJsonData/ChatCompletionStatic.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniDeepSeek.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/UniDeepSeek.sln.DotSettings.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-6000.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-6000.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +52,13 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1e74f08236fb4c1791a523c0bf197e6c1df600/2b/21fde334/ILogger.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1e74f08236fb4c1791a523c0bf197e6c1df600/8e/beee95ab/Debug.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1e74f08236fb4c1791a523c0bf197e6c1df600/b4/008e32eb/DebugLogHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1e74f08236fb4c1791a523c0bf197e6c1df600/d3/7caf8465/MonoBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1e74f08236fb4c1791a523c0bf197e6c1df600/d8/7d04ca68/Logger.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1e74f08236fb4c1791a523c0bf197e6c1df600/ef/e6cd6275/NotNullAttribute.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1e74f08236fb4c1791a523c0bf197e6c1df600/fa/0814c9c0/ColorUtility.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/571672bc8bbd450b9c7559c1d5ddd5f419c00/57/bde213d0/TabGroupAttribute.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5a41d6b7189842eca409fd0b1c3e3dcf17bf78/3f/431713c8/StringComparison.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5a41d6b7189842eca409fd0b1c3e3dcf17bf78/9d/dca77248/HttpCompletionOption.cs" root0="FORCE_HIGHLIGHTING" />
@@ -62,20 +69,13 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/443ce614ff11fd4152a3c735dec9ef388c537ef8ea9c24e0f018f1bd619e85/JObject.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/696aa455fd6736cddaf4da626e8bac73eb7a3f4de26241c24169a89f925074/System.Net.Http.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/b583e7d8f82a4d824fae2e16e2af7f00dc92a5cddd53375c554aee1980d145/JContainer.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://F:/Unity/MyProject/UniDeepSeek/Assets/Example/Special/ReasonerStreamChatCompletion/ReasonerStreamChatCompletion.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://F:/Unity/MyProject/UniDeepSeek/Assets/Example/StreamChatCompletionEvent/StreamCompletionEvent.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Editor/ManifestJsonEditor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Analysis/SampleDeserializeCompletion.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://F:/Unity/MyProject/UniDeepSeek/Assets/Scripts/UniDeepSeek/ChatModel.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://F:/Unity/MyProject/UniDeepSeek/Assets/Scripts/UniDeepSeek/ChatProcessor.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://F:/Unity/MyProject/UniDeepSeek/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Buffer/ContentBuffer.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://F:/Unity/MyProject/UniDeepSeek/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Interface/IAggregationStreamHandler.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://F:/Unity/MyProject/UniDeepSeek/Assets/Scripts/UniDeepSeek/Events/StreamChatCompletion/Interface/IStreamCompletionEvent.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/Expands/ChatCompletionExpand.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://F:/Unity/MyProject/UniDeepSeek/Assets/Scripts/UniDeepSeek/Expands/UnityTextMeshProUGUI/TextMeshProPrintUtility.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UniDeepSeek/ResponseJsonData/Logprobs/LogprobItem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@f3fac7af1578/Runtime/TMP/TMP_Text.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@f3fac7af1578/Runtime/UGUI/UI/Core/Text.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@b4d700247d4b/Runtime/VisualScripting.Core/Utilities/XColor.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
@@ -234,7 +234,9 @@
       <workItem from="1756818837620" duration="706000" />
       <workItem from="1756819577781" duration="3795000" />
       <workItem from="1756880474716" duration="662000" />
-      <workItem from="1756881175542" duration="6542000" />
+      <workItem from="1756881175542" duration="17370000" />
+      <workItem from="1756898694488" duration="1037000" />
+      <workItem from="1756966116386" duration="2903000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -572,7 +574,15 @@
       <option name="project" value="LOCAL" />
       <updated>1756886237355</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="feat(DeepSeekModelList): 获取 DeepSeek 相关模型列表。">
+      <option name="closed" value="true" />
+      <created>1756887987342</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1756887987342</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -602,7 +612,6 @@
       <path value="$PROJECT_DIR$/Assets" />
     </ignored-roots>
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="(fix:ctor): 为 `AssistantMessage` 与 `SystemMessage` 类添加构造函数。" />
     <MESSAGE value="fix(Dependency): `DependencyManager.cs` 会检查是否已经添加依赖。" />
     <MESSAGE value="feat(authentication api_key): 现在你可以指定 `ChatProcessor` 中的 `ApiKeyConverter` 来对api key进行加密解密。" />
     <MESSAGE value="log(unity reference refresh)" />
@@ -627,7 +636,8 @@
     <MESSAGE value="fix: `ContentOption.cs` 与 `ReasoningContentOption.cs` 变为可序列化的（Unity Inspector可编辑）。" />
     <MESSAGE value="refactor!(Events): 扁平化 StreamChatCompletion 事件的命名空间&#10;&#10;动机：&#10;为了简化事件模型的命名结构，减少不必要的嵌套，提升代码的可读性和使用的便利性。&#10;&#10;主要内容：&#10;- 将 `Xiyu.UniDeepSeek.Events.StreamChatCompletion` 命名空间下的所有类型&#10;- 移至 `Xiyu.UniDeepSeek.Events` 根命名空间下&#10;- 并移除了空的 `StreamChatCompletion` 嵌套命名空间。&#10;&#10;破坏性变更：&#10;这是一个破坏性变更。所有对旧命名空间的引用都需要更新。&#10;- 所有使用 `Xiyu.UniDeepSeek.Events.StreamChatCompletion.*` 的代码&#10;- 需要改为使用 `Xiyu.UniDeepSeek.Events.*`&#10;&#10;影响范围：&#10;所有创建或消费 `StreamChatCompletion` 相关事件的代码都需要更新其 `using` 指令或完全限定名称。&#10;&#10;迁移指南：&#10;全局搜索并替换 `Xiyu.UniDeepSeek.Events.StreamChatCompletion` 为 `Xiyu.UniDeepSeek.Events` 即可完成迁移。" />
     <MESSAGE value="fix: 命名空间未及时更改导致报错" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: 命名空间未及时更改导致报错" />
+    <MESSAGE value="feat(DeepSeekModelList): 获取 DeepSeek 相关模型列表。" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(DeepSeekModelList): 获取 DeepSeek 相关模型列表。" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
